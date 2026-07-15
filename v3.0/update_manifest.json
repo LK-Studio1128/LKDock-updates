@@ -29,7 +29,7 @@
     "linux": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.1/LKDock_v3.0_update_Linux.zip",
       "file_size_mb": 18,
-      "sha256": "REPLACE_WITH_ACTUAL_SHA256",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "files_to_replace": [
         "main3.cpython-311-x86_64-linux-gnu.so"
       ],
