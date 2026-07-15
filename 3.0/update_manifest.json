@@ -1,0 +1,39 @@
+{
+  "latest_version": "3.0.1",
+  "release_date": "2026-07-15",
+  "min_version_required": "3.0.0",
+  "changes": [
+    "新增在线更新功能",
+    "新增源码保护（Nuitka 编译）",
+    "修复已知问题"
+  ],
+  "platforms": {
+    "windows": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.1/LKDock_v3.0_update_Win.zip",
+      "file_size_mb": 5.0,
+      "sha256": "8645e52bdff33b9bc3518c54177891b66d7a7bad184688c1dd620e9ce6c36a16",
+      "files_to_replace": [
+        "main3.cp311-win_amd64.pyd"
+      ],
+      "python_version": "3.11"
+    },
+    "macos": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.1/LKDock_v3.0_update_Mac.zip",
+      "file_size_mb": 5.1,
+      "sha256": "6d5989d5899dc515a7897eb22c594b8b3275214592f814e4b9f284761984bca0",
+      "files_to_replace": [
+        "main3.cpython-311-darwin.so"
+      ],
+      "python_version": "3.11"
+    },
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.1/LKDock_v3.0_update_Linux.zip",
+      "file_size_mb": 18,
+      "sha256": "REPLACE_WITH_ACTUAL_SHA256",
+      "files_to_replace": [
+        "main3.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11"
+    }
+  }
+}
