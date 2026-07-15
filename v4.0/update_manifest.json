@@ -12,7 +12,7 @@
     "windows": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.1/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 10.1,
-      "sha256": "5a20d8779fb717e79461da5d56404197d8c15cdebf4bd23bfba4364de5c60326",
+      "sha256": "797fff2d6641f14693c0fbbdb89172966036d2f001a85375cb5b53dabb8a76a6",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
