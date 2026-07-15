@@ -1,6 +1,6 @@
 {
   "latest_version": "2.0.1",
-  "release_date": "2026-07-15",
+  "release_date": "2026-07-16",
   "min_version_required": "2.0.0",
   "changes": [
     "新增在线更新功能",
@@ -20,7 +20,7 @@
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.1/LKDock_v2.0_update_Mac.zip",
       "file_size_mb": 3.2,
-      "sha256": "db9f4cfcc6d4a0496f3607987212713bae75a312516588e36d92ba8e4d5cbb24",
+      "sha256": "f330909af24a3fd7fec0b429f43a7fe9f3ebc3fae869eb3afef4e40206bd6d5c",
       "files_to_replace": [
         "main2.cpython-311-darwin.so"
       ],
