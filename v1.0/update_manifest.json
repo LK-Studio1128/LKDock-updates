@@ -20,7 +20,7 @@
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.2/LKDock_v1.0_update_Mac.zip",
       "file_size_mb": 1.3,
-      "sha256": "a69fb0197c25fe2216085bc6acf63316fd36fbb5f790165c073a604e8f07458c",
+      "sha256": "1eded29f084894d3eab5701d1bf0e0473b27ccb72b5de2872ff999ecd2283b8d",
       "files_to_replace": [
         "main1.cpython-311-darwin.so"
       ],
