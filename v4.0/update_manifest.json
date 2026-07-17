@@ -24,7 +24,7 @@
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.3/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 10.2,
-      "sha256": "f2de19798962cc31e05be875d1ac34be0797248875ad086698f81fa3c61d392d",
+      "sha256": "c9096d1c43f6994a040c5d90d0385e40c6f45c097d33be457470ff083b4710f0",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
