@@ -1,19 +1,14 @@
 {
-  "latest_version": "4.0.3",
-  "release_date": "2026-07-17",
+  "latest_version": "4.0.4",
+  "release_date": "2026-07-20",
   "min_version_required": "4.0.0",
   "changes": [
-    "新增 PPI 报告6种统计图表（引擎分布/分数分布/界面指标/ipTM排名/残基贡献/完成率）",
-    "新增 PPI PDF论文报告扩展摘要、对接统计总览、附录A-D、技术执行摘要",
-    "新增 PPI HTML报告统计图表展示模块",
-    "新增 PPI 附加报告LKlight分数分布表、AlphaFold ipTM排名表、热点残基Top10",
-    "修复技术执行摘要生成失败bug（df2.iterrows替代df2.fillna迭代）",
-    "修复 PPI parallel_mode 默认值恢复为 parallel",
-    "优化报告排版与分页"
+    "修复已知问题",
+    "优化性能"
   ],
   "platforms": {
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.3/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.4/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 10.1,
       "sha256": "797fff2d6641f14693c0fbbdb89172966036d2f001a85375cb5b53dabb8a76a6",
       "files_to_replace": [
@@ -22,17 +17,17 @@
       "python_version": "3.11"
     },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.3/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 10.2,
-      "sha256": "c9096d1c43f6994a040c5d90d0385e40c6f45c097d33be457470ff083b4710f0",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.4/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 9.9,
+      "sha256": "50f9aeec6a1b580abb533dd68bcb06f5665713c8c008968c93e5ff50c104c052",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11"
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.3/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 15,
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.4/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 0,
       "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
