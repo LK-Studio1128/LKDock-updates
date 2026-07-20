@@ -1,6 +1,6 @@
 {
-  "latest_version": "3.0.3",
-  "release_date": "2026-07-17",
+  "latest_version": "3.0.4",
+  "release_date": "2026-07-20",
   "min_version_required": "3.0.0",
   "changes": [
     "新增 PPI 报告6种统计图表（引擎分布/分数分布/界面指标/ipTM排名/残基贡献/完成率）",
@@ -13,7 +13,7 @@
   ],
   "platforms": {
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.3/LKDock_v3.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.4/LKDock_v3.0_update_Win.zip",
       "file_size_mb": 5.0,
       "sha256": "0ef1d5eb1deb1ca1d302315726cba06c66f0344ac47cda05c00569b67f7db59f",
       "files_to_replace": [
@@ -22,7 +22,7 @@
       "python_version": "3.11"
     },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.3/LKDock_v3.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.4/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 5.1,
       "sha256": "a9310b4793c4f2ee1066fd69a226aa99678dbf9701b5d30d0b0c5c5b3837f21c",
       "files_to_replace": [
@@ -31,9 +31,9 @@
       "python_version": "3.11"
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.3/LKDock_v3.0_update_Linux.zip",
-      "file_size_mb": 18,
-      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.4/LKDock_v3.0_update_Linux.zip",
+      "file_size_mb": 6.3,
+      "sha256": "3c9c3a06c3ead3f9e8989e8796279c35ee89788b4d931fb78d553ba8ee7c5135",
       "files_to_replace": [
         "main3.cpython-311-x86_64-linux-gnu.so"
       ],
