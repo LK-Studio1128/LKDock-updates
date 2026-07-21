@@ -1,14 +1,20 @@
 {
-  "latest_version": "4.0.4",
-  "release_date": "2026-07-20",
+  "latest_version": "4.0.5",
+  "release_date": "2026-07-21",
   "min_version_required": "4.0.0",
   "changes": [
-    "修复已知问题",
-    "优化性能"
+    "修复 UniDock-Pro GPU 引擎使用 --exhaustiveness 导致卡死的问题（改用 --search_mode balance/fast/detail 档位）",
+    "修复共晶配体成盒在 UniDock-Pro GPU 引擎下仍写入 exhaustiveness 参数导致无法正常对接的问题",
+    "修复空配体 PDBQT 文件导致 UniDock-Pro GPU 批量对接崩溃（segfault/rc=3221225477）的问题：新增预飞行验证跳过无原子记录的配体",
+    "修复 GPU 引擎盒子尺寸超 30Å 未裁剪导致 UniDock-Pro 卡死的问题",
+    "修复 MM-PBSA/GBSA 能量分量图标准差显示为±0.0的bug（Δ前缀剥离错误+标准差列选择错误）",
+    "修复小分子-小分子(ligand-ligand)MD模拟因_lie_rerun_needed内部键泄漏到MDP文件导致grompp误报Unknown left-hand致命警告的问题（Win/Linux/Mac三版本均已修复）",
+    "修复纯膜/嵌膜MD模拟中packmol-memgen输出的Amber Lipid17分裂残基(PA/PC/OL)无法被charmm36力场pdb2gmx识别的问题：新增Amber Lipid17→charmm36 POPC原子名转换器，修正PA/OL尾巴映射颠倒、双键氢原子名(H91/H101)错误、OL尾巴C117/C118丢弃等bug",
+    "修复分析模块在ML打分未启用时因ml_results变量未初始化导致综合打分报告崩溃的问题（UnboundLocalError）"
   ],
   "platforms": {
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.4/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.5/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 10.1,
       "sha256": "797fff2d6641f14693c0fbbdb89172966036d2f001a85375cb5b53dabb8a76a6",
       "files_to_replace": [
@@ -17,16 +23,16 @@
       "python_version": "3.11"
     },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.4/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.5/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 9.9,
-      "sha256": "50f9aeec6a1b580abb533dd68bcb06f5665713c8c008968c93e5ff50c104c052",
+      "sha256": "4eab4bfd3bb9a616ebc22b748ffeaf3499a8313dd0fdb504eaeb4500ef53ae7d",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11"
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.4/LKDock_v4.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.5/LKDock_v4.0_update_Linux.zip",
       "file_size_mb": 13.1,
       "sha256": "63881e216533971eba2aaf1b559e68820b70de76765878171b6a51dc2973ce33",
       "files_to_replace": [

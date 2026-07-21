@@ -1,19 +1,17 @@
 {
-  "latest_version": "3.0.4",
-  "release_date": "2026-07-20",
+  "latest_version": "3.0.5",
+  "release_date": "2026-07-21",
   "min_version_required": "3.0.0",
   "changes": [
-    "新增 PPI 报告6种统计图表（引擎分布/分数分布/界面指标/ipTM排名/残基贡献/完成率）",
-    "新增 PPI PDF论文报告扩展摘要、对接统计总览、附录A-D、技术执行摘要",
-    "新增 PPI HTML报告统计图表展示模块",
-    "新增 PPI 附加报告LKlight分数分布表、AlphaFold ipTM排名表、热点残基Top10",
-    "修复技术执行摘要生成失败bug（df2.iterrows替代df2.fillna迭代）",
-    "修复 PPI parallel_mode 默认值恢复为 parallel",
-    "优化报告排版与分页"
+    "修复 UniDock-Pro GPU 引擎使用 --exhaustiveness 导致卡死的问题（改用 --search_mode balance/fast/detail 档位）",
+    "修复共晶配体成盒在 UniDock-Pro GPU 引擎下仍写入 exhaustiveness 参数导致无法正常对接的问题",
+    "修复空配体 PDBQT 文件导致 UniDock-Pro GPU 批量对接崩溃（segfault）的问题：新增预飞行验证跳过无原子记录的配体",
+    "修复 GPU 引擎盒子尺寸超 30Å 未裁剪导致 UniDock-Pro 卡死的问题",
+    "修复分析模块在ML打分未启用时因ml_results变量未初始化导致综合打分报告崩溃的问题（UnboundLocalError）"
   ],
   "platforms": {
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.4/LKDock_v3.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.5/LKDock_v3.0_update_Win.zip",
       "file_size_mb": 5.0,
       "sha256": "0ef1d5eb1deb1ca1d302315726cba06c66f0344ac47cda05c00569b67f7db59f",
       "files_to_replace": [
@@ -22,18 +20,18 @@
       "python_version": "3.11"
     },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.4/LKDock_v3.0_update_Mac.zip",
-      "file_size_mb": 5.1,
-      "sha256": "a9310b4793c4f2ee1066fd69a226aa99678dbf9701b5d30d0b0c5c5b3837f21c",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.5/LKDock_v3.0_update_Mac.zip",
+      "file_size_mb": 5.0,
+      "sha256": "f6061b1948b73d8e01b25b166e2e59d6b0c4c0c6cb2b6141b64ec89b695d07f2",
       "files_to_replace": [
         "main3.cpython-311-darwin.so"
       ],
       "python_version": "3.11"
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.4/LKDock_v3.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.5/LKDock_v3.0_update_Linux.zip",
       "file_size_mb": 6.3,
-      "sha256": "3c9c3a06c3ead3f9e8989e8796279c35ee89788b4d931fb78d553ba8ee7c5135",
+      "sha256": "af23385f79c3fd9233fe5e5448c5deeebf3cd58534c24f8d75b7952cab4d83f1",
       "files_to_replace": [
         "main3.cpython-311-x86_64-linux-gnu.so"
       ],

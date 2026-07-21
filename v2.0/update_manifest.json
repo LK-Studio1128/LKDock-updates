@@ -1,14 +1,15 @@
 {
-  "latest_version": "2.0.4",
-  "release_date": "2026-07-20",
+  "latest_version": "2.0.5",
+  "release_date": "2026-07-21",
   "min_version_required": "2.0.0",
   "changes": [
     "修复已知问题",
-    "优化报告排版与分页"
+    "优化报告排版与分页",
+    "修复分析模块在ML打分未启用时因ml_results变量未初始化导致综合打分报告崩溃的问题（UnboundLocalError）"
   ],
   "platforms": {
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.4/LKDock_v2.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.5/LKDock_v2.0_update_Win.zip",
       "file_size_mb": 3.0,
       "sha256": "4a12df5119274c207a10640f2c721b717015798c801dff9fee0e03378d96dcce",
       "files_to_replace": [
@@ -17,16 +18,16 @@
       "python_version": "3.11"
     },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.4/LKDock_v2.0_update_Mac.zip",
-      "file_size_mb": 3.2,
-      "sha256": "44165ee4c56a186a09c45efd623979208c42def593ee256db3bb5e4d9f50a944",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.5/LKDock_v2.0_update_Mac.zip",
+      "file_size_mb": 3.1,
+      "sha256": "41da9f52e4817c6c975917a2b35eb36e41d5871bfda5450f5fd654a054ec1cbc",
       "files_to_replace": [
         "main2.cpython-311-darwin.so"
       ],
       "python_version": "3.11"
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.4/LKDock_v2.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.5/LKDock_v2.0_update_Linux.zip",
       "file_size_mb": 3.9,
       "sha256": "d26c2e7eea30aff7c53c37506681347e53a2150769b6cd3d59a6e6cc3404b44a",
       "files_to_replace": [
