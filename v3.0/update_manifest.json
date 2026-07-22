@@ -3,42 +3,32 @@
   "release_date": "2026-07-22",
   "min_version_required": "3.0.0",
   "changes": [
-    "修复 UniDock-Pro GPU 引擎使用 --exhaustiveness 导致卡死的问题（改用 --search_mode balance/fast/detail 档位）",
-    "修复共晶配体成盒在 UniDock-Pro GPU 引擎下仍写入 exhaustiveness 参数导致无法正常对接的问题",
-    "修复空配体 PDBQT 文件导致 UniDock-Pro GPU 批量对接崩溃（segfault）的问题：新增预飞行验证跳过无原子记录的配体",
-    "修复 GPU 引擎盒子尺寸超 30Å 未裁剪导致 UniDock-Pro 卡死的问题",
-    "修复分析模块在ML打分未启用时因ml_results变量未初始化导致综合打分报告崩溃的问题（UnboundLocalError）"
+    "修复在线更新功能（module_suffix 未定义导致更新失败）",
+    "修复 Windows .pyd 文件锁定导致更新安装失败",
+    "修复 v2/v3 版本比较使用 != 而非 > 导致降级也触发更新",
+    "添加更新错误日志输出"
   ],
   "platforms": {
     "windows": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.6/LKDock_v3.0_update_Win.zip",
       "file_size_mb": 7.0,
-      "sha256": "c20d31b3787f0bdd2129a4c3433fa316ef35ecaf627df56e9590be1289b367a2",
-      "files_to_replace": [
-        "main3.cp311-win_amd64.pyd"
-      ],
-      "python_version": "3.11",
-      "size": 7308672
+      "sha256": "ffafa7ddd408026ab38374e71d2497aaaf6558f3bc924c334d64887c179b0483",
+      "files_to_replace": ["main3.cp311-win_amd64.pyd"],
+      "python_version": "3.11"
     },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.6/LKDock_v3.0_update_Mac.zip",
-      "file_size_mb": 5.0,
-      "sha256": "f3330bc6c73c07a8ddf686a65cb38f7988b7c0f33bbb83703b5e2bbc274494dc",
-      "files_to_replace": [
-        "main3.cpython-311-darwin.so"
-      ],
-      "python_version": "3.11",
-      "size": 5234964
+      "file_size_mb": 4.9,
+      "sha256": "290e5a7b1a25747d9df2536f03c9ff174d96c84283dcd43e6bda9f5cdb44f260",
+      "files_to_replace": ["main3.cpython-311-darwin.so"],
+      "python_version": "3.11"
     },
     "linux": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.6/LKDock_v3.0_update_Linux.zip",
-      "file_size_mb": 6.3,
-      "sha256": "fcc35ab086050e200b7135d876491cb4dc8d6d20b4694651829e519c6648b53b",
-      "files_to_replace": [
-        "main3.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 6589876
+      "file_size_mb": 7.0,
+      "sha256": "fea984270cc7c62a35d471256d20d85b108a0a4d15d83a293f210d470f4892b9",
+      "files_to_replace": ["main3.cpython-311-x86_64-linux-gnu.so"],
+      "python_version": "3.11"
     }
   }
 }
