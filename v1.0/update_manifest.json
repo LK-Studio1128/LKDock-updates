@@ -1,38 +1,32 @@
 {
-  "latest_version": "1.0.3",
-  "release_date": "2026-07-16",
+  "latest_version": "1.0.6",
+  "release_date": "2026-07-22",
   "min_version_required": "1.0.0",
   "changes": [
-    "新增在线更新功能",
-    "新增源码保护（Nuitka 编译）",
-    "修复已知问题"
+    "修复在线更新功能（module_suffix 未定义导致更新失败）",
+    "修复 Windows .pyd 文件锁定导致更新安装失败",
+    "添加更新错误日志输出"
   ],
   "platforms": {
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.3/LKDock_v1.0_update_Win.zip",
-      "file_size_mb": 1.3,
-      "sha256": "a147696d2d32e9d43c2f5e9c9786d7ea83170e8b8f29dd16a5c31f5d718908ec",
-      "files_to_replace": [
-        "main1.cp311-win_amd64.pyd"
-      ],
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.6/LKDock_v1.0_update_Win.zip",
+      "file_size_mb": 1.9,
+      "sha256": "8511ae7791851cbcf53e64d2f39cd2118c31371f93e4e6b8838248b5bf79b5c0",
+      "files_to_replace": ["main1.cp311-win_amd64.pyd"],
       "python_version": "3.11"
     },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.3/LKDock_v1.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.6/LKDock_v1.0_update_Mac.zip",
       "file_size_mb": 1.3,
-      "sha256": "641cc52d39b419a4cab5d52a3f30c3e86c4c09f66ad69a10893e0c22b20f1dbe",
-      "files_to_replace": [
-        "main1.cpython-311-darwin.so"
-      ],
+      "sha256": "8ac8dcf958c552f1858bfa4712a9510a53215dc19146e8b2bd8e6dbd993fd1ad",
+      "files_to_replace": ["main1.cpython-311-darwin.so"],
       "python_version": "3.11"
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.3/LKDock_v1.0_update_Linux.zip",
-      "file_size_mb": 12,
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.6/LKDock_v1.0_update_Linux.zip",
+      "file_size_mb": 0,
       "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-      "files_to_replace": [
-        "main1.cpython-311-x86_64-linux-gnu.so"
-      ],
+      "files_to_replace": ["main1.cpython-311-x86_64-linux-gnu.so"],
       "python_version": "3.11"
     }
   }
