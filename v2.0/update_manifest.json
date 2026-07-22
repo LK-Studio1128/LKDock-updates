@@ -3,40 +3,32 @@
   "release_date": "2026-07-22",
   "min_version_required": "2.0.0",
   "changes": [
-    "修复已知问题",
-    "优化报告排版与分页",
-    "修复分析模块在ML打分未启用时因ml_results变量未初始化导致综合打分报告崩溃的问题（UnboundLocalError）"
+    "修复在线更新功能（module_suffix 未定义导致更新失败）",
+    "修复 Windows .pyd 文件锁定导致更新安装失败",
+    "修复 v2/v3 版本比较使用 != 而非 > 导致降级也触发更新",
+    "添加更新错误日志输出"
   ],
   "platforms": {
     "windows": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.6/LKDock_v2.0_update_Win.zip",
       "file_size_mb": 4.3,
-      "sha256": "4f8d3628908a58e8ffc44032b647a838f812e3e14afced4a2451b4df5b43760e",
-      "files_to_replace": [
-        "main2.cp311-win_amd64.pyd"
-      ],
-      "python_version": "3.11",
-      "size": 4503421
+      "sha256": "264f4a025c2c8b6e79ee6b48c5687b92fb9f4cde4fb11f00cbed04f05cc59855",
+      "files_to_replace": ["main2.cp311-win_amd64.pyd"],
+      "python_version": "3.11"
     },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.6/LKDock_v2.0_update_Mac.zip",
       "file_size_mb": 3.1,
-      "sha256": "482482805cd0ccfc23ca6193c25fb0f02d9da974b49c169533c74f9763d7207b",
-      "files_to_replace": [
-        "main2.cpython-311-darwin.so"
-      ],
-      "python_version": "3.11",
-      "size": 3263161
+      "sha256": "24c0af08ce68e891f4f41c398acf4fd1d8614857c5c0ca9c523edd19f89fb8bf",
+      "files_to_replace": ["main2.cpython-311-darwin.so"],
+      "python_version": "3.11"
     },
     "linux": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.6/LKDock_v2.0_update_Linux.zip",
       "file_size_mb": 3.9,
-      "sha256": "c2e2f5151ffcbfb0068d24d05b6efe0bb58dcefd5c18a0e15c2144bd209ca93d",
-      "files_to_replace": [
-        "main2.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 4109030
+      "sha256": "beca0bdd274fbd5ca5aa49dd8db44483ce1e633b0cf5eecea73695bfec50d1c6",
+      "files_to_replace": ["main2.cpython-311-x86_64-linux-gnu.so"],
+      "python_version": "3.11"
     }
   }
 }
