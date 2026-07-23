@@ -25,13 +25,13 @@
     },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.7/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 9.9,
-      "sha256": "4b2b401afd22e9080ed2740c08a378299b8431473560abc60b3c0b7d382d3616",
+      "file_size_mb": 10.4,
+      "sha256": "618dafafe8ec58decdc3f365145549d2f296c47d7d66d4d5fff47bc3c4a857d1",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 10365779
+      "size": 10881816
     },
     "linux": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.7/LKDock_v4.0_update_Linux.zip",
