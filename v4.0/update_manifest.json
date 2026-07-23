@@ -1,6 +1,6 @@
 {
-  "latest_version": "4.0.6",
-  "release_date": "2026-07-22",
+  "latest_version": "4.0.7",
+  "release_date": "2026-07-23",
   "min_version_required": "4.0.0",
   "changes": [
     "修复 UniDock-Pro GPU 引擎使用 --exhaustiveness 导致卡死的问题（改用 --search_mode balance/fast/detail 档位）",
@@ -14,17 +14,17 @@
   ],
   "platforms": {
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.6/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 14.3,
-      "sha256": "70bccd2e5c883938314e1d575c06fbef48e059dfb76da334998cddda9413918d",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.7/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 14.4,
+      "sha256": "34ee1dd0513e7060bf7f1aba62e14a227f2b08b4b6b8758cf45a5488afff70f8",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 15012764
+      "size": 15087684
     },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.6/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.7/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 9.9,
       "sha256": "4b2b401afd22e9080ed2740c08a378299b8431473560abc60b3c0b7d382d3616",
       "files_to_replace": [
@@ -34,14 +34,14 @@
       "size": 10365779
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.6/LKDock_v4.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.7/LKDock_v4.0_update_Linux.zip",
       "file_size_mb": 13.2,
-      "sha256": "238034c6dd9b1fc9cedf0fa7f3f76c72b10cc44f199ece1611fc9d549df0da20",
+      "sha256": "3cba3bece87a6785069b9e92a4365cd2f2777a112bdbe39a4259db4f8644bf9e",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 13823467
+      "size": 13877087
     }
   }
 }
