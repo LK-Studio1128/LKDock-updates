@@ -12,8 +12,8 @@
   "platforms": {
     "windows": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.8/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 14.4,
-      "sha256": "34ee1dd0513e7060bf7f1aba62e14a227f2b08b4b6b8758cf45a5488afff70f8",
+      "file_size_mb": 0,
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
@@ -30,8 +30,8 @@
     },
     "linux": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.8/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 13.2,
-      "sha256": "3cba3bece87a6785069b9e92a4365cd2f2777a112bdbe39a4259db4f8644bf9e",
+      "file_size_mb": 0,
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],

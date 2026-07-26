@@ -10,8 +10,8 @@
   "platforms": {
     "windows": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.8/LKDock_v1.0_update_Win.zip",
-      "file_size_mb": 1.9,
-      "sha256": "8511ae7791851cbcf53e64d2f39cd2118c31371f93e4e6b8838248b5bf79b5c0",
+      "file_size_mb": 0,
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "files_to_replace": [
         "main1.cp311-win_amd64.pyd"
       ],
