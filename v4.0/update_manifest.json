@@ -1,47 +1,41 @@
 {
-  "latest_version": "4.0.7",
-  "release_date": "2026-07-23",
+  "latest_version": "4.0.8",
+  "release_date": "2026-07-26",
   "min_version_required": "4.0.0",
   "changes": [
-    "修复 UniDock-Pro GPU 引擎使用 --exhaustiveness 导致卡死的问题（改用 --search_mode balance/fast/detail 档位）",
-    "修复共晶配体成盒在 UniDock-Pro GPU 引擎下仍写入 exhaustiveness 参数导致无法正常对接的问题",
-    "修复空配体 PDBQT 文件导致 UniDock-Pro GPU 批量对接崩溃（segfault/rc=3221225477）的问题：新增预飞行验证跳过无原子记录的配体",
-    "修复 GPU 引擎盒子尺寸超 30Å 未裁剪导致 UniDock-Pro 卡死的问题",
-    "修复 MM-PBSA/GBSA 能量分量图标准差显示为±0.0的bug（Δ前缀剥离错误+标准差列选择错误）",
-    "修复小分子-小分子(ligand-ligand)MD模拟因_lie_rerun_needed内部键泄漏到MDP文件导致grompp误报Unknown left-hand致命警告的问题（Win/Linux/Mac三版本均已修复）",
-    "修复纯膜/嵌膜MD模拟中packmol-memgen输出的Amber Lipid17分裂残基(PA/PC/OL)无法被charmm36力场pdb2gmx识别的问题：新增Amber Lipid17→charmm36 POPC原子名转换器，修正PA/OL尾巴映射颠倒、双键氢原子名(H91/H101)错误、OL尾巴C117/C118丢弃等bug",
-    "修复分析模块在ML打分未启用时因ml_results变量未初始化导致综合打分报告崩溃的问题（UnboundLocalError）"
+    "新增 GROMACS 多体系并行 MD 模拟功能：支持多 GPU 独占、单 GPU 共享、CPU 并行三种策略，每个体系独立 worker 子进程执行完整流程（pdb2gmx→editconf→solvate→genion→EM→NVT→NPT→production），默认关闭不影响原有串行流程",
+    "新增并行模式 UI 控件（启用并行、并行模式、并行任务数、每任务CPU线程数），默认 serial 关闭",
+    "新增 --md-gmx-worker 子进程入口，worker 独立加载 CONFIG、绑定 CUDA_VISIBLE_DEVICES、写独立结果 JSON",
+    "新增 worker 启动失败自动回退串行、超时终止全部 worker、spawn 异常清理等安全机制",
+    "修复 PubChem 下载失败后日志缩进错误导致的 IndentationError（Win 版）"
   ],
   "platforms": {
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.7/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.8/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 14.4,
       "sha256": "34ee1dd0513e7060bf7f1aba62e14a227f2b08b4b6b8758cf45a5488afff70f8",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
-      "python_version": "3.11",
-      "size": 15087684
+      "python_version": "3.11"
     },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.7/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 10.4,
-      "sha256": "618dafafe8ec58decdc3f365145549d2f296c47d7d66d4d5fff47bc3c4a857d1",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.8/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 10.0,
+      "sha256": "00f3d4227416a5fa1f76b89beae20d73cb003e8e56fa7ee8dd19b9d2dcccae77",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
-      "python_version": "3.11",
-      "size": 10881816
+      "python_version": "3.11"
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.7/LKDock_v4.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.8/LKDock_v4.0_update_Linux.zip",
       "file_size_mb": 13.2,
       "sha256": "3cba3bece87a6785069b9e92a4365cd2f2777a112bdbe39a4259db4f8644bf9e",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
-      "python_version": "3.11",
-      "size": 13877087
+      "python_version": "3.11"
     }
   }
 }
