@@ -1,5 +1,5 @@
 {
-  "latest_version": "1.0.13",
+  "latest_version": "1.0.14",
   "release_date": "2026-07-29",
   "min_version_required": "1.0.0",
   "changes": [
@@ -9,7 +9,7 @@
   ],
   "platforms": {
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.13/LKDock_v1.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.14/LKDock_v1.0_update_Win.zip",
       "file_size_mb": 2.0,
       "sha256": "a931ecb855901124b0fa2b7510417497e521e9e8d0da52722edcb22b96a1899b",
       "files_to_replace": [
@@ -18,16 +18,16 @@
       "python_version": "3.11"
     },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.13/LKDock_v1.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.14/LKDock_v1.0_update_Mac.zip",
       "file_size_mb": 1.4,
-      "sha256": "6d675234ede5995dfd647a631383fd67ef6deca4999956753cb9545a4d1d53f3",
+      "sha256": "d8838a60a9c382b7d20195e58b9e57fd8876e9cd85adde4e20632e79e44b042a",
       "files_to_replace": [
         "main1.cpython-311-darwin.so"
       ],
       "python_version": "3.11"
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.13/LKDock_v1.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.14/LKDock_v1.0_update_Linux.zip",
       "file_size_mb": 0,
       "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "files_to_replace": [
