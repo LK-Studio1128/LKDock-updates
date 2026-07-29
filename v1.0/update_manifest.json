@@ -1,37 +1,37 @@
 {
-  "latest_version": "1.0.8",
-  "release_date": "2026-07-26",
+  "latest_version": "1.0.13",
+  "release_date": "2026-07-29",
   "min_version_required": "1.0.0",
   "changes": [
-    "修复在线更新功能（module_suffix 未定义导致更新失败）",
-    "修复 Windows .pyd 文件锁定导致更新安装失败",
-    "添加更新错误日志输出"
+    "新增在线更新功能",
+    "新增源码保护（Nuitka 编译）",
+    "修复已知问题"
   ],
   "platforms": {
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.8/LKDock_v1.0_update_Win.zip",
-      "file_size_mb": 0,
-      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.13/LKDock_v1.0_update_Win.zip",
+      "file_size_mb": 2.0,
+      "sha256": "a931ecb855901124b0fa2b7510417497e521e9e8d0da52722edcb22b96a1899b",
       "files_to_replace": [
         "main1.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11"
     },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.8/LKDock_v1.0_update_Mac.zip",
-      "file_size_mb": 2.6,
-      "sha256": "b3c882cc9b26b981dba35207a0f705473e923f51d8d556a6fd1adaf89ef44bf8",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.13/LKDock_v1.0_update_Mac.zip",
+      "file_size_mb": 1.4,
+      "sha256": "6d675234ede5995dfd647a631383fd67ef6deca4999956753cb9545a4d1d53f3",
       "files_to_replace": [
         "main1.cpython-311-darwin.so"
       ],
       "python_version": "3.11"
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.8/LKDock_v1.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.13/LKDock_v1.0_update_Linux.zip",
       "file_size_mb": 0,
       "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "files_to_replace": [
-        "main1.cpython-311-x86_64-linux-gnu.so"
+        "main1"
       ],
       "python_version": "3.11"
     }

@@ -1,37 +1,43 @@
 {
-  "latest_version": "4.0.8",
-  "release_date": "2026-07-26",
+  "latest_version": "4.0.13",
+  "release_date": "2026-07-29",
   "min_version_required": "4.0.0",
   "changes": [
     "新增 GROMACS 多体系并行 MD 模拟功能：支持多 GPU 独占、单 GPU 共享、CPU 并行三种策略，每个体系独立 worker 子进程执行完整流程（pdb2gmx→editconf→solvate→genion→EM→NVT→NPT→production），默认关闭不影响原有串行流程",
     "新增并行模式 UI 控件（启用并行、并行模式、并行任务数、每任务CPU线程数），默认 serial 关闭",
     "新增 --md-gmx-worker 子进程入口，worker 独立加载 CONFIG、绑定 CUDA_VISIBLE_DEVICES、写独立结果 JSON",
     "新增 worker 启动失败自动回退串行、超时终止全部 worker、spawn 异常清理等安全机制",
-    "修复 PubChem 下载失败后日志缩进错误导致的 IndentationError（Win 版）"
+    "修复 PubChem 下载失败后日志缩进错误导致的 IndentationError（Win 版）",
+    "修复糖类/聚合物残基名 URA 与 AMBER RNA 尿嘧啶残基名冲突导致体系被误判为 nucleic-ligand 的问题：新增核酸骨架原子验证（NucleicNameCollisionFix），无磷酸-糖骨架原子（C1'/O5'/P/OP1 等）的残基不归入核酸分类",
+    "修复 _md_extract_ligand_from_complex 将糖类/聚合物 URA 残基误归入蛋白侧的问题：同步骨架验证逻辑（NucleicNameCollisionFix_Extract），无骨架原子的 URA 重分类为配体候选",
+    "修复 ParmEd Amber→GROMACS 转换时 'Could not find <Atom C1>' 错误：所有 .save() 调用添加 combine='all' 保持原子顺序不变，避免 ParmEd split 重排导致的原子查找失败",
+    "修复 GROMACS 2026.2 生产段 MD step 0 即 cuFFT R2C execution failure (error code 6) 致命崩溃：GMX_CUDA_GRAPH 环境变量在 GROMACS 2026.2 中语义变更——设为任何非空值（含 \"0\"）即启用实验性 CUDA Graphs，旧代码 env[\"GMX_CUDA_GRAPH\"]=\"0\" 反而强制开启，导致 GPU 常驻生产段（无 POSRES）cuFFT 在 CUDA Graph 捕获中执行失败。改为 env.pop() 彻底删除该变量，CUDA Graphs 不再启用，cuFFT 恢复正常（实测 RTX 3080 9.6 ns/day）",
+    "修复 CUDA error #999 (cudaErrorUnknown) 回退链断裂：cuFFT 崩溃后 -update cpu + -pme gpu 回退使用 return 直接返回，GPU 上下文已被第一次崩溃污染后 -pme gpu 仍用 cuFFT 必再崩（#999），但代码直接返回失败不触发 -pme cpu 回退。改为条件返回——成功才返回，失败且为 CUDA 错误时继续下探到 -pme cpu（绕开 cuFFT），并补 -cpi 断点续跑保住已完成进度",
+    "修复 CUDA #999/#700 未被检测列表识别：在 NVT/NPT/生产阶段的 _md_cuda_illegal 检测中补充 error #999 / cudaErrorUnknown / cuda error 关键词，使这些错误正确走检查点续跑恢复路径而非误判为非 CUDA 错误"
   ],
   "platforms": {
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.8/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.13/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 0,
       "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "files_to_replace": [
-        "main4.cp311-win_amd64.pyd"
+        "main4"
       ],
       "python_version": "3.11"
     },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.8/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 10.0,
-      "sha256": "00f3d4227416a5fa1f76b89beae20d73cb003e8e56fa7ee8dd19b9d2dcccae77",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.13/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 10.2,
+      "sha256": "934a18ad04466f6c89fe8d751dc4974c11f52a692a92d41a4c628ad6e3642d37",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11"
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.8/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 0,
-      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.13/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 14.9,
+      "sha256": "5a611eb9a606b2edde026d49364e4920667fc05ea487678d276b819e7f3a2139",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
