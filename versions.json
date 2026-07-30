@@ -1,0 +1,60 @@
+{
+  "_comment": "LKDock 全版本统一配置 — 唯一真相源 (Single Source of Truth)",
+  "_usage": "修改 target 版本号后运行 python3 bump_version.py 即可同步所有文件",
+  "versions": {
+    "1.0": {
+      "target": "1.0.14",
+      "main_file": "main1.py",
+      "min_version": "1.0.0",
+      "has_linux": false,
+      "changes": [
+        "新增在线更新功能",
+        "新增源码保护（Nuitka 编译）",
+        "修复已知问题"
+      ]
+    },
+    "2.0": {
+      "target": "2.0.14",
+      "main_file": "main2.py",
+      "min_version": "2.0.0",
+      "has_linux": true,
+      "changes": [
+        "修复已知问题",
+        "优化报告排版与分页",
+        "修复分析模块在ML打分未启用时因ml_results变量未初始化导致综合打分报告崩溃的问题（UnboundLocalError）"
+      ]
+    },
+    "3.0": {
+      "target": "3.0.14",
+      "main_file": "main3.py",
+      "min_version": "3.0.0",
+      "has_linux": true,
+      "changes": [
+        "修复 UniDock-Pro GPU 引擎使用 --exhaustiveness 导致卡死的问题（改用 --search_mode balance/fast/detail 档位）",
+        "修复共晶配体成盒在 UniDock-Pro GPU 引擎下仍写入 exhaustiveness 参数导致无法正常对接的问题",
+        "修复空配体 PDBQT 文件导致 UniDock-Pro GPU 批量对接崩溃（segfault）的问题：新增预飞行验证跳过无原子记录的配体",
+        "修复 GPU 引擎盒子尺寸超 30Å 未裁剪导致 UniDock-Pro 卡死的问题",
+        "修复分析模块在ML打分未启用时因ml_results变量未初始化导致综合打分报告崩溃的问题（UnboundLocalError）"
+      ]
+    },
+    "4.0": {
+      "target": "4.0.14",
+      "main_file": "main4.py",
+      "min_version": "4.0.0",
+      "has_linux": true,
+      "changes": [
+        "新增 GROMACS 多体系并行 MD 模拟功能：支持多 GPU 独占、单 GPU 共享、CPU 并行三种策略，每个体系独立 worker 子进程执行完整流程（pdb2gmx→editconf→solvate→genion→EM→NVT→NPT→production），默认关闭不影响原有串行流程",
+        "新增并行模式 UI 控件（启用并行、并行模式、并行任务数、每任务CPU线程数），默认 serial 关闭",
+        "新增 --md-gmx-worker 子进程入口，worker 独立加载 CONFIG、绑定 CUDA_VISIBLE_DEVICES、写独立结果 JSON",
+        "新增 worker 启动失败自动回退串行、超时终止全部 worker、spawn 异常清理等安全机制",
+        "修复 PubChem 下载失败后日志缩进错误导致的 IndentationError（Win 版）",
+        "修复糖类/聚合物残基名 URA 与 AMBER RNA 尿嘧啶残基名冲突导致体系被误判为 nucleic-ligand 的问题：新增核酸骨架原子验证（NucleicNameCollisionFix），无磷酸-糖骨架原子（C1'/O5'/P/OP1 等）的残基不归入核酸分类",
+        "修复 _md_extract_ligand_from_complex 将糖类/聚合物 URA 残基误归入蛋白侧的问题：同步骨架验证逻辑（NucleicNameCollisionFix_Extract），无骨架原子的 URA 重分类为配体候选",
+        "修复 ParmEd Amber→GROMACS 转换时 'Could not find <Atom C1>' 错误：所有 .save() 调用添加 combine='all' 保持原子顺序不变，避免 ParmEd split 重排导致的原子查找失败",
+        "修复 GROMACS 2026.2 生产段 MD step 0 即 cuFFT R2C execution failure (error code 6) 致命崩溃：GMX_CUDA_GRAPH 环境变量在 GROMACS 2026.2 中语义变更——设为任何非空值（含 \"0\"）即启用实验性 CUDA Graphs，旧代码 env[\"GMX_CUDA_GRAPH\"]=\"0\" 反而强制开启，导致 GPU 常驻生产段（无 POSRES）cuFFT 在 CUDA Graph 捕获中执行失败。改为 env.pop() 彻底删除该变量，CUDA Graphs 不再启用，cuFFT 恢复正常（实测 RTX 3080 9.6 ns/day）",
+        "修复 CUDA error #999 (cudaErrorUnknown) 回退链断裂：cuFFT 崩溃后 -update cpu + -pme gpu 回退使用 return 直接返回，GPU 上下文已被第一次崩溃污染后 -pme gpu 仍用 cuFFT 必再崩（#999），但代码直接返回失败不触发 -pme cpu 回退。改为条件返回——成功才返回，失败且为 CUDA 错误时继续下探到 -pme cpu（绕开 cuFFT），并补 -cpi 断点续跑保住已完成进度",
+        "修复 CUDA #999/#700 未被检测列表识别：在 NVT/NPT/生产阶段的 _md_cuda_illegal 检测中补充 error #999 / cudaErrorUnknown / cuda error 关键词，使这些错误正确走检查点续跑恢复路径而非误判为非 CUDA 错误"
+      ]
+    }
+  }
+}
