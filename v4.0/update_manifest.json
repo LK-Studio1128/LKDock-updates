@@ -1,6 +1,6 @@
 {
   "latest_version": "4.0.15",
-  "release_date": "2026-07-31",
+  "release_date": "2026-08-02",
   "min_version_required": "4.0.0",
   "changes": [
     "新增 GROMACS 多体系并行 MD 模拟功能：支持多 GPU 独占、单 GPU 共享、CPU 并行三种策略，每个体系独立 worker 子进程执行完整流程（pdb2gmx→editconf→solvate→genion→EM→NVT→NPT→production），默认关闭不影响原有串行流程",
