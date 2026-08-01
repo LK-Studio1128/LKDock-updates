@@ -1,6 +1,6 @@
 {
   "latest_version": "3.0.15",
-  "release_date": "2026-07-31",
+  "release_date": "2026-08-02",
   "min_version_required": "3.0.0",
   "changes": [
     "修复 UniDock-Pro GPU 引擎使用 --exhaustiveness 导致卡死的问题（改用 --search_mode balance/fast/detail 档位）",
