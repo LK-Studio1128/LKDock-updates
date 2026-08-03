@@ -38,7 +38,7 @@
       ]
     },
     "4.0": {
-      "target": "4.0.15",
+      "target": "4.0.16",
       "main_file": "main4.py",
       "min_version": "4.0.0",
       "has_linux": true,
@@ -59,7 +59,8 @@
         "新增输入几何净化：检测零坐标原子/超长键（>3.2Å）自动 ETKDG 重建 3D，应用于 mol_a SDF 直连路径、PDB→SDF 路径和混合体系额外组分（修复 anion.sdf 13 个 (0,0,0) 幻影 H 导致的 EM 崩溃）",
         "修复季铵 N 电荷推断：_md_get_ligand_total_charge 改用 sanitize=False 读取 SDF，并新增 [NX4;H0;+0] → +1 模式，使无 M CHG 的季铵阳离子电荷从 0 修正为 +1",
         "liglig 小体系（<5000 原子）改为按平台自动选择 GPU/CPU：原强制 CPU 开关已移除（崩溃根因已修），GPU 崩溃时自动回退 CPU",
-        "修复单原子离子电荷为 0 导致的参数化失败：_md_param_monatomic_ion 遇到 Cl charge=0 等异常电荷时自动归一为标准化合价电荷（-1），不再回退 GAFF2 报 DU 哑原子；同时 mol_a 的 SDF→PDB 转换（obabel -h / RDKit AddHs）对单原子离子跳过补氢，避免 Cl 被补成 Cl-H 伪片段"
+        "修复单原子离子电荷为 0 导致的参数化失败：_md_param_monatomic_ion 遇到 Cl charge=0 等异常电荷时自动归一为标准化合价电荷（-1），不再回退 GAFF2 报 DU 哑原子；同时 mol_a 的 SDF→PDB 转换（obabel -h / RDKit AddHs）对单原子离子跳过补氢，避免 Cl 被补成 Cl-H 伪片段",
+        "更新机制与 v1-v3 对齐（全面修复）：v4 三平台补齐 Ed25519 manifest 验签钩子（LKDOCK_UPDATE_PUBKEY/_lkdock_verify_manifest_signature，默认空=仅 SHA256 校验）、400MB 更新包体积上限、更新包内模块名前缀校验（仅接受 main4.*.pyd/.so）、架构兼容闸门（防装错架构二进制）、备份目录外置（_lkdock_update_state_dir）、启动残留清理（_lkdock_update_startup_cleanup）与失败自动回滚，替换旧版简单 apply_update；同时消除 _lkdock_verify_manifest_signature 引用未定义 LKDOCK_UPDATE_PUBKEY 的 NameError 隐患"
       ]
     }
   }
