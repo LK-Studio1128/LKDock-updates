@@ -1,6 +1,6 @@
 {
-  "latest_version": "3.0.15",
-  "release_date": "2026-08-02",
+  "latest_version": "3.0.17",
+  "release_date": "2026-08-04",
   "min_version_required": "3.0.0",
   "changes": [
     "修复 UniDock-Pro GPU 引擎使用 --exhaustiveness 导致卡死的问题（改用 --search_mode balance/fast/detail 档位）",
@@ -11,34 +11,34 @@
   ],
   "platforms": {
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.15/LKDock_v3.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.17/LKDock_v3.0_update_Win.zip",
       "file_size_mb": 10.5,
-      "sha256": "4517635439ee2fb227725e34600dd1bc1f358e1c29b5f73657fff3038e5abc90",
+      "sha256": "9ba097da4f0e3a912039a240a06f05e0604fb969affa072b77afe774e73c171e",
       "files_to_replace": [
         "main3.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 10995542
+      "size": 11049464
     },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.15/LKDock_v3.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.17/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 7.6,
-      "sha256": "affefc5e0a6a471af28ec34b69df07d2a3e8056f8cbee59d57c7d222792d7cdb",
+      "sha256": "a78a955c3ebe056bc8561c7ac72f2b9d18f3e2dd0262be3b49c5b469c15f90f7",
       "files_to_replace": [
         "main3.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 7986651
+      "size": 7974841
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.15/LKDock_v3.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.17/LKDock_v3.0_update_Linux.zip",
       "file_size_mb": 10.2,
-      "sha256": "b169135e0fdbe36f11b048c6b6b2bfe2ed200633d60249842b5bea401a138f58",
+      "sha256": "95ed1a82754b74ef626f4c17be0f661df6b158f250e0283694cfc60a7747d286",
       "files_to_replace": [
         "main3.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 10677028
+      "size": 10727289
     }
   }
 }

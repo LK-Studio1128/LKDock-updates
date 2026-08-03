@@ -1,6 +1,6 @@
 {
-  "latest_version": "2.0.15",
-  "release_date": "2026-08-02",
+  "latest_version": "2.0.17",
+  "release_date": "2026-08-04",
   "min_version_required": "2.0.0",
   "changes": [
     "修复已知问题",
@@ -9,34 +9,34 @@
   ],
   "platforms": {
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.15/LKDock_v2.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.17/LKDock_v2.0_update_Win.zip",
       "file_size_mb": 6.5,
-      "sha256": "37e9b15ad69d1fc5ead650f1b7d81e828d1c4899098fdd971369cdaeda7e9bdd",
+      "sha256": "71b503a40da85a8ae8705e41fe4392125e7fbe1a511f69cb256b34889b431e7f",
       "files_to_replace": [
         "main2.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 6780040
+      "size": 6814494
     },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.15/LKDock_v2.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.17/LKDock_v2.0_update_Mac.zip",
       "file_size_mb": 4.7,
-      "sha256": "b6d6238eec7f7f1820dd90fbebe77fb99c7b74ffad74ef6b0316bb0dad7dd7e6",
+      "sha256": "1a06fc803ad8d466e96f53bfa0059c3ecb139f452d8a9e642c6f95d9f2449d91",
       "files_to_replace": [
         "main2.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 4965006
+      "size": 4974113
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.15/LKDock_v2.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.17/LKDock_v2.0_update_Linux.zip",
       "file_size_mb": 6.4,
-      "sha256": "df81febe31fe91b642f96a1c7e476f1327b283fa8a11e071056b485f3e9cd5b2",
+      "sha256": "e8f90aef8ac5e34c9d76b87d20f85bac07511f17acfda18574234c4b34289dd4",
       "files_to_replace": [
         "main2.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 6700444
+      "size": 6742878
     }
   }
 }

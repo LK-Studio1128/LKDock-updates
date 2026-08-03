@@ -1,6 +1,6 @@
 {
-  "latest_version": "4.0.16",
-  "release_date": "2026-08-03",
+  "latest_version": "4.0.17",
+  "release_date": "2026-08-04",
   "min_version_required": "4.0.0",
   "changes": [
     "新增 GROMACS 多体系并行 MD 模拟功能：支持多 GPU 独占、单 GPU 共享、CPU 并行三种策略，每个体系独立 worker 子进程执行完整流程（pdb2gmx→editconf→solvate→genion→EM→NVT→NPT→production），默认关闭不影响原有串行流程",
@@ -24,34 +24,34 @@
   ],
   "platforms": {
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.16/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 19.0,
-      "sha256": "2be867f1a992414af49531f450fbdb93ecfc6dd168a979e68a00e00b2159ebcc",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.17/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 19.1,
+      "sha256": "7f90840b8595e2c87befa1456c3e3856f65292d806de1797aad529b40af6ee42",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 19963054
+      "size": 20078097
     },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.16/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 16.7,
-      "sha256": "5baa45f0dda50902a470897625d41abbd63176516e04f2a108ff5abefe88aaa8",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.17/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 16.6,
+      "sha256": "d99875ad097ac59cd17d41ff8ba82d785f1f0b00e11f6eb99c24d2f3136071f5",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 17484020
+      "size": 17370487
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.16/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 18.2,
-      "sha256": "6fff4d96efec0ce3db30982dd92e09b511cbcc6d742a2cb1dec8517a64c9f03b",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.17/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 18.3,
+      "sha256": "5c167eb60a2849ac7d8f8d619a0788d2d2c9270a77e547727d90cde4a8d23c81",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 19115884
+      "size": 19214041
     }
   }
 }
