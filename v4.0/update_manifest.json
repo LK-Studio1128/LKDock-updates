@@ -33,32 +33,32 @@
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.19/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 16.8,
-      "sha256": "3fb19ec2e8032daf01385159613234299c2bf51b300e48b271bf6b54fc8621a7",
+      "sha256": "f9cd8764bde13f4424106f2fedf0cf9955c455bfaf402f713aa3bb325f0606df",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 17630143
+      "size": 17660108
     },
     "windows": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.19/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 19.2,
-      "sha256": "b53605e2ebd2f2ee6be79afbf87c357f9dbbcfc35f563cdb4bd83a61efb763a2",
+      "sha256": "db9e1eec2a2fad5d612ecf05b6b9f7ad1fab72d5d5e5031fcf8f23684530f6ca",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 20106278
+      "size": 20139693
     },
     "linux": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.19/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 18.3,
-      "sha256": "55a5f18dceb532453cc6a89dc5a1254d5298fc0979b56c5e29cb1d756d7b4fe9",
+      "file_size_mb": 18.4,
+      "sha256": "34ce184d350986cbf33851a912ff12917125ca7ba2adb4c6d21be9b89de09c5f",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 19238733
+      "size": 19295266
     }
   }
 }
