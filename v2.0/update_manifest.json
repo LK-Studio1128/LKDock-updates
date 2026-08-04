@@ -1,6 +1,6 @@
 {
-  "latest_version": "2.0.17",
-  "release_date": "2026-08-04",
+  "latest_version": "2.0.18",
+  "release_date": "2026-08-05",
   "min_version_required": "2.0.0",
   "changes": [
     "修复已知问题",
@@ -8,35 +8,35 @@
     "修复分析模块在ML打分未启用时因ml_results变量未初始化导致综合打分报告崩溃的问题（UnboundLocalError）"
   ],
   "platforms": {
-    "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.17/LKDock_v2.0_update_Win.zip",
-      "file_size_mb": 6.5,
-      "sha256": "d3879e05edf8974bdc7d92fc72d24fe8ba0767a4256558ad33284139bd6a7dc3",
-      "files_to_replace": [
-        "main2.cp311-win_amd64.pyd"
-      ],
-      "python_version": "3.11",
-      "size": 6814494
-    },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.17/LKDock_v2.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.18/LKDock_v2.0_update_Mac.zip",
       "file_size_mb": 4.8,
-      "sha256": "6ecb6535cfbbe01579cfd682970e212d595de136beed3c3b181d226ab6431b5d",
+      "sha256": "da3c02017889caea28a95e4eac88c7a82209f6a5d03b569219b1ed0128d3726d",
       "files_to_replace": [
         "main2.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 5021996
+      "size": 5071389
+    },
+    "windows": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.18/LKDock_v2.0_update_Win.zip",
+      "file_size_mb": 6.6,
+      "sha256": "454713fb8d5a67707d8a0ffc96ab3bdda39b4e3bb27c0d60122fcc6608c0f982",
+      "files_to_replace": [
+        "main2.cp311-win_amd64.pyd"
+      ],
+      "python_version": "3.11",
+      "size": 6895674
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.17/LKDock_v2.0_update_Linux.zip",
-      "file_size_mb": 6.4,
-      "sha256": "8f28070076c2fc5a0f683311667b3477a9154860709b3ad9a20fe4627509db9c",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.18/LKDock_v2.0_update_Linux.zip",
+      "file_size_mb": 6.5,
+      "sha256": "67fddeafd960952c2ea15bac8dfc6b11dd527c32aeafbd8e4f707e934de7dccc",
       "files_to_replace": [
         "main2.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 6742878
+      "size": 6829471
     }
   }
 }

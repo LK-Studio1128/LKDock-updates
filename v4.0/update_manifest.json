@@ -1,8 +1,15 @@
 {
-  "latest_version": "4.0.17",
-  "release_date": "2026-08-04",
+  "latest_version": "4.0.19",
+  "release_date": "2026-08-05",
   "min_version_required": "4.0.0",
   "changes": [
+    "MD 出图全局字号细分：新增 XY 轴数值/刻度、XY 轴标注、图内文字、主图标注/图注四类独立字号设置，三平台一致，覆盖全部主流程分析与对比分析图片",
+    "修复 Win/Mac 对比分析字号设置此前因函数内缺少 matplotlib 导入而静默失效的问题",
+    "SVG/PDF 矢量图文字可编辑：SVG 输出真实 <text>、PDF 内嵌 TrueType（fonttype=42），可在 Illustrator/Inkscape/Acrobat 中直接编辑文字内容/字号/位置；新增全局开关（默认开启）",
+    "MD 全部出图统一走 _md_save_fig 保存入口：SMD 功曲线、metad FES、aMD 重加权、伞形采样窗口、膜渗透等图现在跟随用户所选输出格式（png/pdf/svg/tiff/jpeg）并支持矢量文字可编辑",
+    "汇总面板 SVG 输出真实拼接面板图（不再为占位文字）；移除 PCA / RMSD-Rg 3D 自由能面冗余的硬编码 PDF 副本",
+    "构象快照新增按时间点分组的蛋白/配体配色：输入几个时间点即自动出现几组颜色设置，保存后按快照序号逐张生效；修复配体自动色硬编码为同一颜色的问题；修复 hex 自定义颜色渲染脚本缺少 set_color 定义导致 PyMOL 无法着色的问题",
+    "修复 Mac 版构象快照 UI 重复显示问题；加宽 Linux 版 MD 模拟配置与对接参数配置对话框",
     "新增 GROMACS 多体系并行 MD 模拟功能：支持多 GPU 独占、单 GPU 共享、CPU 并行三种策略，每个体系独立 worker 子进程执行完整流程（pdb2gmx→editconf→solvate→genion→EM→NVT→NPT→production），默认关闭不影响原有串行流程",
     "新增并行模式 UI 控件（启用并行、并行模式、并行任务数、每任务CPU线程数），默认 serial 关闭",
     "新增 --md-gmx-worker 子进程入口，worker 独立加载 CONFIG、绑定 CUDA_VISIBLE_DEVICES、写独立结果 JSON",
@@ -23,35 +30,35 @@
     "更新机制与 v1-v3 对齐（全面修复）：v4 三平台补齐 Ed25519 manifest 验签钩子（LKDOCK_UPDATE_PUBKEY/_lkdock_verify_manifest_signature，默认空=仅 SHA256 校验）、400MB 更新包体积上限、更新包内模块名前缀校验（仅接受 main4.*.pyd/.so）、架构兼容闸门（防装错架构二进制）、备份目录外置（_lkdock_update_state_dir）、启动残留清理（_lkdock_update_startup_cleanup）与失败自动回滚，替换旧版简单 apply_update；同时消除 _lkdock_verify_manifest_signature 引用未定义 LKDOCK_UPDATE_PUBKEY 的 NameError 隐患"
   ],
   "platforms": {
-    "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.17/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 19.1,
-      "sha256": "1df67202271253e3c914dc5e20b6929d7e43de12b57e29e0e2e05620691c9346",
-      "files_to_replace": [
-        "main4.cp311-win_amd64.pyd"
-      ],
-      "python_version": "3.11",
-      "size": 20078097
-    },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.17/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.19/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 16.8,
-      "sha256": "782096229948099553c29895ae74d1409a8ff1e2c8d9832ef6ed3bb80b73f74e",
+      "sha256": "3fb19ec2e8032daf01385159613234299c2bf51b300e48b271bf6b54fc8621a7",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 17614376
+      "size": 17630143
+    },
+    "windows": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.19/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 19.2,
+      "sha256": "b53605e2ebd2f2ee6be79afbf87c357f9dbbcfc35f563cdb4bd83a61efb763a2",
+      "files_to_replace": [
+        "main4.cp311-win_amd64.pyd"
+      ],
+      "python_version": "3.11",
+      "size": 20106278
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.17/LKDock_v4.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.19/LKDock_v4.0_update_Linux.zip",
       "file_size_mb": 18.3,
-      "sha256": "6912b388fc782a86d516423d55571ef23b1ab9803a2eec3e39e027cd79904224",
+      "sha256": "55a5f18dceb532453cc6a89dc5a1254d5298fc0979b56c5e29cb1d756d7b4fe9",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 19214041
+      "size": 19238733
     }
   }
 }

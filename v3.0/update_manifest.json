@@ -1,6 +1,6 @@
 {
-  "latest_version": "3.0.17",
-  "release_date": "2026-08-04",
+  "latest_version": "3.0.18",
+  "release_date": "2026-08-05",
   "min_version_required": "3.0.0",
   "changes": [
     "修复 UniDock-Pro GPU 引擎使用 --exhaustiveness 导致卡死的问题（改用 --search_mode balance/fast/detail 档位）",
@@ -10,35 +10,35 @@
     "修复分析模块在ML打分未启用时因ml_results变量未初始化导致综合打分报告崩溃的问题（UnboundLocalError）"
   ],
   "platforms": {
-    "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.17/LKDock_v3.0_update_Win.zip",
-      "file_size_mb": 10.5,
-      "sha256": "71fcbf3cf246e89869e008a4937e12a461018027e2adb6f24df4320051439876",
-      "files_to_replace": [
-        "main3.cp311-win_amd64.pyd"
-      ],
-      "python_version": "3.11",
-      "size": 11049464
-    },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.17/LKDock_v3.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.18/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 7.7,
-      "sha256": "029a0510895b71c918b26e2f49d5a690a8943c3c2a922428be54a9586ed992fc",
+      "sha256": "a069ea1ba647d57479163f4cd4e4881b155cfa63755b6e1ececcd6b4ef038d57",
       "files_to_replace": [
         "main3.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 8055856
+      "size": 8093340
+    },
+    "windows": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.18/LKDock_v3.0_update_Win.zip",
+      "file_size_mb": 10.6,
+      "sha256": "416e652c861b26c7aac6077bab90206cd9ba43d39af503c2cd136ce57e762241",
+      "files_to_replace": [
+        "main3.cp311-win_amd64.pyd"
+      ],
+      "python_version": "3.11",
+      "size": 11118890
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.17/LKDock_v3.0_update_Linux.zip",
-      "file_size_mb": 10.2,
-      "sha256": "937d2de6184dd7126c57f764bca38fae5fd145cf8f1b4e97fb20920036a4e6d0",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.18/LKDock_v3.0_update_Linux.zip",
+      "file_size_mb": 10.3,
+      "sha256": "52f38f42b0a80b408f64ef5841af6c1d555fa0178d65a570b4868c76f9baa5e0",
       "files_to_replace": [
         "main3.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 10727289
+      "size": 10799765
     }
   }
 }
