@@ -1,6 +1,6 @@
 {
-  "latest_version": "4.0.19",
-  "release_date": "2026-08-05",
+  "latest_version": "4.0.20",
+  "release_date": "2026-08-07",
   "min_version_required": "4.0.0",
   "changes": [
     "MD 出图全局字号细分：新增 XY 轴数值/刻度、XY 轴标注、图内文字、主图标注/图注四类独立字号设置，三平台一致，覆盖全部主流程分析与对比分析图片",
@@ -31,34 +31,34 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.19/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 16.8,
-      "sha256": "f9cd8764bde13f4424106f2fedf0cf9955c455bfaf402f713aa3bb325f0606df",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.20/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 18.6,
+      "sha256": "79f823e98cc45128df22fffbeacc472abff62fed090a5c1889643781aa106ea1",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 17660108
+      "size": 19539244
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.19/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 19.2,
-      "sha256": "db9e1eec2a2fad5d612ecf05b6b9f7ad1fab72d5d5e5031fcf8f23684530f6ca",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.20/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 21.2,
+      "sha256": "ab072c9a33060c50c8554606a0137f9a584b22ecbe79ede25b17efe7117bedaf",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 20139693
+      "size": 22191161
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.19/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 18.4,
-      "sha256": "34ce184d350986cbf33851a912ff12917125ca7ba2adb4c6d21be9b89de09c5f",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.20/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 20.5,
+      "sha256": "beccfc1e744a39023552498948dce3f1afba8b7c2c05ef32d4f93f17d10780c9",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 19295266
+      "size": 21445478
     }
   }
 }
