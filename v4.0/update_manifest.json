@@ -1,8 +1,12 @@
 {
-  "latest_version": "4.0.24",
-  "release_date": "2026-08-13",
+  "latest_version": "4.0.26",
+  "release_date": "2026-08-16",
   "min_version_required": "4.0.0",
   "changes": [
+    "修复 MD 外部目录分析：①时间轴重建条件笔误导致 30 ps 保存间隔被误判异常，500 ns 轨迹被算成 166 ns；②多轨迹目录误选去水 fit 轨迹导致水桥等分析失效，改为「轨迹+拓扑」配对、含水完整体系优先并自动挂 fit/center/noPBC 角色；③损坏/截断轨迹（如 trjconv 中断的 md_nojump.xtc）在配对时强制读末帧校验并排除；④同段轨迹同时存在 .trr/.xtc 时主轨迹优先 .xtc，cluster/eigenvec 等分析产物降权；⑤MMPBSA 泛化发现任意命名的 .tpr/.top，并按 molecules 段挑选含水含配体的完整拓扑",
+    "修复外部 .gro 拓扑无键信息导致 H 键寿命分析失败：自动 guess_bonds 补键，失败时给出明确提示",
+    "修复元动力学轨迹被误标为伞形采样「窗口0约束轨迹/per_window_ns」的误导性提示，按增强采样方法区分措辞",
+    "修复 OpenMM MM-GBSA（方法 B）报告中 VDW/ELE/GB/SA/dH/-TdS 全部显示为 0：补齐 dg_components_kcalmol/delta_h_kcalmol/entropy_ts_kcalmol 报告兼容字段，LCPO 拆分失败时合并显示 GBSA，并新增 interaction entropy 熵校正",
     "修复 MD 高频警告与精度问题：①AM1-BCC 电荷计算超时由固定 120s 改为按原子数自适应（120s+3s/原子，且不小于用户配置），避免 100-170 原子大配体被误判卡死而降级 MMFF94；②AmberTools 路径大分子跳过阈值 80→200，超时按 180s+4s/原子自适应；③默认水模型 tip3pfb→tip3p，消除捆绑 OpenMM 不支持 tip3pfb 导致的 water_ff_adjusted/addSolvent_model_fallback 双警告；④配体 3D 构象优化回退、Ewald→PME 等安全自动修正提示降为 INFO；⑤OpenMM Platform 可用列表去重",
     "修复 Metadynamics cv_list 配置笔误导致集合变量全部解析失败的问题：自动纠正常见错误（组间 | 丢失/写成 l、下划线被空格替代、分隔符周围空格），并给出明确格式提示；MD 准备阶段提前校验，避免等完平衡才发现生产段未启用增强采样",
     "修复 Linux AI 助手首次打开报 name '_AI_PANEL_QT_INSTANCE' is not defined：补模块级初始化",
@@ -42,34 +46,34 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.24/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 19.8,
-      "sha256": "4ef75ed4f5786bb052d32c5d84b4429ca81bcaaca5bfbdb9311f8dea256348b9",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.26/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 19.1,
+      "sha256": "913142f4ae7b5adb14304b086067df2ae16193ad0575e2766ba085ccdc747ddf",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 20799316
+      "size": 20010626
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.24/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 21.4,
-      "sha256": "fc98000e3acee3d9f0e903edd0aa421b2dc490a254e064a12988b0d72e004d04",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.26/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 21.7,
+      "sha256": "2c7b0e817cbca08c965c9d18e4d78b18904412d8ce88c2b5a8d0f9827ece7451",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 22460290
+      "size": 22750902
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.24/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 20.6,
-      "sha256": "299ed225bda329325abe090a9942409a2c3d0c131150ccd2fdd344091e414543",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.26/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 20.9,
+      "sha256": "cd91a83febfa08ce9ccf1935fb291cbd3d44c9406a9bd9ef4439116740db9839",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 21603738
+      "size": 21891144
     }
   }
 }
