@@ -1,35 +1,36 @@
 {
-  "latest_version": "1.0.29",
-  "release_date": "2026-08-19",
+  "latest_version": "1.0.30",
+  "release_date": "2026-08-20",
   "min_version_required": "1.0.0",
   "changes": [
+    "修复 3D 可视化氢键判定口径：统一为供体-受体化学类型 + 重原子距离 2.5-3.5Å，剔除 O…O 等伪氢键，数量与结果分析一致",
     "新增在线更新功能",
     "新增源码保护（Nuitka 编译）",
     "修复已知问题"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.29/LKDock_v1.0_update_Mac.zip",
-      "file_size_mb": 2.1,
-      "sha256": "67b66e03a6f3ff1a24f9c412b4adb0aa6269105a6ee50da5e223909f7b689203",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.30/LKDock_v1.0_update_Mac.zip",
+      "file_size_mb": 2.2,
+      "sha256": "4367719d4aac56e3f13b3e873c9ee4d0aa0ce79df56d8b5a5ae488807a17ef58",
       "files_to_replace": [
         "main1.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 2254168
+      "size": 2260702
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.29/LKDock_v1.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.30/LKDock_v1.0_update_Win.zip",
       "file_size_mb": 3.2,
-      "sha256": "aae548649424e9b0a9d98be8dbad13a693fbac156ded25a8fc6c9a5857c34869",
+      "sha256": "ec7a59eff90c83374f19614ec4a8c9106a560126ff6fd72313698238a1872217",
       "files_to_replace": [
         "main1.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 3343128
+      "size": 3346049
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.29/LKDock_v1.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.30/LKDock_v1.0_update_Linux.zip",
       "file_size_mb": 0,
       "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "files_to_replace": [

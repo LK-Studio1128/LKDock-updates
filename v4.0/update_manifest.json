@@ -1,8 +1,9 @@
 {
-  "latest_version": "4.0.29",
-  "release_date": "2026-08-19",
+  "latest_version": "4.0.30",
+  "release_date": "2026-08-20",
   "min_version_required": "4.0.0",
   "changes": [
+    "修复结果分析表 / 2D LigPlus 图 / 3D PyMOL 可视化三处氢键数量与残基不一致：统一为供体-受体化学类型 + 重原子距离 2.5-3.5Å（PLIP 式），剔除 O…O 伪氢键，无显式 H 的对接 pose 也能正确识别",
     "修复 MD 外部目录分析：①时间轴重建条件笔误导致 30 ps 保存间隔被误判异常，500 ns 轨迹被算成 166 ns；②多轨迹目录误选去水 fit 轨迹导致水桥等分析失效，改为「轨迹+拓扑」配对、含水完整体系优先并自动挂 fit/center/noPBC 角色；③损坏/截断轨迹（如 trjconv 中断的 md_nojump.xtc）在配对时强制读末帧校验并排除；④同段轨迹同时存在 .trr/.xtc 时主轨迹优先 .xtc，cluster/eigenvec 等分析产物降权；⑤MMPBSA 泛化发现任意命名的 .tpr/.top，并按 molecules 段挑选含水含配体的完整拓扑",
     "修复外部 .gro 拓扑无键信息导致 H 键寿命分析失败：自动 guess_bonds 补键，失败时给出明确提示",
     "修复元动力学轨迹被误标为伞形采样「窗口0约束轨迹/per_window_ns」的误导性提示，按增强采样方法区分措辞",
@@ -46,34 +47,34 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.29/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.30/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 19.3,
-      "sha256": "61a242f1183566663d6a87c7eebab5dee73b1321fceb88c18f130cee959841c8",
+      "sha256": "753c05cab2df6cbb526fb032113846b27b852e7cf976d6b6a0cb7624642e7e3e",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 20196155
+      "size": 20233366
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.29/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.30/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 21.9,
-      "sha256": "26d92f5865a5e6377a2822148a6a0dc160581331c5a4aeb83a1a273e800912d9",
+      "sha256": "36ada49c204c3ae11a6da245486578da1f5d130dbf38d47133b642f0fa3a365e",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 22970811
+      "size": 23002334
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.29/LKDock_v4.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.30/LKDock_v4.0_update_Linux.zip",
       "file_size_mb": 21.1,
-      "sha256": "2c2b5d6f3f33f75dfede4980a18c4e1d1f184a0e2542a3f7b80943579436da73",
+      "sha256": "8bcc6c7625eb82defe0a4422628e5fb36f0ce97ccbe81c801e88556bb01f23aa",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 22108467
+      "size": 22134465
     }
   }
 }

@@ -1,8 +1,9 @@
 {
-  "latest_version": "3.0.29",
-  "release_date": "2026-08-19",
+  "latest_version": "3.0.30",
+  "release_date": "2026-08-20",
   "min_version_required": "3.0.0",
   "changes": [
+    "修复结果分析表 / 2D LigPlus 图 / 3D PyMOL 可视化三处氢键数量与残基不一致：统一为供体-受体化学类型 + 重原子距离 2.5-3.5Å（PLIP 式），剔除 O…O 伪氢键，无显式 H 的对接 pose 也能正确识别",
     "修复受体金属检查中 _KNOWN_METAL_ELEMENTS 未定义导致的 NameError（三平台）",
     "修复 UniDock-Pro GPU 引擎使用 --exhaustiveness 导致卡死的问题（改用 --search_mode balance/fast/detail 档位）",
     "修复共晶配体成盒在 UniDock-Pro GPU 引擎下仍写入 exhaustiveness 参数导致无法正常对接的问题",
@@ -12,34 +13,34 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.29/LKDock_v3.0_update_Mac.zip",
-      "file_size_mb": 7.7,
-      "sha256": "a22c50c80d840a1c41a0bf3831c112de8d2d3dd62e66d81dc5ddbf16c4c569bd",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.30/LKDock_v3.0_update_Mac.zip",
+      "file_size_mb": 7.8,
+      "sha256": "26fc641b96888e4d49e2e367b8f296c034fd3a472976bb0ac567e6d272d39b09",
       "files_to_replace": [
         "main3.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 8116607
+      "size": 8138872
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.29/LKDock_v3.0_update_Win.zip",
-      "file_size_mb": 10.6,
-      "sha256": "c5a848dbb9e7382a1a1b28aba579f8bc95f5b8b41e785ec95092129d0fc470f1",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.30/LKDock_v3.0_update_Win.zip",
+      "file_size_mb": 10.7,
+      "sha256": "03cb961cda9463a9b8b790706e2e27b5cf723e72c6d83fdd9712287916c1e324",
       "files_to_replace": [
         "main3.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 11150500
+      "size": 11180197
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.29/LKDock_v3.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.30/LKDock_v3.0_update_Linux.zip",
       "file_size_mb": 9.9,
-      "sha256": "dda57986b62c38dde8e95ae95bd39fbbe1524c978418c848a8a7fc92db5cdc52",
+      "sha256": "a4b1e6afb27fa1a072d4c696fd4759f15a06be6b74f7afc02a2e2872c81b3a79",
       "files_to_replace": [
         "main3.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 10365437
+      "size": 10395351
     }
   }
 }
