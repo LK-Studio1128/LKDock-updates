@@ -1,8 +1,9 @@
 {
-  "latest_version": "1.0.31",
+  "latest_version": "1.0.32",
   "release_date": "2026-08-22",
   "min_version_required": "1.0.0",
   "changes": [
+    "修复 3D 可视化氢键角度过滤导致的数量与分析表不一致：统一为供体-受体化学类型+距离判定（2.5-3.5Å），三处口径一致",
     "三平台同步更新至 1.0.31（与最新编译产物对齐，修复已知问题）",
     "修复 3D 可视化氢键判定口径：统一为供体-受体化学类型 + 重原子距离 2.5-3.5Å，剔除 O…O 等伪氢键，数量与结果分析一致",
     "新增在线更新功能",
@@ -11,27 +12,27 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.31/LKDock_v1.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.32/LKDock_v1.0_update_Mac.zip",
       "file_size_mb": 2.2,
-      "sha256": "9f90cd13f1ff8d7a5205322d1fb7ab458d51df513b40400e50657c04084a9913",
+      "sha256": "5cb594cd484ec6bb1827464046f0e563d02924e109cc7ea229ccd7daa2331ccc",
       "files_to_replace": [
         "main1.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 2261290
+      "size": 2261235
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.31/LKDock_v1.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.32/LKDock_v1.0_update_Win.zip",
       "file_size_mb": 3.2,
-      "sha256": "634ff0ea23d8b44c1a852eb7e4021c08c2971e5f9ec529b081ef85c3869614d6",
+      "sha256": "ce3c4f4a61b471dd76bc1a19efcf86be7352f5033db01aae73a0cfe5b0bb15a3",
       "files_to_replace": [
         "main1.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 3346658
+      "size": 3346689
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.31/LKDock_v1.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.32/LKDock_v1.0_update_Linux.zip",
       "file_size_mb": 0,
       "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "files_to_replace": [

@@ -1,8 +1,9 @@
 {
-  "latest_version": "3.0.31",
+  "latest_version": "3.0.32",
   "release_date": "2026-08-22",
   "min_version_required": "3.0.0",
   "changes": [
+    "修复 3D 可视化氢键角度过滤导致的数量与分析表不一致：统一为供体-受体化学类型+距离判定（2.5-3.5Å），三处口径一致",
     "三平台同步更新至 3.0.31（与最新编译产物对齐，修复已知问题）",
     "修复结果分析表 / 2D LigPlus 图 / 3D PyMOL 可视化三处氢键数量与残基不一致：统一为供体-受体化学类型 + 重原子距离 2.5-3.5Å（PLIP 式），剔除 O…O 伪氢键，无显式 H 的对接 pose 也能正确识别",
     "修复受体金属检查中 _KNOWN_METAL_ELEMENTS 未定义导致的 NameError（三平台）",
@@ -14,34 +15,34 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.31/LKDock_v3.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.32/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 7.8,
-      "sha256": "267cbf024bfdd7405907c82b28bca2743e036fcf97f31264ba68ab2d5a0a0cae",
+      "sha256": "db35d02ff75611f7cd48436b6b69db064564792d1faf7f5dcd986061bb7f315c",
       "files_to_replace": [
         "main3.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 8138678
+      "size": 8139005
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.31/LKDock_v3.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.32/LKDock_v3.0_update_Win.zip",
       "file_size_mb": 10.7,
-      "sha256": "803be1fb8907f747315d518aad97e0336a2a0ee7ba01972c7b83a9bc4a404a91",
+      "sha256": "c6a6282d0bb8be550ad3c887b6ca67ea3fb06b20934b327ba6352bb3b42adfba",
       "files_to_replace": [
         "main3.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 11178049
+      "size": 11180965
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.31/LKDock_v3.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.32/LKDock_v3.0_update_Linux.zip",
       "file_size_mb": 10.4,
-      "sha256": "2781f9df08d64c569740586032e03b5a660fffab0711ff09f98a4876291f2165",
+      "sha256": "7440a191dfc4eeef1d97fe7d0f0f9d9b1acd261be2b9872f2685cb25de11f678",
       "files_to_replace": [
         "main3.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 10893203
+      "size": 10891257
     }
   }
 }
