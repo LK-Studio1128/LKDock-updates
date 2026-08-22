@@ -1,8 +1,14 @@
 {
-  "latest_version": "4.0.32",
+  "latest_version": "4.0.33",
   "release_date": "2026-08-22",
   "min_version_required": "4.0.0",
   "changes": [
+    "修复 ligand-ligand 预装重复配体体系：同构 UNL 仅参数化一次并按真实份数在原 CRYST1 有界盒内装填，取消额外片段沿 X 轴无限递增偏移，避免生成 151×151×151 异常水盒和 solvate 内存溢出",
+    "新增 ligand-ligand solvate 前盒长硬保护与装填原子数完整性校验，任一组分少装或盒子异常时立即中止，不再带病进入溶剂化",
+    "修复 GROMACS 错误提示误判：保留 stderr 末尾 Fatal error，并排除 Gromacs*-GPU 可执行路径中的 GPU 关键词；Not enough memory 现在正确提示主机内存/异常盒问题",
+    "修复 ligand-ligand GPU NPT/生产段缺少 LINCS 多级自救：接入 Berendsen、缩小步长、re-EM/re-NVT 恢复链并优先保持 GPU Update",
+    "修复 macOS/Linux ligand-ligand 流水线在 NVT、NPT、生产成功后因缩进错误提前返回，三平台流程行为统一",
+    "Windows RTX 2080 + GROMACS 2026.2 CUDA 真机验证：487123 原子体系完成 GPU EM、NVT、NPT 和生产段，短程非键、PME、绝大多数 bonded 与 update/constraints 均实际在 GPU 运行",
     "修复 3D 可视化氢键角度过滤导致的数量与分析表不一致：统一为供体-受体化学类型+距离判定（2.5-3.5Å），三处口径一致",
     "三平台同步更新至 4.0.31（与最新编译产物对齐，修复已知问题）",
     "修复结果分析表 / 2D LigPlus 图 / 3D PyMOL 可视化三处氢键数量与残基不一致：统一为供体-受体化学类型 + 重原子距离 2.5-3.5Å（PLIP 式），剔除 O…O 伪氢键，无显式 H 的对接 pose 也能正确识别",
@@ -49,34 +55,34 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.32/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 19.4,
-      "sha256": "3d675d51469a942f3ca4270f4ee5276a0edc7e082de4ee047e7e7cb43a0a188b",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.33/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 20.6,
+      "sha256": "3e57719bfaf82e31d8a61e0a3bfdffaefafb7a33c4738d63ccbdba4c6f7017ac",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 20385711
+      "size": 21551183
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.32/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.33/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 22.1,
-      "sha256": "2a8a5b7706a1564d9465df60c4a7600ddfe6031ecb8e8c4cf9e19b87653e606e",
+      "sha256": "f9a57bf6bf0cfdec74cd507748427c849268a6450fec8b4568ca31d14c075827",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23147409
+      "size": 23203715
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.32/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 21.3,
-      "sha256": "14627f04487a4c3d7935f0f7b10c4bff50fb5efaf85fd98b1fe707d3b9d415e5",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.33/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 21.4,
+      "sha256": "9e01d948396ff23d513970f18a16bc789d7e07eedc458dcf114e73bdb5501fdc",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 22375879
+      "size": 22433025
     }
   }
 }
