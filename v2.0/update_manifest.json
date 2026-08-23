@@ -1,10 +1,12 @@
 {
-  "latest_version": "2.0.32",
-  "release_date": "2026-08-22",
+  "latest_version": "2.0.34",
+  "release_date": "2026-08-24",
   "min_version_required": "2.0.0",
   "changes": [
+    "修复配体/受体预处理原生库线程池崩溃：改为内置子进程隔离，程序不再闪退",
+    "修复虚拟筛选 SDF 名称与属性：α/β 等转为 ASCII 文件名，原始名称保留在 Original_Name/LKDock_File_Stem",
     "修复 3D 可视化氢键角度过滤导致的数量与分析表不一致：统一为供体-受体化学类型+距离判定（2.5-3.5Å），三处口径一致",
-    "三平台同步更新至 2.0.31（与最新编译产物对齐，修复已知问题）",
+    "三平台同步更新至 2.0.34（与最新编译产物对齐，修复已知问题）",
     "修复结果分析表与 3D 可视化氢键数量不一致：统一为供体-受体化学类型 + 重原子距离 2.5-3.5Å（PLIP 式），剔除 O…O 伪氢键，无显式 H 的对接 pose 也能正确识别",
     "修复已知问题",
     "优化报告排版与分页",
@@ -12,34 +14,34 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.32/LKDock_v2.0_update_Mac.zip",
-      "file_size_mb": 4.9,
-      "sha256": "7b024a096ab3319325cf129fe0b272012d3d43269eaaacafb67cda360867e070",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.34/LKDock_v2.0_update_Mac.zip",
+      "file_size_mb": 5.2,
+      "sha256": "74eecbc8292386e1223c8342a160e9ef66e016b654db177c660a7dd8cd65e286",
       "files_to_replace": [
         "main2.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 5112100
+      "size": 5426641
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.32/LKDock_v2.0_update_Win.zip",
-      "file_size_mb": 6.6,
-      "sha256": "659360e9cd3ed9191db23eb1315a7452c38b03ae01e49864046a08befc7de56e",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.34/LKDock_v2.0_update_Win.zip",
+      "file_size_mb": 6.7,
+      "sha256": "febcb6c7b12e30e02eac1bb658b1d18c9a6742d779510bfe579bbc58b9d030bf",
       "files_to_replace": [
         "main2.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 6952253
+      "size": 7056534
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.32/LKDock_v2.0_update_Linux.zip",
-      "file_size_mb": 6.6,
-      "sha256": "3fd0de2140735f8e527d59f51242c716561d51e38807da179c8c29a9e56915fd",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.34/LKDock_v2.0_update_Linux.zip",
+      "file_size_mb": 6.4,
+      "sha256": "e16bc5117bfdd000f0abad9c031ef3828026c206a25dda4e18090474a9ca2d0f",
       "files_to_replace": [
         "main2.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 6907165
+      "size": 6706242
     }
   }
 }

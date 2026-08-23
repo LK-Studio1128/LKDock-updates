@@ -1,10 +1,12 @@
 {
-  "latest_version": "1.0.32",
-  "release_date": "2026-08-22",
+  "latest_version": "1.0.34",
+  "release_date": "2026-08-24",
   "min_version_required": "1.0.0",
   "changes": [
+    "修复配体/受体预处理原生库线程池崩溃：改为内置子进程隔离，程序不再闪退",
+    "修复虚拟筛选 SDF 名称与属性：α/β 等转为 ASCII 文件名，原始名称保留在 Original_Name/LKDock_File_Stem",
     "修复 3D 可视化氢键角度过滤导致的数量与分析表不一致：统一为供体-受体化学类型+距离判定（2.5-3.5Å），三处口径一致",
-    "三平台同步更新至 1.0.31（与最新编译产物对齐，修复已知问题）",
+    "三平台同步更新至 1.0.34（与最新编译产物对齐，修复已知问题）",
     "修复 3D 可视化氢键判定口径：统一为供体-受体化学类型 + 重原子距离 2.5-3.5Å，剔除 O…O 等伪氢键，数量与结果分析一致",
     "新增在线更新功能",
     "新增源码保护（Nuitka 编译）",
@@ -12,27 +14,27 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.32/LKDock_v1.0_update_Mac.zip",
-      "file_size_mb": 2.2,
-      "sha256": "5cb594cd484ec6bb1827464046f0e563d02924e109cc7ea229ccd7daa2331ccc",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.34/LKDock_v1.0_update_Mac.zip",
+      "file_size_mb": 2.3,
+      "sha256": "015af4da6776f12381b4c7ef03f52861edadf28042dbbe17db05cbc4ba23652c",
       "files_to_replace": [
         "main1.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 2261235
+      "size": 2387765
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.32/LKDock_v1.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.34/LKDock_v1.0_update_Win.zip",
       "file_size_mb": 3.2,
-      "sha256": "ce3c4f4a61b471dd76bc1a19efcf86be7352f5033db01aae73a0cfe5b0bb15a3",
+      "sha256": "d7760671516a7e08e791c03947d367f9037d61ff5b065b4c555beb8a2d14d311",
       "files_to_replace": [
         "main1.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 3346689
+      "size": 3395969
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.32/LKDock_v1.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.34/LKDock_v1.0_update_Linux.zip",
       "file_size_mb": 0,
       "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "files_to_replace": [
