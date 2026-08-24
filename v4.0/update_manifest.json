@@ -1,6 +1,6 @@
 {
-  "latest_version": "4.0.34",
-  "release_date": "2026-08-24",
+  "latest_version": "4.0.35",
+  "release_date": "2026-08-25",
   "min_version_required": "4.0.0",
   "changes": [
     "修复配体/受体预处理原生库线程池崩溃：改为内置子进程隔离，程序不再闪退",
@@ -12,7 +12,12 @@
     "修复 macOS/Linux ligand-ligand 流水线在 NVT、NPT、生产成功后因缩进错误提前返回，三平台流程行为统一",
     "Windows RTX 2080 + GROMACS 2026.2 CUDA 真机验证：487123 原子体系完成 GPU EM、NVT、NPT 和生产段，短程非键、PME、绝大多数 bonded 与 update/constraints 均实际在 GPU 运行",
     "修复 3D 可视化氢键角度过滤导致的数量与分析表不一致：统一为供体-受体化学类型+距离判定（2.5-3.5Å），三处口径一致",
-    "三平台同步更新至 4.0.34（与最新编译产物对齐，修复已知问题）",
+    "修复 GROMACS PBC 兜底使用错误结构源的问题（改为 ions.tpr），三平台一致",
+    "新增确认性 GPU 掉卡持久防护：CUDA #719/#700 且 GPU 消失时写入安全标记，后续任务仅保留 -nb gpu，PME/bonded/update 回 CPU",
+    "RTX50/Blackwell 默认进入稳定卸载档：覆盖默认与旧配置，aggressive/max 可显式恢复满血；其他 RTX30/40 不受影响",
+    "移除 RTX50 一律强制 NVT 0.5 fs 的过度保守降速；多配体/碎片/大步长风险仍保留安全启动",
+    "NVT 约束爆炸伴随 GPU 系统级消失时不再自动重试冲击显卡，直接给出重启/驱动排查指引",
+    "三平台同步更新至 4.0.35（Windows 服务器已编译导入验证）",
     "修复结果分析表 / 2D LigPlus 图 / 3D PyMOL 可视化三处氢键数量与残基不一致：统一为供体-受体化学类型 + 重原子距离 2.5-3.5Å（PLIP 式），剔除 O…O 伪氢键，无显式 H 的对接 pose 也能正确识别",
     "修复 MD 外部目录分析：①时间轴重建条件笔误导致 30 ps 保存间隔被误判异常，500 ns 轨迹被算成 166 ns；②多轨迹目录误选去水 fit 轨迹导致水桥等分析失效，改为「轨迹+拓扑」配对、含水完整体系优先并自动挂 fit/center/noPBC 角色；③损坏/截断轨迹（如 trjconv 中断的 md_nojump.xtc）在配对时强制读末帧校验并排除；④同段轨迹同时存在 .trr/.xtc 时主轨迹优先 .xtc，cluster/eigenvec 等分析产物降权；⑤MMPBSA 泛化发现任意命名的 .tpr/.top，并按 molecules 段挑选含水含配体的完整拓扑",
     "修复外部 .gro 拓扑无键信息导致 H 键寿命分析失败：自动 guess_bonds 补键，失败时给出明确提示",
@@ -57,34 +62,34 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.34/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 20.6,
-      "sha256": "fe7cb16fdfb0bc67d010c755bba9d9640dc5bad71ee72a9a94cad18d836ce750",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.35/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 19.5,
+      "sha256": "03c41dfb68180b371a22b98a690159cc7546f5f27dcf9059117e8461b84be7df",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21592080
+      "size": 20485244
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.34/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.35/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 22.2,
-      "sha256": "212b7206f8bd8597fe0e21c0ce15d0c63d0d0696fa7967b6fcb89a0ea5d86e7b",
+      "sha256": "af9b912f2bcab99faf1cc541e1e54769522aa1c24f2cbab18f4eb4f873dc2199",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23239627
+      "size": 23245803
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.34/LKDock_v4.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.35/LKDock_v4.0_update_Linux.zip",
       "file_size_mb": 21.3,
-      "sha256": "1ba664b3cedc2e96b57a1dca7ef25f2edd9b3f3f57c0b9453eb273467c0e3ba0",
+      "sha256": "3e55e0e1197ff0d50e455fc5e3bc0cba689cb454b8ec628f5616703875d06144",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 22378921
+      "size": 22365416
     }
   }
 }
