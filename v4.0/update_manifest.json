@@ -1,98 +1,33 @@
 {
-  "latest_version": "4.0.36",
-  "release_date": "2026-08-26",
+  "latest_version": "4.0.37",
+  "release_date": "2026-08-27",
   "min_version_required": "4.0.0",
   "changes": [
-    "修复 MD 生产模拟被误判挂起：运行期间自动阻止 Windows 系统睡眠（全 GPU 卸载时 CPU 占用低会被判空闲而睡眠），看门狗新增系统睡眠唤醒识别，唤醒后重置无输出计时不再误杀健康模拟",
-    "超时报错文案修正：无输出看门狗触发时显示真实时长（如 无输出6.0h），不再出现 Nones；并标记 inactivity_timeout 以支持检查点续跑兜底",
-    "新增 GPU 性能档位设置：max=满血卸载（默认，与旧版一致）；medium=仅非键上 GPU 显著降低负载功耗温度；low=纯 CPU。三平台同步",
-    "修复配体/受体预处理原生库线程池崩溃：改为内置子进程隔离，程序不再闪退",
-    "修复虚拟筛选 SDF 名称与属性：α/β 等转为 ASCII 文件名，原始名称保留在 Original_Name/LKDock_File_Stem",
-    "修复 ligand-ligand 预装重复配体体系：同构 UNL 仅参数化一次并按真实份数在原 CRYST1 有界盒内装填，取消额外片段沿 X 轴无限递增偏移，避免生成 151×151×151 异常水盒和 solvate 内存溢出",
-    "新增 ligand-ligand solvate 前盒长硬保护与装填原子数完整性校验，任一组分少装或盒子异常时立即中止，不再带病进入溶剂化",
-    "修复 GROMACS 错误提示误判：保留 stderr 末尾 Fatal error，并排除 Gromacs*-GPU 可执行路径中的 GPU 关键词；Not enough memory 现在正确提示主机内存/异常盒问题",
-    "修复 ligand-ligand GPU NPT/生产段缺少 LINCS 多级自救：接入 Berendsen、缩小步长、re-EM/re-NVT 恢复链并优先保持 GPU Update",
-    "修复 macOS/Linux ligand-ligand 流水线在 NVT、NPT、生产成功后因缩进错误提前返回，三平台流程行为统一",
-    "Windows RTX 2080 + GROMACS 2026.2 CUDA 真机验证：487123 原子体系完成 GPU EM、NVT、NPT 和生产段，短程非键、PME、绝大多数 bonded 与 update/constraints 均实际在 GPU 运行",
-    "修复 3D 可视化氢键角度过滤导致的数量与分析表不一致：统一为供体-受体化学类型+距离判定（2.5-3.5Å），三处口径一致",
-    "修复 GROMACS PBC 兜底使用错误结构源的问题（改为 ions.tpr），三平台一致",
-    "新增确认性 GPU 掉卡持久防护：CUDA #719/#700 且 GPU 消失时写入安全标记，后续任务仅保留 -nb gpu，PME/bonded/update 回 CPU",
-    "RTX50/Blackwell 默认进入稳定卸载档：覆盖默认与旧配置，aggressive/max 可显式恢复满血；其他 RTX30/40 不受影响",
-    "移除 RTX50 一律强制 NVT 0.5 fs 的过度保守降速；多配体/碎片/大步长风险仍保留安全启动",
-    "NVT 约束爆炸伴随 GPU 系统级消失时不再自动重试冲击显卡，直接给出重启/驱动排查指引",
-    "三平台同步更新至 4.0.35（Windows 服务器已编译导入验证）",
-    "修复结果分析表 / 2D LigPlus 图 / 3D PyMOL 可视化三处氢键数量与残基不一致：统一为供体-受体化学类型 + 重原子距离 2.5-3.5Å（PLIP 式），剔除 O…O 伪氢键，无显式 H 的对接 pose 也能正确识别",
-    "修复 MD 外部目录分析：①时间轴重建条件笔误导致 30 ps 保存间隔被误判异常，500 ns 轨迹被算成 166 ns；②多轨迹目录误选去水 fit 轨迹导致水桥等分析失效，改为「轨迹+拓扑」配对、含水完整体系优先并自动挂 fit/center/noPBC 角色；③损坏/截断轨迹（如 trjconv 中断的 md_nojump.xtc）在配对时强制读末帧校验并排除；④同段轨迹同时存在 .trr/.xtc 时主轨迹优先 .xtc，cluster/eigenvec 等分析产物降权；⑤MMPBSA 泛化发现任意命名的 .tpr/.top，并按 molecules 段挑选含水含配体的完整拓扑",
-    "修复外部 .gro 拓扑无键信息导致 H 键寿命分析失败：自动 guess_bonds 补键，失败时给出明确提示",
-    "修复元动力学轨迹被误标为伞形采样「窗口0约束轨迹/per_window_ns」的误导性提示，按增强采样方法区分措辞",
-    "修复 OpenMM MM-GBSA（方法 B）报告中 VDW/ELE/GB/SA/dH/-TdS 全部显示为 0：补齐 dg_components_kcalmol/delta_h_kcalmol/entropy_ts_kcalmol 报告兼容字段，LCPO 拆分失败时合并显示 GBSA，并新增 interaction entropy 熵校正",
-    "修复 MD 高频警告与精度问题：①AM1-BCC 电荷计算超时由固定 120s 改为按原子数自适应（120s+3s/原子，且不小于用户配置），避免 100-170 原子大配体被误判卡死而降级 MMFF94；②AmberTools 路径大分子跳过阈值 80→200，超时按 180s+4s/原子自适应；③默认水模型 tip3pfb→tip3p，消除捆绑 OpenMM 不支持 tip3pfb 导致的 water_ff_adjusted/addSolvent_model_fallback 双警告；④配体 3D 构象优化回退、Ewald→PME 等安全自动修正提示降为 INFO；⑤OpenMM Platform 可用列表去重",
-    "修复 Metadynamics cv_list 配置笔误导致集合变量全部解析失败的问题：自动纠正常见错误（组间 | 丢失/写成 l、下划线被空格替代、分隔符周围空格），并给出明确格式提示；MD 准备阶段提前校验，避免等完平衡才发现生产段未启用增强采样",
-    "修复 Linux AI 助手首次打开报 name '_AI_PANEL_QT_INSTANCE' is not defined：补模块级初始化",
-    "修复 Mac 版 _GMX_MULTIGPU_WARNED 未初始化导致多 GPU 提示 NameError",
-    "修复生成论文 PDF 时共价对接段落 RESULTS_DIR 引用错误导致指标静默缺失（三平台）",
-    "修复 Linux AI 助手厂商切换槽函数参数不匹配导致模型列表不刷新，并加固面板全部信号槽签名",
-    "修复 MD 多段受体/多链复合物模拟：无编号冲突的多段结构自动拆链放行，不再误拦截",
-    "修复 MD 盒子装不下时直接中止的问题：自动切换矩形盒重试（八面体放不下自动改用矩形盒，默认上限 15 nm 保持不变）",
-    "修复 PDBFixer 因缺少 CPU 平台导致缺原子无法修复的问题：自动选择可用 OpenMM 平台（CPU→Reference→其他）",
-    "修复 PDBFixer 修复失败后受体被侧链清理破坏的问题：失败自动恢复原始受体",
-    "修复 -missing 兜底生成的坏 gro 导致 solvate 报 A coordinate does not contain a '.'：加盒/加水前自动校验并规范化 .gro 坐标与盒向量",
-    "MD 出图全局字号细分：新增 XY 轴数值/刻度、XY 轴标注、图内文字、主图标注/图注四类独立字号设置，三平台一致，覆盖全部主流程分析与对比分析图片",
-    "修复 Win/Mac 对比分析字号设置此前因函数内缺少 matplotlib 导入而静默失效的问题",
-    "SVG/PDF 矢量图文字可编辑：SVG 输出真实 <text>、PDF 内嵌 TrueType（fonttype=42），可在 Illustrator/Inkscape/Acrobat 中直接编辑文字内容/字号/位置；新增全局开关（默认开启）",
-    "MD 全部出图统一走 _md_save_fig 保存入口：SMD 功曲线、metad FES、aMD 重加权、伞形采样窗口、膜渗透等图现在跟随用户所选输出格式（png/pdf/svg/tiff/jpeg）并支持矢量文字可编辑",
-    "汇总面板 SVG 输出真实拼接面板图（不再为占位文字）；移除 PCA / RMSD-Rg 3D 自由能面冗余的硬编码 PDF 副本",
-    "构象快照新增按时间点分组的蛋白/配体配色：输入几个时间点即自动出现几组颜色设置，保存后按快照序号逐张生效；修复配体自动色硬编码为同一颜色的问题；修复 hex 自定义颜色渲染脚本缺少 set_color 定义导致 PyMOL 无法着色的问题",
-    "修复 Mac 版构象快照 UI 重复显示问题；加宽 Linux 版 MD 模拟配置与对接参数配置对话框",
-    "新增 GROMACS 多体系并行 MD 模拟功能：支持多 GPU 独占、单 GPU 共享、CPU 并行三种策略，每个体系独立 worker 子进程执行完整流程（pdb2gmx→editconf→solvate→genion→EM→NVT→NPT→production），默认关闭不影响原有串行流程",
-    "新增并行模式 UI 控件（启用并行、并行模式、并行任务数、每任务CPU线程数），默认 serial 关闭",
-    "新增 --md-gmx-worker 子进程入口，worker 独立加载 CONFIG、绑定 CUDA_VISIBLE_DEVICES、写独立结果 JSON",
-    "新增 worker 启动失败自动回退串行、超时终止全部 worker、spawn 异常清理等安全机制",
-    "修复 PubChem 下载失败后日志缩进错误导致的 IndentationError（Win 版）",
-    "修复糖类/聚合物残基名 URA 与 AMBER RNA 尿嘧啶残基名冲突导致体系被误判为 nucleic-ligand 的问题：新增核酸骨架原子验证（NucleicNameCollisionFix），无磷酸-糖骨架原子（C1'/O5'/P/OP1 等）的残基不归入核酸分类",
-    "修复 _md_extract_ligand_from_complex 将糖类/聚合物 URA 残基误归入蛋白侧的问题：同步骨架验证逻辑（NucleicNameCollisionFix_Extract），无骨架原子的 URA 重分类为配体候选",
-    "修复 ParmEd Amber→GROMACS 转换时 'Could not find <Atom C1>' 错误：所有 .save() 调用添加 combine='all' 保持原子顺序不变，避免 ParmEd split 重排导致的原子查找失败",
-    "修复 GROMACS 2026.2 生产段 MD step 0 即 cuFFT R2C execution failure (error code 6) 致命崩溃：GMX_CUDA_GRAPH 环境变量在 GROMACS 2026.2 中语义变更——设为任何非空值（含 \"0\"）即启用实验性 CUDA Graphs，旧代码 env[\"GMX_CUDA_GRAPH\"]=\"0\" 反而强制开启，导致 GPU 常驻生产段（无 POSRES）cuFFT 在 CUDA Graph 捕获中执行失败。改为 env.pop() 彻底删除该变量，CUDA Graphs 不再启用，cuFFT 恢复正常（实测 RTX 3080 9.6 ns/day）",
-    "修复 CUDA error #999 (cudaErrorUnknown) 回退链断裂：cuFFT 崩溃后 -update cpu + -pme gpu 回退使用 return 直接返回，GPU 上下文已被第一次崩溃污染后 -pme gpu 仍用 cuFFT 必再崩（#999），但代码直接返回失败不触发 -pme cpu 回退。改为条件返回——成功才返回，失败且为 CUDA 错误时继续下探到 -pme cpu（绕开 cuFFT），并补 -cpi 断点续跑保住已完成进度",
-    "修复 CUDA #999/#700 未被检测列表识别：在 NVT/NPT/生产阶段的 _md_cuda_illegal 检测中补充 error #999 / cudaErrorUnknown / cuda error 关键词，使这些错误正确走检查点续跑恢复路径而非误判为非 CUDA 错误",
-    "修复离子液体/liglig 体系 GROMACS NVT step 0 ACCESS_VIOLATION 崩溃（0xC0000005）：根因是 OpenBabel/RDKit 把孤立 Cl- 自动补氢成 Cl-H 伪片段，进 GAFF2 得到 r=0/k=0 退化键，配合 constraints=h-bonds 触发 LINCS 崩溃（GPU/CPU 构建均复现）。新增标准离子伪氢剥离（_ll_strip_std_ion_hydrogens），恢复裸离子后再参数化",
-    "单原子离子（Cl-/Na+/K+ 等）参数化新增 CHARMM36 内置离子参数直连兜底：Windows 上 tleap 加载 atomic_ions.lib 挂起失败、GAFF2 又无法处理孤立离子时，直接用 charmm36.ff/ions.itp 的 CLA/SOD/POT 等参数生成拓扑",
-    "新增输入几何净化：检测零坐标原子/超长键（>3.2Å）自动 ETKDG 重建 3D，应用于 mol_a SDF 直连路径、PDB→SDF 路径和混合体系额外组分（修复 anion.sdf 13 个 (0,0,0) 幻影 H 导致的 EM 崩溃）",
-    "修复季铵 N 电荷推断：_md_get_ligand_total_charge 改用 sanitize=False 读取 SDF，并新增 [NX4;H0;+0] → +1 模式，使无 M CHG 的季铵阳离子电荷从 0 修正为 +1",
-    "liglig 小体系（<5000 原子）改为按平台自动选择 GPU/CPU：原强制 CPU 开关已移除（崩溃根因已修），GPU 崩溃时自动回退 CPU",
-    "修复单原子离子电荷为 0 导致的参数化失败：_md_param_monatomic_ion 遇到 Cl charge=0 等异常电荷时自动归一为标准化合价电荷（-1），不再回退 GAFF2 报 DU 哑原子；同时 mol_a 的 SDF→PDB 转换（obabel -h / RDKit AddHs）对单原子离子跳过补氢，避免 Cl 被补成 Cl-H 伪片段",
-    "更新机制与 v1-v3 对齐（全面修复）：v4 三平台补齐 Ed25519 manifest 验签钩子（LKDOCK_UPDATE_PUBKEY/_lkdock_verify_manifest_signature，默认空=仅 SHA256 校验）、400MB 更新包体积上限、更新包内模块名前缀校验（仅接受 main4.*.pyd/.so）、架构兼容闸门（防装错架构二进制）、备份目录外置（_lkdock_update_state_dir）、启动残留清理（_lkdock_update_startup_cleanup）与失败自动回滚，替换旧版简单 apply_update；同时消除 _lkdock_verify_manifest_signature 引用未定义 LKDOCK_UPDATE_PUBKEY 的 NameError 隐患"
+    "修复 MD 生产模拟被误判挂起：运行期间自动阻止 Windows 系统睡眠，看门狗新增系统睡眠唤醒识别，唤醒后重置计时不再误杀健康模拟",
+    "超时报错文案修正：无输出看门狗触发时显示真实时长（如 无输出6.0h），不再出现 Nones",
+    "新增 GPU 性能档位设置：max=满血卸载（默认）；medium=仅非键上 GPU 显著降低负载功耗；low=纯 CPU",
+    "Windows 版编译参数优化：体积减少约 24%，功能与性能不变"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.36/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.37/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 19.4,
-      "sha256": "6d198505ca9eac756a96c170a6f8891724cdae8207a4c6d34f306a0b0e6c1b30",
+      "sha256": "05c5b969d84018542c0fc3ceae56cd5bc23e68f9647043fea68573a3242154e1",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 20300079
-    },
-    "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.36/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 22.2,
-      "sha256": "af9b912f2bcab99faf1cc541e1e54769522aa1c24f2cbab18f4eb4f873dc2199",
-      "files_to_replace": [
-        "main4.cp311-win_amd64.pyd"
-      ],
-      "python_version": "3.11",
-      "size": 23245803
+      "size": 20344748
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.36/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 18.9,
-      "sha256": "3b922717a39d5e4f60d94dbb77fceb378a07dc04726a269bb71384cc0f476a93",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.37/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 19.0,
+      "sha256": "254fb91d0626685dd44233a79949006995b94c126809e1a98fb16c325e9b9768",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 19834644
+      "size": 19871847
     }
   }
 }
