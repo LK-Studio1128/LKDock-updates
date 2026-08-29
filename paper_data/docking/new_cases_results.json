@@ -1,0 +1,14 @@
+{
+ "4HJO_EGFR_Erlotinib": {
+  "score": -7.727,
+  "rmsd_a": 5.257958590855353,
+  "time_s": 41.809032917022705,
+  "ligand_atoms": 29
+ },
+ "1REV_HIV1RT_TIBO": {
+  "score": -10.859,
+  "rmsd_a": 1.685512368331983,
+  "time_s": 13.48696494102478,
+  "ligand_atoms": 21
+ }
+}
