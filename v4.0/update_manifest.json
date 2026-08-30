@@ -1,5 +1,5 @@
 {
-  "latest_version": "4.0.41",
+  "latest_version": "4.0.42",
   "release_date": "2026-08-30",
   "min_version_required": "4.0.0",
   "changes": [
@@ -9,34 +9,34 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.41/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.42/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 19.7,
-      "sha256": "0e58a3bd6e8dd6806de450d2e7b6b3460111f19ffe57ecd64eaf4e5a33c77d31",
+      "sha256": "6155da733ee20192c86b7667e0d40173e22c39b8ce91313b0924c8351895f404",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 20664747
+      "size": 20675583
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.41/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.42/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 20.5,
-      "sha256": "408c1c2544294155e6145ac2e3c82a7066cfe3012e1178876b47dfc1d678db26",
+      "sha256": "596a4addf799151a834cbd152fd40c3e486b88214cd2a87c51921fb0569f51cc",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 21495840
+      "size": 21506998
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.41/LKDock_v4.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.42/LKDock_v4.0_update_Linux.zip",
       "file_size_mb": 22.3,
-      "sha256": "0300f9860cad581cbac1782d40126e9f736520e310e4ec1f05aae42d4cb75e51",
+      "sha256": "9716e9c2bc74f2fd1cd220a0bb3549748857caa715a922c640e20de10decdb2d",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 23410924
+      "size": 23426173
     }
   }
 }
