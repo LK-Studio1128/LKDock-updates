@@ -3,64 +3,47 @@
   "_usage": "修改 target 版本号后运行 python3 bump_version.py 即可同步所有文件",
   "versions": {
     "1.0": {
-      "target": "1.0.15",
+      "target": "1.0.44",
       "main_file": "main1.py",
       "min_version": "1.0.0",
       "has_linux": false,
       "changes": [
-        "新增在线更新功能",
-        "新增源码保护（Nuitka 编译）",
-        "修复已知问题"
+        "修复 MD 生产模拟被误判挂起：运行期间自动阻止 Windows 系统睡眠，看门狗新增睡眠唤醒识别，不再误杀健康模拟",
+        "超时报错文案修正：无输出时显示真实时长，不再出现 Nones",
+        "新增 GPU 性能档位设置：max=满血卸载（默认）；medium=降低 GPU 负载功耗；low=纯 CPU"
       ]
     },
     "2.0": {
-      "target": "2.0.15",
+      "target": "2.0.45",
       "main_file": "main2.py",
       "min_version": "2.0.0",
       "has_linux": true,
       "changes": [
-        "修复已知问题",
-        "优化报告排版与分页",
-        "修复分析模块在ML打分未启用时因ml_results变量未初始化导致综合打分报告崩溃的问题（UnboundLocalError）"
+        "修复 MD 生产模拟被误判挂起：运行期间自动阻止 Windows 系统睡眠，看门狗新增睡眠唤醒识别，不再误杀健康模拟",
+        "超时报错文案修正：无输出时显示真实时长，不再出现 Nones",
+        "新增 GPU 性能档位设置：max=满血卸载（默认）；medium=降低 GPU 负载功耗；low=纯 CPU"
       ]
     },
     "3.0": {
-      "target": "3.0.15",
+      "target": "3.0.45",
       "main_file": "main3.py",
       "min_version": "3.0.0",
       "has_linux": true,
       "changes": [
-        "修复 UniDock-Pro GPU 引擎使用 --exhaustiveness 导致卡死的问题（改用 --search_mode balance/fast/detail 档位）",
-        "修复共晶配体成盒在 UniDock-Pro GPU 引擎下仍写入 exhaustiveness 参数导致无法正常对接的问题",
-        "修复空配体 PDBQT 文件导致 UniDock-Pro GPU 批量对接崩溃（segfault）的问题：新增预飞行验证跳过无原子记录的配体",
-        "修复 GPU 引擎盒子尺寸超 30Å 未裁剪导致 UniDock-Pro 卡死的问题",
-        "修复分析模块在ML打分未启用时因ml_results变量未初始化导致综合打分报告崩溃的问题（UnboundLocalError）"
+        "修复 MD 生产模拟被误判挂起：运行期间自动阻止 Windows 系统睡眠，看门狗新增睡眠唤醒识别，不再误杀健康模拟",
+        "超时报错文案修正：无输出时显示真实时长，不再出现 Nones",
+        "新增 GPU 性能档位设置：max=满血卸载（默认）；medium=降低 GPU 负载功耗；low=纯 CPU"
       ]
     },
     "4.0": {
-      "target": "4.0.16",
+      "target": "4.0.45",
       "main_file": "main4.py",
       "min_version": "4.0.0",
       "has_linux": true,
       "changes": [
-        "新增 GROMACS 多体系并行 MD 模拟功能：支持多 GPU 独占、单 GPU 共享、CPU 并行三种策略，每个体系独立 worker 子进程执行完整流程（pdb2gmx→editconf→solvate→genion→EM→NVT→NPT→production），默认关闭不影响原有串行流程",
-        "新增并行模式 UI 控件（启用并行、并行模式、并行任务数、每任务CPU线程数），默认 serial 关闭",
-        "新增 --md-gmx-worker 子进程入口，worker 独立加载 CONFIG、绑定 CUDA_VISIBLE_DEVICES、写独立结果 JSON",
-        "新增 worker 启动失败自动回退串行、超时终止全部 worker、spawn 异常清理等安全机制",
-        "修复 PubChem 下载失败后日志缩进错误导致的 IndentationError（Win 版）",
-        "修复糖类/聚合物残基名 URA 与 AMBER RNA 尿嘧啶残基名冲突导致体系被误判为 nucleic-ligand 的问题：新增核酸骨架原子验证（NucleicNameCollisionFix），无磷酸-糖骨架原子（C1'/O5'/P/OP1 等）的残基不归入核酸分类",
-        "修复 _md_extract_ligand_from_complex 将糖类/聚合物 URA 残基误归入蛋白侧的问题：同步骨架验证逻辑（NucleicNameCollisionFix_Extract），无骨架原子的 URA 重分类为配体候选",
-        "修复 ParmEd Amber→GROMACS 转换时 'Could not find <Atom C1>' 错误：所有 .save() 调用添加 combine='all' 保持原子顺序不变，避免 ParmEd split 重排导致的原子查找失败",
-        "修复 GROMACS 2026.2 生产段 MD step 0 即 cuFFT R2C execution failure (error code 6) 致命崩溃：GMX_CUDA_GRAPH 环境变量在 GROMACS 2026.2 中语义变更——设为任何非空值（含 \"0\"）即启用实验性 CUDA Graphs，旧代码 env[\"GMX_CUDA_GRAPH\"]=\"0\" 反而强制开启，导致 GPU 常驻生产段（无 POSRES）cuFFT 在 CUDA Graph 捕获中执行失败。改为 env.pop() 彻底删除该变量，CUDA Graphs 不再启用，cuFFT 恢复正常（实测 RTX 3080 9.6 ns/day）",
-        "修复 CUDA error #999 (cudaErrorUnknown) 回退链断裂：cuFFT 崩溃后 -update cpu + -pme gpu 回退使用 return 直接返回，GPU 上下文已被第一次崩溃污染后 -pme gpu 仍用 cuFFT 必再崩（#999），但代码直接返回失败不触发 -pme cpu 回退。改为条件返回——成功才返回，失败且为 CUDA 错误时继续下探到 -pme cpu（绕开 cuFFT），并补 -cpi 断点续跑保住已完成进度",
-        "修复 CUDA #999/#700 未被检测列表识别：在 NVT/NPT/生产阶段的 _md_cuda_illegal 检测中补充 error #999 / cudaErrorUnknown / cuda error 关键词，使这些错误正确走检查点续跑恢复路径而非误判为非 CUDA 错误",
-        "修复离子液体/liglig 体系 GROMACS NVT step 0 ACCESS_VIOLATION 崩溃（0xC0000005）：根因是 OpenBabel/RDKit 把孤立 Cl- 自动补氢成 Cl-H 伪片段，进 GAFF2 得到 r=0/k=0 退化键，配合 constraints=h-bonds 触发 LINCS 崩溃（GPU/CPU 构建均复现）。新增标准离子伪氢剥离（_ll_strip_std_ion_hydrogens），恢复裸离子后再参数化",
-        "单原子离子（Cl-/Na+/K+ 等）参数化新增 CHARMM36 内置离子参数直连兜底：Windows 上 tleap 加载 atomic_ions.lib 挂起失败、GAFF2 又无法处理孤立离子时，直接用 charmm36.ff/ions.itp 的 CLA/SOD/POT 等参数生成拓扑",
-        "新增输入几何净化：检测零坐标原子/超长键（>3.2Å）自动 ETKDG 重建 3D，应用于 mol_a SDF 直连路径、PDB→SDF 路径和混合体系额外组分（修复 anion.sdf 13 个 (0,0,0) 幻影 H 导致的 EM 崩溃）",
-        "修复季铵 N 电荷推断：_md_get_ligand_total_charge 改用 sanitize=False 读取 SDF，并新增 [NX4;H0;+0] → +1 模式，使无 M CHG 的季铵阳离子电荷从 0 修正为 +1",
-        "liglig 小体系（<5000 原子）改为按平台自动选择 GPU/CPU：原强制 CPU 开关已移除（崩溃根因已修），GPU 崩溃时自动回退 CPU",
-        "修复单原子离子电荷为 0 导致的参数化失败：_md_param_monatomic_ion 遇到 Cl charge=0 等异常电荷时自动归一为标准化合价电荷（-1），不再回退 GAFF2 报 DU 哑原子；同时 mol_a 的 SDF→PDB 转换（obabel -h / RDKit AddHs）对单原子离子跳过补氢，避免 Cl 被补成 Cl-H 伪片段",
-        "更新机制与 v1-v3 对齐（全面修复）：v4 三平台补齐 Ed25519 manifest 验签钩子（LKDOCK_UPDATE_PUBKEY/_lkdock_verify_manifest_signature，默认空=仅 SHA256 校验）、400MB 更新包体积上限、更新包内模块名前缀校验（仅接受 main4.*.pyd/.so）、架构兼容闸门（防装错架构二进制）、备份目录外置（_lkdock_update_state_dir）、启动残留清理（_lkdock_update_startup_cleanup）与失败自动回滚，替换旧版简单 apply_update；同时消除 _lkdock_verify_manifest_signature 引用未定义 LKDOCK_UPDATE_PUBKEY 的 NameError 隐患"
+        "修复 MD 生产模拟被误判挂起：运行期间自动阻止 Windows 系统睡眠，看门狗新增睡眠唤醒识别，不再误杀健康模拟",
+        "超时报错文案修正：无输出时显示真实时长，不再出现 Nones",
+        "新增 GPU 性能档位设置：max=满血卸载（默认）；medium=降低 GPU 负载功耗；low=纯 CPU"
       ]
     }
   }
