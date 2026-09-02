@@ -36,7 +36,7 @@
       ]
     },
     "4.0": {
-      "target": "4.0.45",
+      "target": "4.0.46",
       "main_file": "main4.py",
       "min_version": "4.0.0",
       "has_linux": true,
