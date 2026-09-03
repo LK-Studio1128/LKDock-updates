@@ -1,6 +1,6 @@
 {
-  "latest_version": "2.0.45",
-  "release_date": "2026-09-02",
+  "latest_version": "2.0.47",
+  "release_date": "2026-09-03",
   "min_version_required": "2.0.0",
   "changes": [
     "修复 MD 生产模拟被误判挂起：运行期间自动阻止 Windows 系统睡眠，看门狗新增睡眠唤醒识别，不再误杀健康模拟",
@@ -9,34 +9,34 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.45/LKDock_v2.0_update_Mac.zip",
-      "file_size_mb": 5.3,
-      "sha256": "2bbf2e1fd1df824245f3fdefa54151acc1966b96270db2a198c6cd29a4684fb2",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.47/LKDock_v2.0_update_Mac.zip",
+      "file_size_mb": 5.2,
+      "sha256": "f12099927d1a3f0acb8ce62cea341a2cb67d753ecec88c632ebdf9a038b7f688",
       "files_to_replace": [
         "main2.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 5523733
+      "size": 5496920
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.45/LKDock_v2.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.47/LKDock_v2.0_update_Win.zip",
       "file_size_mb": 5.9,
-      "sha256": "97d36c12ce1432ff7022489f03cbcbbc4a61ce06febb708dcbf4f23faadbeb5e",
+      "sha256": "17f60e0e7ede860cdb8bdf39ecbfe80feb329479430fe55aae9b590f8de4573b",
       "files_to_replace": [
         "main2.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 6156536
+      "size": 6184108
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.45/LKDock_v2.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.47/LKDock_v2.0_update_Linux.zip",
       "file_size_mb": 6.9,
-      "sha256": "065ddac510b9745a32b5530514f22d6d98306d2c41e6f6ccdc476b8857aa7b56",
+      "sha256": "297cd99c9578b75cac18d98d193e5041ec6b9c28966d165d2380ff3fb8077ce9",
       "files_to_replace": [
         "main2.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 7210492
+      "size": 7236547
     }
   }
 }
