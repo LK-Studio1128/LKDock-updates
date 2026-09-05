@@ -1,42 +1,40 @@
 {
-  "latest_version": "2.0.47",
-  "release_date": "2026-09-03",
+  "latest_version": "2.0.52",
+  "release_date": "2026-09-05",
   "min_version_required": "2.0.0",
   "changes": [
-    "修复 MD 生产模拟被误判挂起：运行期间自动阻止 Windows 系统睡眠，看门狗新增睡眠唤醒识别，不再误杀健康模拟",
-    "超时报错文案修正：无输出时显示真实时长，不再出现 Nones",
-    "新增 GPU 性能档位设置：max=满血卸载（默认）；medium=降低 GPU 负载功耗；low=纯 CPU"
+    "[LIGPREP-FASTRECOVER] 修复配体预处理隔离框架：worker 异常退出时若该配体结果文件已产出且校验有效，直接按完成收集（免重跑），并对大文件配体动态放宽看门狗超时；v1 同步补齐崩溃恢复加速。全部版本 x.0.52。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.47/LKDock_v2.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.52/LKDock_v2.0_update_Mac.zip",
       "file_size_mb": 5.2,
-      "sha256": "f12099927d1a3f0acb8ce62cea341a2cb67d753ecec88c632ebdf9a038b7f688",
+      "sha256": "e59dcd85808074128019d2eb0894bccfdc21377ef4d0dc17111a1dfde7d46c79",
       "files_to_replace": [
         "main2.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 5496920
+      "size": 5504742
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.47/LKDock_v2.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.52/LKDock_v2.0_update_Win.zip",
       "file_size_mb": 5.9,
-      "sha256": "17f60e0e7ede860cdb8bdf39ecbfe80feb329479430fe55aae9b590f8de4573b",
+      "sha256": "6d098ca882479cacf563d79e621c78293356884fe66e49669bae32893f110b3a",
       "files_to_replace": [
         "main2.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 6184108
+      "size": 6192168
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.47/LKDock_v2.0_update_Linux.zip",
-      "file_size_mb": 6.9,
-      "sha256": "297cd99c9578b75cac18d98d193e5041ec6b9c28966d165d2380ff3fb8077ce9",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.52/LKDock_v2.0_update_Linux.zip",
+      "file_size_mb": 6.8,
+      "sha256": "8c4f9e911a625a54bb1208f12ad551eef6298fe31b48343e4c701c6417de791b",
       "files_to_replace": [
         "main2.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 7236547
+      "size": 7154624
     }
   }
 }

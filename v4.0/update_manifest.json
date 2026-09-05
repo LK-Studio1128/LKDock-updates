@@ -1,49 +1,40 @@
 {
-  "latest_version": "4.0.51",
+  "latest_version": "4.0.52",
   "release_date": "2026-09-05",
   "min_version_required": "4.0.0",
   "changes": [
-    "[LIGPOCKET-NOCENTER] 修复 MD 中结合态配体被无条件平移到盒子中心导致破坏对接 pose：配体距受体（蛋白/核酸）<1.2nm 视为结合态跳过居中，仅游离配体才居中防 PBC 折散",
-    "[OCTA-MARGIN-050] 修复八面体/十二面体盒边距不足仍放行导致蛋白与周期镜像发生非键自作用：最小边距阈值 0.2→0.5nm，自动盒重试后仍不足则强制切换矩形盒",
-    "[HISPROT-ORDER] 修复组氨酸质子化态时序 bug：原实现把 HID/HIE/HIP 归一化后在 PDBFixer 前又全部改 HIE，导致原 HID/HIP 无法恢复被错误统一成 HIE；现由 restore 按映射正确恢复，仅原始 HIS 兜底为 HIE（含 restore 空映射早退修复与数量异常提示）",
-    "[EMUIHANG] 修复 MD 跑到 EM/NVT 阶段界面卡顿无响应：stderr 独立管道实时输出 GPU 错误（TDR/cuFFT/Blackwell 段错误），Popen 禁缓冲，GPU 致命错误立即自动全 CPU 重试不再死等 6h，并新增心跳日志让用户确认 mdrun 仍在运行",
-    "[BOXOK+BOXTYPE] 修复 4.0.48 实测盒子误中止：强制矩形盒成功后漏置 ok=True 导致细长蛋白矩形盒达标仍报“装不下蛋白”中止；octa 触发重试时直接请求矩形盒（一次成功且省 40% 水体积，实测 AKT1：octa 9.8 边距 0.38 vs 矩形 6.86×8.56×7.66 边距 0.66nm）",
-    "[EXPLICITBOX] 修复固定盒（explicit）模式被误覆盖：用户显式指定尺寸且 octa 内切边距<0.5nm 时尊重用户选择不再强制切矩形；仅原子真越界（负边距）才自动矩形兜底",
-    "[NUCQC] 修复纯核酸/蛋白-核酸体系盒子边距未检查：盒 QC 大分子统计纳入核酸残基全集（RA/DA/端基/ADE 等），避免核酸体系带病进 EM 才爆炸",
-    "[WATERPENMEM] 修复分析阶段水穿透统计内存爆炸：原一次性构建 水×核心 全成对距离矩阵（实测 151540×17112 需 19.3GiB 直接 MemoryError）；改为分块计算（峰值≤320MB，结果一致）",
-    "[OMPSYNCPROD] 修复 GROMACS 2026.3 生产模拟 fatal：mdrun 启动前把 OMP_NUM_THREADS 与 -ntomp 线程数强制同步一致，避免环境变量与命令行声明不一致导致报错退出",
-    "[BACKBONE-BREAK-SAFE-NVT] 修复 GPU 首步 CUDA #700 崩溃与 NPT 降速：检测主链断裂（低质量/碎片拼接结构）时首次 NVT 自动降 dt 至 0.5fs 安全暖机（nsteps 等比放大，总时长不变），规避坏接触在 dt=2fs 首步触发约束爆炸；NVT 兜底成功后自动复位 -update gpu，避免 NPT/生产被永久锁 CPU 拖慢 3~4 倍（sticky/用户指定 update=cpu 不复位）"
+    "[LIGPREP-FASTRECOVER] 修复配体预处理隔离框架：worker 异常退出时若该配体结果文件已产出且校验有效，直接按完成收集（免重跑），并对大文件配体动态放宽看门狗超时；v1 同步补齐崩溃恢复加速。全部版本 x.0.52。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.51/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.52/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.1,
-      "sha256": "439422865f3321bf4a163b4ead4c94ce7780c4d333c221c26e4d81220f503b7c",
+      "sha256": "3e5692d1c8dd380666efd36eb8efee7b4b34344e9bd3c0039f41ad540b0d53a9",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21032535
+      "size": 21043973
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.51/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.52/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 20.9,
-      "sha256": "e84552294c72ca9cd634daa630d3af2107ecb86b58e09fa947142bfc10673f75",
+      "sha256": "7b73c7dab4fa284779b8b14943260cd46ab7348115a2b74bbf70715ff12c7d71",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 21895713
+      "size": 21904938
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.51/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 22.1,
-      "sha256": "78fa3240a53478163af1ddca112b84d71544a4734e3eb0054e8f1cb726cf8322",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.52/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 22.2,
+      "sha256": "9355981dc77ece17f40eeb48a28756007b9786687c0938d8a115251009265730",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 23217612
+      "size": 23229450
     }
   }
 }
