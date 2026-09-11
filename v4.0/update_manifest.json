@@ -1,40 +1,40 @@
 {
-  "latest_version": "4.0.57",
+  "latest_version": "4.0.58",
   "release_date": "2026-09-11",
   "min_version_required": "4.0.0",
   "changes": [
-    "[MD-STABILITY] MD 模拟稳定性与跨机器一致性修复：(1) constraints=h-angles 全局自动降级为 h-bonds（GROMACS 2026.x 下 NVT Step0 即大量 LINCS warnings，为'同一复合物一人能跑一人崩'根因），保留用户设置并写警告；(2) LINCS 恢复分级表将 h-angles 归入 h-bonds 通道；(3) 配体提取感知确定性修复——OpenBabel 静默失败回退距离法时按键长几何自动修复羰基 C=O 并写明确警告，杜绝同一复合物跨机器提取出不同分子（原子数/净电荷漂移）；(4) NVT 前 em.gro 配体键长复核：错位自动重排修复，真损坏中止并给原子级诊断；(5) 复合物消碰撞配体内部按 itp 键表判键合（含多配体各自键表）+ 无近邻边界修复；(6) 八面体盒边距阈值 0.5→0.7 nm。实测：用户失败现场 before(5351 LINCS)/after(0 warnings, 5001 步稳定) 对照通过，全链路本机实测通过。三平台重新编译。"
+    "[MD-BONDQC-FIX] 修复 v4.0.57 配体键长复核误杀：键长-坐标偏差改为分级容差（≤0.03 nm 判健康；0.03–0.35 nm 仅告警不阻断；>0.35 nm 才判真损坏并中止、给出原子级诊断）；NVT 前复核仅在'重排确有改善'时才改写坐标，em.gro 复核后同样对轻微偏差只告警。修复用户蛋白-RNA 复合物（34 原子配体仅 0.033 nm 正常几何/来源偏差）在 v4.0.57 被误判坐标损坏而整条 MD 中止的问题，该任务恢复到可正常完成。三平台重新编译。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.57/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.58/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.3,
-      "sha256": "1a01a0643895d6746fa5bc3a9e8fece358d6e9b651184a8d4b59e0efb76c6c80",
+      "sha256": "d5d69df5d6afdd5338bf7892ab1da8d0e359fff9e12ae7e5b1725d8d90353c69",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21277390
+      "size": 21280585
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.57/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.58/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 21.1,
-      "sha256": "7e83fcf3c2eb02ac0c7e416f578708e2e708861390c6860aa7fc86e332ae9b9d",
+      "sha256": "68c8190813c42af30df3e73865ee9fa05e304002cfdbe0ada9c1f8cf64a5b05e",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 22150337
+      "size": 22153096
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.57/LKDock_v4.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.58/LKDock_v4.0_update_Linux.zip",
       "file_size_mb": 23.0,
-      "sha256": "47b563817605a7b9a52502b421aca191207c9f1da8e5c33e9b6089e6eac07ebc",
+      "sha256": "efdb2ba7635a07063b3dedf2e5aef02ee8c32ccbd72f5c7dc97fa8dc44516c80",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 24090433
+      "size": 24109114
     }
   }
 }
