@@ -1,40 +1,40 @@
 {
-  "latest_version": "4.0.58",
-  "release_date": "2026-09-12",
+  "latest_version": "4.0.59",
+  "release_date": "2026-09-13",
   "min_version_required": "4.0.0",
   "changes": [
-    "[MD-BONDQC-FIX] 修复 v4.0.57 配体键长复核误杀：键长-坐标偏差改为分级容差（≤0.03 nm 判健康；0.03–0.35 nm 仅告警不阻断；>0.35 nm 才判真损坏并中止、给出原子级诊断）；NVT 前复核仅在'重排确有改善'时才改写坐标，em.gro 复核后同样对轻微偏差只告警。修复用户蛋白-RNA 复合物（34 原子配体仅 0.033 nm 正常几何/来源偏差）在 v4.0.57 被误判坐标损坏而整条 MD 中止的问题，该任务恢复到可正常完成。三平台重新编译。"
+    "[LIGPREP-GUARDV2] 修复巨型配体护栏误拒：重原子数 >300 的分子先做连通性识别，单一连通大分子（多肽/大环/大糖苷）正常放行，多个互不相连片段或超过引擎可对接上限（2000 重原子）才拒绝；三平台重新编译。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.58/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.59/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.3,
-      "sha256": "d5d69df5d6afdd5338bf7892ab1da8d0e359fff9e12ae7e5b1725d8d90353c69",
+      "sha256": "46089e035dda410d5464bc39f250a4371796e0652d9b4dcedd1a40dbf5506745",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21280585
+      "size": 21306762
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.58/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.59/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 21.1,
-      "sha256": "68c8190813c42af30df3e73865ee9fa05e304002cfdbe0ada9c1f8cf64a5b05e",
+      "sha256": "09a44466689357551ca86a2bc1d91f811b849caec6949a01ef48ebca7a23620d",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 22153096
+      "size": 22165729
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.58/LKDock_v4.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.59/LKDock_v4.0_update_Linux.zip",
       "file_size_mb": 23.0,
-      "sha256": "efdb2ba7635a07063b3dedf2e5aef02ee8c32ccbd72f5c7dc97fa8dc44516c80",
+      "sha256": "8cf679352f6f849f4081db4a349139783129182b8a96dcded07dcaa66f4d6501",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 24109114
+      "size": 24132787
     }
   }
 }
