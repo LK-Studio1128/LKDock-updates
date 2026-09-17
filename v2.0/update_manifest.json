@@ -1,40 +1,40 @@
 {
-  "latest_version": "2.0.60",
-  "release_date": "2026-09-14",
+  "latest_version": "2.0.65",
+  "release_date": "2026-09-18",
   "min_version_required": "2.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.60；三平台重新编译并发布在线更新。"
+    "[RELEASE] 主程序版本同步升级至 x.0.65；三平台重新编译并发布在线更新。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.60/LKDock_v2.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.65/LKDock_v2.0_update_Mac.zip",
       "file_size_mb": 5.6,
-      "sha256": "79adfab2428995582e5a33209e377e27881cfb495ce27211568f80b57f7fafe2",
+      "sha256": "d43378cc5986ebabcfc9995a1a1c27349f59192e7de517b6729996f79df21142",
       "files_to_replace": [
         "main2.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 5854174
+      "size": 5854667
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.60/LKDock_v2.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.65/LKDock_v2.0_update_Win.zip",
       "file_size_mb": 5.8,
-      "sha256": "13216ebb97ff9fb88de09b2db1ff7ec80b7197676d4b12739c8b7a47590c15fc",
+      "sha256": "50ae73f10061d6570539009883a7a9b79797dd765961eb4c3d1a3eb5851de9aa",
       "files_to_replace": [
         "main2.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 6131117
+      "size": 6130718
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.60/LKDock_v2.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.65/LKDock_v2.0_update_Linux.zip",
       "file_size_mb": 7.0,
-      "sha256": "54c9bd9a60f53825bb5834b8be302a01cd9de2354951a8f3ddc636eb9ead8838",
+      "sha256": "cffa85b78f6eb30b1400fc86b0f7e3b8e896372aae4110fef1eda9882da2100a",
       "files_to_replace": [
         "main2.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 7332085
+      "size": 7332597
     }
   }
 }
