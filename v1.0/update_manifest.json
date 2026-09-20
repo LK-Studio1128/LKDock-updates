@@ -1,33 +1,33 @@
 {
-  "latest_version": "1.0.52",
-  "release_date": "2026-09-05",
+  "latest_version": "1.0.67",
+  "release_date": "2026-09-21",
   "min_version_required": "1.0.0",
   "changes": [
-    "[LIGPREP-FASTRECOVER] 修复配体预处理隔离框架：worker 异常退出时若该配体结果文件已产出且校验有效，直接按完成收集（免重跑），并对大文件配体动态放宽看门狗超时；v1 同步补齐崩溃恢复加速。全部版本 x.0.52。"
+    "[RELEASE] 主程序版本同步升级至 x.0.67。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.52/LKDock_v1.0_update_Mac.zip",
-      "file_size_mb": 2.2,
-      "sha256": "aa6e7772124456bcf066ef58d3b93ddb21bafd4a271adf1f395ee7f97e07e54d",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.67/LKDock_v1.0_update_Mac.zip",
+      "file_size_mb": 2.3,
+      "sha256": "3c268e20f7b2f71e53263a7e0fca1d17a5a07997e61975f5c60ac7b904c02284",
       "files_to_replace": [
         "main1.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 2325487
+      "size": 2447271
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.52/LKDock_v1.0_update_Win.zip",
-      "file_size_mb": 3.3,
-      "sha256": "88bc1817a197963d582680dc1e266a592f888d5bb358191138e9d141bc7a04fc",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.67/LKDock_v1.0_update_Win.zip",
+      "file_size_mb": 2.7,
+      "sha256": "7312b1c013971e51611f0e4953a38c03ea5af227e40bdd6686cc729cd2bef68c",
       "files_to_replace": [
         "main1.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 3473586
+      "size": 2872727
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.52/LKDock_v1.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.67/LKDock_v1.0_update_Linux.zip",
       "file_size_mb": 0,
       "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "files_to_replace": [
