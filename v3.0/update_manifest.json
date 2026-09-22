@@ -1,40 +1,40 @@
 {
-  "latest_version": "3.0.67",
-  "release_date": "2026-09-21",
+  "latest_version": "3.0.68",
+  "release_date": "2026-09-23",
   "min_version_required": "3.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.67。"
+    "[RELEASE] 主程序版本同步升级至 x.0.68。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.67/LKDock_v3.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.68/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 8.7,
-      "sha256": "0cc6db09325c55a3198fc1abee13258da65e494be7192ea91cb89f216c211599",
+      "sha256": "cb492d5d542ece5c87ada62ae7812764ffe8dad04624ef8e0b85e2db5210527c",
       "files_to_replace": [
         "main3.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 9144798
+      "size": 9170791
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.67/LKDock_v3.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.68/LKDock_v3.0_update_Win.zip",
       "file_size_mb": 9.1,
-      "sha256": "d04473ac4d82882cbe8a3bcb97e7a6976812c634a2f2c61e329a40852fe53173",
+      "sha256": "1c2062ccec0e51087863f75e1f5635ad4a3328176e88052d8ec5fd9014950017",
       "files_to_replace": [
         "main3.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 9551494
+      "size": 9582779
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.67/LKDock_v3.0_update_Linux.zip",
-      "file_size_mb": 10.8,
-      "sha256": "8005c9dc3598c2c6581953a5909ac4e93fc6b07b58d7c078c343b75c1048735a",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.68/LKDock_v3.0_update_Linux.zip",
+      "file_size_mb": 10.9,
+      "sha256": "87510127d9a573f478d3da0ce9d97bf2aa99a82a83de8ec01c63078d444ac5bc",
       "files_to_replace": [
         "main3.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 11368808
+      "size": 11405173
     }
   }
 }
