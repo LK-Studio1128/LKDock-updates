@@ -1,6 +1,6 @@
 {
   "latest_version": "3.0.70",
-  "release_date": "2026-09-27",
+  "release_date": "2026-09-28",
   "min_version_required": "3.0.0",
   "changes": [
     "[RELEASE] 主程序版本同步升级至 x.0.70。"
@@ -17,14 +17,14 @@
       "size": 8782520
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.68/LKDock_v3.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.70/LKDock_v3.0_update_Win.zip",
       "file_size_mb": 9.1,
-      "sha256": "1c2062ccec0e51087863f75e1f5635ad4a3328176e88052d8ec5fd9014950017",
+      "sha256": "db2bb427c51d9633aff1494858bb098a21ba05c81bf68a0a0b3f793b85cf64e0",
       "files_to_replace": [
         "main3.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 9582779
+      "size": 9582661
     },
     "linux": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.70/LKDock_v3.0_update_Linux.zip",
