@@ -27,14 +27,14 @@
       "size": 6345952
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.78/LKDock_v2.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.79/LKDock_v2.0_update_Linux.zip",
       "file_size_mb": 7.3,
-      "sha256": "9d4a688701f19e5a009e9ab315914f92dd934c9cd24253c5ba1604dc286ddfe3",
+      "sha256": "f5367ac4b6512a2140c32d678a4634229f1869649159b0d5d6cd691077c1d61e",
       "files_to_replace": [
         "main2.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 7612524
+      "size": 7628811
     }
   }
 }
