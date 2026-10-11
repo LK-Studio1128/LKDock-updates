@@ -1,30 +1,30 @@
 {
-  "latest_version": "3.0.79",
-  "release_date": "2026-10-11",
+  "latest_version": "3.0.80",
+  "release_date": "2026-10-12",
   "min_version_required": "3.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.79。"
+    "[RELEASE] 主程序版本同步升级至 x.0.80。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.79/LKDock_v3.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.80/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 8.5,
-      "sha256": "f5f63c603ea51e8f723481a9f28a7776e8609533f0d7460f29964a69c17927c9",
+      "sha256": "e69998904b0846210a182df738a51cf25d55edb5f114d6d306c856f1aedece5a",
       "files_to_replace": [
         "main3.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 8901371
+      "size": 8908576
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.79/LKDock_v3.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.80/LKDock_v3.0_update_Win.zip",
       "file_size_mb": 9.3,
-      "sha256": "c925eddf442a8b12bf1b1997af8acf792d6296fe6170d06db69757583e2537d7",
+      "sha256": "d13df35f2ef9f83e993f882778e085af796800a6f69badc1db04012e97633056",
       "files_to_replace": [
         "main3.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 9786626
+      "size": 9799757
     },
     "linux": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.79/LKDock_v3.0_update_Linux.zip",
