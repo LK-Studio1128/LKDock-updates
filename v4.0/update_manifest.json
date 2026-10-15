@@ -1,40 +1,42 @@
 {
-  "latest_version": "4.0.82",
-  "release_date": "2026-10-15",
+  "latest_version": "4.0.83",
+  "release_date": "2026-10-16",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.82。"
+    "[RELEASE] 主程序版本同步升级至 x.0.83。",
+    "[修复] PB 计算(gmx_MMPBSA)：修复安装目录中嵌套旧引擎导致 sander 调用失败的问题，自动在“当前引擎目录及上级同名引擎目录”中选择最新的 AmberTools 工具。",
+    "[修复] PDB 元素列自动修复：原子元素列右移错位（如 Br 被误判为 B）时自动纠正，并输出 *.elementfix.pdb 供后续流程使用。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.82/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.83/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 21.4,
-      "sha256": "563b479177ac45bc31bd946658b3a38c6e0c31149adae99bcf3a4a5b66c5062a",
+      "sha256": "02f2cf2d1cac26297815854fda57297a63fcd7a4f4b77d4e586f586290962efb",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 22439852
+      "size": 22454303
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.82/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.83/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 21.7,
-      "sha256": "9a620aff31dc857e94984b2f85fd3b8beec77dfc3eabbb00cb661cb4d039d235",
+      "sha256": "f779e2d9f261b8ac12c441200bf14b6db556af6b380db8d80f3f0063dd06682f",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 22744789
+      "size": 22760647
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.82/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 24.2,
-      "sha256": "4cc084e4a04f4674782e6e34db45789a602c0d7173147e62008dbd23e8972577",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.83/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 21.1,
+      "sha256": "bad730527eea81692e4a8f702e5461fcfd2b32b077c9daaf70d202ce045f8fe5",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 25332856
+      "size": 22088475
     }
   }
 }
