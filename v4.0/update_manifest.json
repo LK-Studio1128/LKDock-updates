@@ -1,42 +1,44 @@
 {
-  "latest_version": "4.0.83",
-  "release_date": "2026-10-16",
+  "latest_version": "4.0.84",
+  "release_date": "2026-10-18",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.83。",
-    "[修复] PB 计算(gmx_MMPBSA)：修复安装目录中嵌套旧引擎导致 sander 调用失败的问题，自动在“当前引擎目录及上级同名引擎目录”中选择最新的 AmberTools 工具。",
-    "[修复] PDB 元素列自动修复：原子元素列右移错位（如 Br 被误判为 B）时自动纠正，并输出 *.elementfix.pdb 供后续流程使用。"
+    "[RELEASE] 主程序版本同步升级至 x.0.84。",
+    "[修复] PB 计算：嵌套引擎修复升级 V2——主程序 gmx_MMPBSA 与 AmberTools（sander 等）都改为在“当前引擎目录及上级同名目录”中取最新的真实文件，避免内层旧 gmx_MMPBSA 把 AMBERHOME 指回内层旧 sander 而继续报 prmtop 错误。",
+    "[修复] MD 分帧并行进度：改为增量读取日志并为每个分片保留历史最大完成帧数，修复进度回退（5/5→0/5）、最终 done=0，以及部分环境只写阶段汇总行时长期显示 0/N 的问题；进度行新增已等待时长与子进程运行数。",
+    "[修复] MD 对比白名单解析：兼容历史 \"['OB2','PYD']\" 形式与双重转义 JSON，避免对比样本被漏选。",
+    "[优化] MD 分析与报告标注：统一引擎名称、GROMACS 能力检测、barostat、GB 模型与分析窗口标注，完善 GROMACS EDR 查找/解析与 RMSD 曲线标签（C-alpha / Ligands）。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.83/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 21.4,
-      "sha256": "02f2cf2d1cac26297815854fda57297a63fcd7a4f4b77d4e586f586290962efb",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.84/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 20.3,
+      "sha256": "a5d49cd74838f27c5a048db2831649e9589c21ec4f945ddc5701ef8a3def50d7",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 22454303
+      "size": 21271316
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.83/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 21.7,
-      "sha256": "f779e2d9f261b8ac12c441200bf14b6db556af6b380db8d80f3f0063dd06682f",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.84/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 21.9,
+      "sha256": "65308e2455991465e784b6adaf920a1bf0e3d534f552578b82e8cc0304c80fe1",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 22760647
+      "size": 22962296
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.83/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 21.1,
-      "sha256": "bad730527eea81692e4a8f702e5461fcfd2b32b077c9daaf70d202ce045f8fe5",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.84/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 21.3,
+      "sha256": "65e03f54f64522fb3c592798e2605e8efa2e5cc2dd3b49d312ad4df8517ef728",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 22088475
+      "size": 22293392
     }
   }
 }
