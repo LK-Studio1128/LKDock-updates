@@ -1,44 +1,33 @@
 {
-  "latest_version": "4.0.84",
+  "latest_version": "4.0.85",
   "release_date": "2026-10-18",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.84。",
-    "[修复] PB 计算：嵌套引擎修复升级 V2——主程序 gmx_MMPBSA 与 AmberTools（sander 等）都改为在“当前引擎目录及上级同名目录”中取最新的真实文件，避免内层旧 gmx_MMPBSA 把 AMBERHOME 指回内层旧 sander 而继续报 prmtop 错误。",
-    "[修复] MD 分帧并行进度：改为增量读取日志并为每个分片保留历史最大完成帧数，修复进度回退（5/5→0/5）、最终 done=0，以及部分环境只写阶段汇总行时长期显示 0/N 的问题；进度行新增已等待时长与子进程运行数。",
-    "[修复] MD 对比白名单解析：兼容历史 \"['OB2','PYD']\" 形式与双重转义 JSON，避免对比样本被漏选。",
-    "[优化] MD 分析与报告标注：统一引擎名称、GROMACS 能力检测、barostat、GB 模型与分析窗口标注，完善 GROMACS EDR 查找/解析与 RMSD 曲线标签（C-alpha / Ligands）。"
+    "[RELEASE] 主程序版本同步升级至 x.0.85。",
+    "[修复] MM-PBSA/GBSA 参考结构：改为从干复合物 System 组生成并校验链ID参考结构，修复多链/自定义复合物参考结构取到子集、报 “number of residues of the complex ... and of the reference structure ... are different” 而导致某个体系亲合力不显示的问题（如 8XQO+65064）。",
+    "[修复] MM-PBSA/GBSA 自愈：若仍报参考结构残基数不一致或自动分链失败，自动切换 -cr 模式单核重试一次；干复合物合并组改为按索引并集确定性生成，不再依赖 make_ndx 最后一组。",
+    "[修复] 多体系 MM-PBSA/GBSA 对比图：失败体系不再按 0 画成“消失的柱子”，改为不纳入柱状图并输出 *_missing.csv；单体系结合自由能排名同样列出未纳入原因。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.84/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.85/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.3,
-      "sha256": "a5d49cd74838f27c5a048db2831649e9589c21ec4f945ddc5701ef8a3def50d7",
+      "sha256": "cc0206709afa8f2540de669a018e7a92bc92aaf1e3f83c4b5dc16bf90fb9b4be",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21271316
+      "size": 21319685
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.84/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.85/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 21.9,
-      "sha256": "65308e2455991465e784b6adaf920a1bf0e3d534f552578b82e8cc0304c80fe1",
+      "sha256": "384bf89c7f7e905593f618f19a09621df81449f9135bfb14c06e6298b1f4e1bf",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 22962296
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.84/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 21.3,
-      "sha256": "65e03f54f64522fb3c592798e2605e8efa2e5cc2dd3b49d312ad4df8517ef728",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 22293392
+      "size": 23008655
     }
   }
 }
