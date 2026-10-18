@@ -1,44 +1,32 @@
 {
-  "latest_version": "4.0.86",
-  "release_date": "2026-10-18",
+  "latest_version": "4.0.87",
+  "release_date": "2026-10-19",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.86。",
-    "[新增] 膜体系混合脂质：新增“混合脂质组成”（membrane.lipid_mix，格式如 POPC:0.7,POPE:0.2,CHOL:0.1），配合 GROMACS + Packmol-Memgen 建膜；建膜器增加 packmol-memgen 选项并自动切换到对应引擎路由。",
-    "[修复] 膜体系建膜稳定性：tleap loadPdb 前自动规范化 PDB（首残基 H→H1，HIS/HID/HIE/HIP 按 HD1/HE2 纠正），膜体系 .gro 自动平移到周期盒中心，memembed 取向后的 PDB 补做元素列修复。",
-    "[新增] MD 盒子形状新增 rectangular（矩形盒，膜蛋白推荐；GROMACS 映射为 90° triclinic）。",
-    "[修复] 周期性边界余量计算：分数坐标改为取模，修正原子落在盒外时盒壁余量误判；OpenMM 检查点改为连同速度一起保存；能量组/LIE 判定需同时具备配体，避免无配体体系误设 LIE 重跑。"
+    "[RELEASE] 主程序版本同步升级至 x.0.87。",
+    "[修复] 建膜 AMBERHOME 定位：膜构建 worker 的 AmberTools 根目录改为直接使用引擎包父目录（原先多取一层），修复 AMBERHOME/AMBERCLASSICHOME 指错导致 tleap、sander 等找不到力场与库文件的问题。",
+    "[修复] tleap 力场搜索路径：调用 tleap 时按 AMBERHOME 自动追加 -I（dat、dat/leap/lib、dat/leap/cmd、dat/leap/parm、dat/leap/prep，仅添加实际存在的目录），修复建膜过程报找不到 leaprc/库文件而失败。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.86/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.87/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.4,
-      "sha256": "df4ae0a529e90501fdcbb1ff7c1a366b8134f05711fb0a0aa68b6941afe70a23",
+      "sha256": "4d7669417e382a058c0f20258e3400d5af79f78f84819e70f60664d949feb57b",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21354911
+      "size": 21353353
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.86/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.87/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 22.0,
-      "sha256": "14adb516d15fa466f020a0eec34cf133748f1fe82715f478522b221aa444f99c",
+      "sha256": "76a9dad0a479fc97876f626be321c9e3ea406c8efc4bdba66700ab8fe192101f",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23040978
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.86/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 21.3,
-      "sha256": "360d8af686544492034a7f01c735a2cd8cc66b6072c3bec8eb83be93d972d361",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 22364780
+      "size": 23040492
     }
   }
 }
