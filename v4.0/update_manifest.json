@@ -1,43 +1,34 @@
 {
-  "latest_version": "4.0.85",
+  "latest_version": "4.0.86",
   "release_date": "2026-10-18",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.85。",
-    "[修复] MM-PBSA/GBSA 参考结构：改为从干复合物 System 组生成并校验链ID参考结构，修复多链/自定义复合物参考结构取到子集、报 “number of residues of the complex ... and of the reference structure ... are different” 而导致某个体系亲合力不显示的问题（如 8XQO+65064）。",
-    "[修复] MM-PBSA/GBSA 自愈：若仍报参考结构残基数不一致或自动分链失败，自动切换 -cr 模式单核重试一次；干复合物合并组改为按索引并集确定性生成，不再依赖 make_ndx 最后一组。",
-    "[修复] 多体系 MM-PBSA/GBSA 对比图：失败体系不再按 0 画成“消失的柱子”，改为不纳入柱状图并输出 *_missing.csv；单体系结合自由能排名同样列出未纳入原因。"
+    "[RELEASE] 主程序版本同步升级至 x.0.86。",
+    "[新增] 膜体系混合脂质：新增“混合脂质组成”（membrane.lipid_mix，格式如 POPC:0.7,POPE:0.2,CHOL:0.1），配合 GROMACS + Packmol-Memgen 建膜；建膜器增加 packmol-memgen 选项并自动切换到对应引擎路由。",
+    "[修复] 膜体系建膜稳定性：tleap loadPdb 前自动规范化 PDB（首残基 H→H1，HIS/HID/HIE/HIP 按 HD1/HE2 纠正），膜体系 .gro 自动平移到周期盒中心，memembed 取向后的 PDB 补做元素列修复。",
+    "[新增] MD 盒子形状新增 rectangular（矩形盒，膜蛋白推荐；GROMACS 映射为 90° triclinic）。",
+    "[修复] 周期性边界余量计算：分数坐标改为取模，修正原子落在盒外时盒壁余量误判；OpenMM 检查点改为连同速度一起保存；能量组/LIE 判定需同时具备配体，避免无配体体系误设 LIE 重跑。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.85/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 20.3,
-      "sha256": "cc0206709afa8f2540de669a018e7a92bc92aaf1e3f83c4b5dc16bf90fb9b4be",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.86/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 20.4,
+      "sha256": "df4ae0a529e90501fdcbb1ff7c1a366b8134f05711fb0a0aa68b6941afe70a23",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21319685
+      "size": 21354911
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.85/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 21.9,
-      "sha256": "384bf89c7f7e905593f618f19a09621df81449f9135bfb14c06e6298b1f4e1bf",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.86/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 22.0,
+      "sha256": "14adb516d15fa466f020a0eec34cf133748f1fe82715f478522b221aa444f99c",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23008655
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.85/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 21.3,
-      "sha256": "7b482bf4323a568140c07c0240830fd04b6aeab47a52c171b7270ccdbd7ed9ef",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 22334798
+      "size": 23040978
     }
   }
 }
