@@ -1,42 +1,33 @@
 {
-  "latest_version": "4.0.87",
-  "release_date": "2026-10-19",
+  "latest_version": "4.0.88",
+  "release_date": "2026-10-20",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.87。",
-    "[修复] 建膜 AMBERHOME 定位：膜构建 worker 的 AmberTools 根目录改为直接使用引擎包父目录（原先多取一层），修复 AMBERHOME/AMBERCLASSICHOME 指错导致 tleap、sander 等找不到力场与库文件的问题。",
-    "[修复] tleap 力场搜索路径：调用 tleap 时按 AMBERHOME 自动追加 -I（dat、dat/leap/lib、dat/leap/cmd、dat/leap/parm、dat/leap/prep，仅添加实际存在的目录），修复建膜过程报找不到 leaprc/库文件而失败。"
+    "[RELEASE] 主程序版本同步升级至 x.0.88。",
+    "[优化] 大膜体系建膜速度：膜蛋白原子数 ≥2000 时，PACKMOL-Memgen 只铺膜和蛋白（--no_bulk_solvent），水分子与离子改由 tleap solvateBox/addIonsRand 按网格生成，避免 PACKMOL 逐个摆放数万个水分子导致建膜极慢或失败；盒子尺寸按蛋白包围盒自动计算，可用 membrane.bulk_solvent 手动指定 tleap/packmol。",
+    "[修复] 建膜溶剂化兜底：若 PACKMOL 输出的膜体系不含水分子（WAT/HOH/TIP3/SOL），tleap 阶段自动补水并中和（溶剂缓冲默认 15 Å，可用 membrane.tleap_solvate_buffer_A 调整）。",
+    "[修复] PACKMOL 软失败容忍：判定为 forced 结构时，若“最大目标距离违反量”≤1.0 Å，不再直接判失败，而是交给 GROMACS 能量最小化消除轻微冲突；仅在冲突过大时才回退。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.87/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 20.4,
-      "sha256": "4d7669417e382a058c0f20258e3400d5af79f78f84819e70f60664d949feb57b",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.88/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 20.5,
+      "sha256": "6329dc527bd9d950b4dfa628b04bd2e372ac5037eb1f23acc464befc74acfa29",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21353353
+      "size": 21479661
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.87/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 22.0,
-      "sha256": "76a9dad0a479fc97876f626be321c9e3ea406c8efc4bdba66700ab8fe192101f",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.88/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 22.1,
+      "sha256": "89b0b67f650afb9671bbf247af6ceb76f4e3fbd319a9f2341586806f2c9bd3ae",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23040492
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.87/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 21.3,
-      "sha256": "b2d7a09137af0b2046a01ca1b9242e1ec8f0a8a15bd87da4b82695f70948ad17",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 22366158
+      "size": 23173533
     }
   }
 }
