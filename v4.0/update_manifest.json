@@ -1,43 +1,33 @@
 {
-  "latest_version": "4.0.88",
-  "release_date": "2026-10-20",
+  "latest_version": "4.0.89",
+  "release_date": "2026-10-21",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.88。",
-    "[优化] 大膜体系建膜速度：膜蛋白原子数 ≥2000 时，PACKMOL-Memgen 只铺膜和蛋白（--no_bulk_solvent），水分子与离子改由 tleap solvateBox/addIonsRand 按网格生成，避免 PACKMOL 逐个摆放数万个水分子导致建膜极慢或失败；盒子尺寸按蛋白包围盒自动计算，可用 membrane.bulk_solvent 手动指定 tleap/packmol。",
-    "[修复] 建膜溶剂化兜底：若 PACKMOL 输出的膜体系不含水分子（WAT/HOH/TIP3/SOL），tleap 阶段自动补水并中和（溶剂缓冲默认 15 Å，可用 membrane.tleap_solvate_buffer_A 调整）。",
-    "[修复] PACKMOL 软失败容忍：判定为 forced 结构时，若“最大目标距离违反量”≤1.0 Å，不再直接判失败，而是交给 GROMACS 能量最小化消除轻微冲突；仅在冲突过大时才回退。"
+    "[RELEASE] 主程序版本同步升级至 x.0.89。",
+    "[修复] 真空/无溶剂体系 GROMACS 报错：solvent.mode 为 custom/none 的纯蛋白体系不会生成 Non-Protein 索引组，此前 NPT/生产仍写 tc-grps=\"Protein Non-Protein\" 会导致 grompp 致命失败（Group Non-Protein not found）；现在自动判断该组是否真实存在，不存在则回退为 System 单组，并提示真空体系不宜做 NPT、建议改用水相。",
+    "[修复] GROMACS 预检提示落地：pdb2gmx 的警告与提示（含上述 tc-grps 回退说明）此前只生成不输出，现在会写入运行日志与结果告警列表，便于现场定位。",
+    "[修复] PDB 元素列推断收紧：元素列已有合法值时以其为准，不再因原子名（如 CA/CD/NE）以双字母元素开头而改写，避免有机原子被误判为金属元素。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.88/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.89/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.5,
-      "sha256": "6329dc527bd9d950b4dfa628b04bd2e372ac5037eb1f23acc464befc74acfa29",
+      "sha256": "c5246303973ee4dbd574ba6e1dd46196a41b5364e25875d142a28f52043299b2",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21479661
+      "size": 21483427
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.88/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.89/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 22.1,
-      "sha256": "89b0b67f650afb9671bbf247af6ceb76f4e3fbd319a9f2341586806f2c9bd3ae",
+      "sha256": "a31f3e2f906395d0ab395bc735f2706f81a095b7a013c9dea2e358c54d6df392",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23173533
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.88/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 21.5,
-      "sha256": "9be8af09d3be3b33859cdfc8f1b75ab5df3004b19f7182f0dd1ccdcd158e7d75",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 22500562
+      "size": 23182548
     }
   }
 }
