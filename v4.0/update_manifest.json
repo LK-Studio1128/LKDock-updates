@@ -1,43 +1,34 @@
 {
-  "latest_version": "4.0.89",
-  "release_date": "2026-10-21",
+  "latest_version": "4.0.90",
+  "release_date": "2026-10-22",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.89。",
-    "[修复] 真空/无溶剂体系 GROMACS 报错：solvent.mode 为 custom/none 的纯蛋白体系不会生成 Non-Protein 索引组，此前 NPT/生产仍写 tc-grps=\"Protein Non-Protein\" 会导致 grompp 致命失败（Group Non-Protein not found）；现在自动判断该组是否真实存在，不存在则回退为 System 单组，并提示真空体系不宜做 NPT、建议改用水相。",
-    "[修复] GROMACS 预检提示落地：pdb2gmx 的警告与提示（含上述 tc-grps 回退说明）此前只生成不输出，现在会写入运行日志与结果告警列表，便于现场定位。",
-    "[修复] PDB 元素列推断收紧：元素列已有合法值时以其为准，不再因原子名（如 CA/CD/NE）以双字母元素开头而改写，避免有机原子被误判为金属元素。"
+    "[RELEASE] 主程序版本同步升级至 x.0.90。",
+    "[修复] 受体结构身份恢复（与 v2/v3 同一修复）：按原始受体 PDB 坐标恢复 chain/resSeq/iCode/resName，避免 OpenBabel 分片造成的两条链合并与 PyMOL 跨链伪键。",
+    "[修复] 膜体系 PDB 校验：不再回退到目录里的中间 PDB（此前可能把 packmol-memgen 生成的 protein.grid.pdb 数十万水网格点静默当成膜体系）；新增原子组成判定（必须同时含蛋白与非水原子），并保留构建器工作文件供检查。",
+    "[修复] tleap 加盐：界面离子名称会映射为 tleap 单位名（addIonsRand 需要 atomic_ions.lib 中的名称），并先探测水分子数再按目标摩尔浓度换算离子个数，使设定的盐浓度真正生效。",
+    "[修复] 膜体系能量最小化保护：软强制/拉伸膜堆积残留的亚埃级冲突在短 EM 后会被带入 NVT 并触发 LINCS 失败（实测 CERS5 体系 2000 步 EM 后 400 步报错），现为膜体系提供更大的 steep/CG 最小化步数预算。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.89/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.90/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.5,
-      "sha256": "c5246303973ee4dbd574ba6e1dd46196a41b5364e25875d142a28f52043299b2",
+      "sha256": "f55603a4607b7d46fd68ecf3979d94d7c63ba20e82f2d0288e2f22398c125aef",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21483427
+      "size": 21533465
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.89/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 22.1,
-      "sha256": "a31f3e2f906395d0ab395bc735f2706f81a095b7a013c9dea2e358c54d6df392",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.90/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 22.2,
+      "sha256": "6499f3f19db1ed9a2e4432a1b02409c813b8902b207fa8fa5e693452c3a4a33d",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23182548
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.89/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 21.5,
-      "sha256": "02c59add5229ef861a406fca4dc3b1a35eb545dad319b657777d7854132af665",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 22505319
+      "size": 23248441
     }
   }
 }

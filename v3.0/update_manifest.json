@@ -1,40 +1,31 @@
 {
-  "latest_version": "3.0.81",
-  "release_date": "2026-10-13",
+  "latest_version": "3.0.90",
+  "release_date": "2026-10-22",
   "min_version_required": "3.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.81。"
+    "[RELEASE] 主程序版本同步升级至 x.0.90。",
+    "[修复] 受体结构身份恢复：OpenBabel 将受体写成多个独立片段时会重置链号/残基号（常变成 A/1、A/1），此前在 PyMOL 显示或转回 PDB 时两条链被合并，并据此推断出跨链伪键（表现为中心出现针状/乱棍）。现按原始受体 PDB 坐标恢复 chain/resSeq/iCode/resName，OpenBabel 新增的极性氢归入最近重原子所在残基；不改变任何坐标与 AutoDock 原子类型。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.81/LKDock_v3.0_update_Mac.zip",
-      "file_size_mb": 8.5,
-      "sha256": "08fe88686a360e3adb84ac640c058d214938009a278c45269044332394b38ce3",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.90/LKDock_v3.0_update_Mac.zip",
+      "file_size_mb": 8.6,
+      "sha256": "b3b188c032ca24ebbeaa37887aaa1d57db14b7b4adcfd90b57bcf7a78e381560",
       "files_to_replace": [
         "main3.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 8934669
+      "size": 9006750
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.81/LKDock_v3.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.90/LKDock_v3.0_update_Win.zip",
       "file_size_mb": 9.4,
-      "sha256": "a9303234033f0f3d9d7d357904c24be76942e5c5269ce9239c5657d552b95fb8",
+      "sha256": "7d24176ecb09aae65f2f14864f38723b110e47b7b429007ce9d97d60e824c2d0",
       "files_to_replace": [
         "main3.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 9829392
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.81/LKDock_v3.0_update_Linux.zip",
-      "file_size_mb": 11.1,
-      "sha256": "5a7b2692ca4772bee21e0adb6478108170b0edfddf1b379058577648c6706c5c",
-      "files_to_replace": [
-        "main3.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 11676855
+      "size": 9869434
     }
   }
 }

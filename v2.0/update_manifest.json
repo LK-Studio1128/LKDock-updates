@@ -1,40 +1,31 @@
 {
-  "latest_version": "2.0.81",
-  "release_date": "2026-10-13",
+  "latest_version": "2.0.90",
+  "release_date": "2026-10-22",
   "min_version_required": "2.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.81。"
+    "[RELEASE] 主程序版本同步升级至 x.0.90。",
+    "[修复] 受体结构身份恢复：OpenBabel 将受体写成多个独立片段时会重置链号/残基号（常变成 A/1、A/1），此前在 PyMOL 显示或转回 PDB 时两条链被合并，并据此推断出跨链伪键（表现为中心出现针状/乱棍）。现按原始受体 PDB 坐标恢复 chain/resSeq/iCode/resName，OpenBabel 新增的极性氢归入最近重原子所在残基；不改变任何坐标与 AutoDock 原子类型。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.81/LKDock_v2.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.90/LKDock_v2.0_update_Mac.zip",
       "file_size_mb": 5.6,
-      "sha256": "d8e59cc12c597917a619498247f043a62b4936a95d354189579f6264592f2e26",
+      "sha256": "0e0300ba0ff5bdd3c5d914cfed953a9bf206796e22a1429ca049fc2faf2fd5bb",
       "files_to_replace": [
         "main2.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 5838693
+      "size": 5858283
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.81/LKDock_v2.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.90/LKDock_v2.0_update_Win.zip",
       "file_size_mb": 6.1,
-      "sha256": "320109836777ec0e8fd07b7889cfa22b6426d7da682e96b585f8253deecdadf1",
+      "sha256": "f872c3d0b99ec68cd32cec8c3f77a5cfe3668fed853778d2ff272283effbbe25",
       "files_to_replace": [
         "main2.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 6381423
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.81/LKDock_v2.0_update_Linux.zip",
-      "file_size_mb": 7.3,
-      "sha256": "0bfa42bf39b69cb80e08b533dc0239d6b5262bb1b569e0187154926739080781",
-      "files_to_replace": [
-        "main2.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 7669014
+      "size": 6424520
     }
   }
 }
