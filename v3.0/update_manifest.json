@@ -26,6 +26,16 @@
       ],
       "python_version": "3.11",
       "size": 9869434
+    },
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.90/LKDock_v3.0_update_Linux.zip",
+      "file_size_mb": 8.9,
+      "sha256": "c510e53a81f416be7ae6c7b91e6495bc7f2aa5edba439e020aa1850ee477423b",
+      "files_to_replace": [
+        "main3.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 9298354
     }
   }
 }
