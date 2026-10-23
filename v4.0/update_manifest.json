@@ -1,34 +1,37 @@
 {
-  "latest_version": "4.0.91",
-  "release_date": "2026-10-23",
+  "latest_version": "4.0.92",
+  "release_date": "2026-10-24",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.91。",
-    "[修复] Packmol 未收敛自动重试：建膜时若 Packmol 未收敛或只给出 forced 结构，自动隔离上一次的不完整输出（含 *_FORCED 残留），改用 --random --nloop 50 --nloop_all 120 提高采样重试一次；重试结果仍须通过膜体系组成与冲突检查才被接受，不再直接接受第一次的强制结构。",
-    "[修复] 老架构 GPU 的 CPU 回退：Pascal/Volta 等老 GPU 下内置 GROMACS CUDA 版没有对应 kernel，程序会切到 CPU 计算，但 CUDA 版仍会在设备检测阶段调用 cudaDriverGetVersion 并以 #801 退出；现在只要判定为 CPU 回退，就显式关闭 GPU 探测（GMX_DISABLE_GPU_DETECTION=1、CUDA_VISIBLE_DEVICES=-1），与已验证的纯 CPU 运行环境一致。",
-    "[修复] 建膜工作目录兜底：宿主启动器可能把 worker 的工作目录重置到应用根目录，现同时在可执行文件目录与当前目录搜索有效的膜体系 PDB，并把它移回体系运行目录，避免找不到输出而误判失败。",
-    "[修复] 膜体系脂质识别补充 PA / PC / OL 三类脂质名，避免合法的膜结构被当成非膜体系。"
+    "[RELEASE] 主程序版本同步升级至 x.0.92。",
+    "[修复] 建膜崩溃（Cluster4/5 报 packmol-memgen_exception: name '_os' is not defined）：建膜工作目录兜底代码误用了未导入的 _os，导致该代码分支一执行就直接退出；现已修正并可正常返回结果。",
+    "[修复] NVT/NPT 温控压控被关闭（日志 tcoupl=no / pcoupl=no）：选择 NVE（Verlet）积分算法时，此前会把平衡段的温控与压控也一并关闭，导致“10K→目标温度升温”与“NPT 等压平衡”名不副实。现在平衡段始终保留真实控温/控压（NVT: v-rescale；NPT: v-rescale + c-rescale，膜体系自动 semiisotropic），仅生产段按 NVE 语义关闭并给出明确告警。",
+    "[修复] NVE 预设不再污染全局耦合设置：此前该预设会把全局 tcoupl/pcoupl 写成 no 并写入配置，使后续普通 MD 运行也失去温控压控；现改为只设置生产段耦合。",
+    "[修复] 膜体系 POSRES 分段松弛失败（no [ position_restraints ] 行）：tleap+ParmEd 路线的位置约束内联在 topol.top 的 #ifdef POSRES 块内，没有 posre*.itp，导致分段松弛必然失败并回退单段 NPT；现在会同时改写内联约束的力常数，分段松弛可正常执行。",
+    "[修复] MM-GBSA/MM-PBSA 结合能解析：gmx_MMPBSA 输出使用 “ΔTOTAL”/“DELTA TOTAL” 前缀，旧正则只认 TOTAL，导致分析取不到数值；现已兼容三种写法。",
+    "[优化] EM 收敛判据可见性：全 CPU EM 重跑后会输出最终 Fmax（及 Epot），未达 emtol 时给出告警，便于判断是否真正收敛。",
+    "[优化] 消碰撞影响量化：复合物消碰撞后新增输出最大/RMS 位移、位移>0.5Å/>1.0Å 的原子数、位移最大的残基，以及非邻近残基界面接触对数（前后对比），避免无法判断对接界面是否被推走。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.91/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.92/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.6,
-      "sha256": "f51bb809224c0824638188006974a7e16c4135af3f02136821757baad987cdba",
+      "sha256": "02cced95774f5999664aa5b1048f20c70c22231a9a57f6363e26389df58bf600",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21569584
+      "size": 21623427
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.91/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.92/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 22.2,
-      "sha256": "4572209da9ca18d0bc11b20d4622280051bf5f2176a436c2ce17e85ae9575653",
+      "sha256": "ae811ba1735fa0476fac17dcef12fb16579aa7ebd522eb4c4c19a88ef789a27d",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23267980
+      "size": 23326209
     }
   }
 }
