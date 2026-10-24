@@ -1,25 +1,88 @@
 {
-  "latest_version": "4.0.93",
-  "release_date": "2026-10-24",
+  "latest_version": "4.0.94",
+  "release_date": "2026-10-25",
   "min_version_required": "4.0.0",
   "changes": [
-    "[新增] 在线更新支持历史版本选择：可更新到最新版，也可回退到指定 v4.0.x 版本。",
+    "[新增] 在线更新支持历史版本选择：可更新到最新版，也可回退到指定 x.0.x 版本。",
     "[新增] 更新窗口显示当前版本、历史版本、平台可用性和版本状态。",
     "[安全] 下载后继续执行 SHA256 校验，替换前自动备份当前主程序模块。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.93/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.94/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.7,
-      "sha256": "6a561074e1bfd13e669183e3e4937f53aec94a4cf9fafe31d1be8d5951ab5a4d",
+      "sha256": "596097d0beeffce274df7ffbdfede771b5d1fca58ec158b7d9b900968350abb1",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21689151
+      "size": 21689102
+    },
+    "windows": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.94/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 22.3,
+      "sha256": "a1cc31dd2e24ba1057ca895ec4e1a71f93e7b2fdb6e21713aed7ef4eebb3bc21",
+      "files_to_replace": [
+        "main4.cp311-win_amd64.pyd"
+      ],
+      "python_version": "3.11",
+      "size": 23390970
+    },
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.94/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 21.7,
+      "sha256": "4de7ebaab7128ec0e7b9b6b21c8064cdcffe628b4bdabac7ae04108713dfe6da",
+      "files_to_replace": [
+        "main4.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 22713630
     }
   },
   "versions": [
+    {
+      "version": "4.0.94",
+      "release_date": "2026-10-25",
+      "status": "stable",
+      "changes": [
+        "[新增] 在线更新支持历史版本选择：可更新到最新版，也可回退到指定 x.0.x 版本。",
+        "[新增] 更新窗口显示当前版本、历史版本、平台可用性和版本状态。",
+        "[安全] 下载后继续执行 SHA256 校验，替换前自动备份当前主程序模块。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.94/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 20.7,
+          "sha256": "596097d0beeffce274df7ffbdfede771b5d1fca58ec158b7d9b900968350abb1",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 21689102
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.94/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 22.3,
+          "sha256": "a1cc31dd2e24ba1057ca895ec4e1a71f93e7b2fdb6e21713aed7ef4eebb3bc21",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 23390970
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.94/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 21.7,
+          "sha256": "4de7ebaab7128ec0e7b9b6b21c8064cdcffe628b4bdabac7ae04108713dfe6da",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 22713630
+        }
+      }
+    },
     {
       "version": "4.0.93",
       "release_date": "2026-10-24",
