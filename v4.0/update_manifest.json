@@ -1,45 +1,72 @@
 {
-  "latest_version": "4.0.94",
-  "release_date": "2026-10-25",
+  "latest_version": "4.0.95",
+  "release_date": "2026-10-26",
   "min_version_required": "4.0.0",
   "changes": [
-    "[新增] 在线更新支持历史版本选择：可更新到最新版，也可回退到指定 x.0.x 版本。",
-    "[新增] 更新窗口显示当前版本、历史版本、平台可用性和版本状态。",
-    "[安全] 下载后继续执行 SHA256 校验，替换前自动备份当前主程序模块。"
+    "[RELEASE] 主程序版本同步升级至 x.0.95。",
+    "[修复] 生产段被静默关闭温压耦合（实测 <T>≈24 K、P≈-2800 bar）：此前只要积分算法为 verlet（NVE）就无条件把生产段写成 tcoupl=no/pcoupl=no，连显式设置的 v-rescale/c-rescale 也被覆盖。现在只有“生产段温度/压力耦合=no”被显式选择时才按 NVE 运行；否则沿用全局耦合，若检测到全局仍是旧版污染的 no 则自动修正为 v-rescale/c-rescale 并给出告警。",
+    "[修复] 模拟方式预设残留：从“NVE 能量守恒”切回“推荐·稳定优先”时，会清除之前残留的生产段 no，避免出现“设定 310 K 却跑出 24 K 轨迹”。",
+    "[修复] 旧错误轨迹不再被续跑沿用：若检测到已有 md.gro/md.xtc 是在错误耦合（no/no）下产生的，即使存在断点也会强制归档旧运行，并按修复后的参数重新构建与平衡，避免继续沿用已验证错误的轨迹。",
+    "[新增] 生产前物理量闸门：正式生产前校验耦合设置与 NPT 末段平均温度，未显式选择 NVE 时不允许静默保留 no/no；若 NPT 末段平均温度偏离目标超过 0.5–1.5 倍范围则立即停止并提示，避免白跑长时间生产；压力仅做异常告警、不因瞬时涨落阻断。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.94/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.95/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.7,
-      "sha256": "596097d0beeffce274df7ffbdfede771b5d1fca58ec158b7d9b900968350abb1",
+      "sha256": "d1c03eed69586851f2920c0ddecb1595149cd633d1e2e60e10d9b06d9df4efdd",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21689102
+      "size": 21700135
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.94/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.95/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 22.3,
-      "sha256": "a1cc31dd2e24ba1057ca895ec4e1a71f93e7b2fdb6e21713aed7ef4eebb3bc21",
+      "sha256": "296506952426c028f9004c889c1b265414cca177912bf3a3552ba144f533fb89",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23390970
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.94/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 21.7,
-      "sha256": "4de7ebaab7128ec0e7b9b6b21c8064cdcffe628b4bdabac7ae04108713dfe6da",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 22713630
+      "size": 23410371
     }
   },
   "versions": [
+    {
+      "version": "4.0.95",
+      "release_date": "2026-10-26",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本同步升级至 x.0.95。",
+        "[修复] 生产段被静默关闭温压耦合（实测 <T>≈24 K、P≈-2800 bar）：此前只要积分算法为 verlet（NVE）就无条件把生产段写成 tcoupl=no/pcoupl=no，连显式设置的 v-rescale/c-rescale 也被覆盖。现在只有“生产段温度/压力耦合=no”被显式选择时才按 NVE 运行；否则沿用全局耦合，若检测到全局仍是旧版污染的 no 则自动修正为 v-rescale/c-rescale 并给出告警。",
+        "[修复] 模拟方式预设残留：从“NVE 能量守恒”切回“推荐·稳定优先”时，会清除之前残留的生产段 no，避免出现“设定 310 K 却跑出 24 K 轨迹”。",
+        "[修复] 旧错误轨迹不再被续跑沿用：若检测到已有 md.gro/md.xtc 是在错误耦合（no/no）下产生的，即使存在断点也会强制归档旧运行，并按修复后的参数重新构建与平衡，避免继续沿用已验证错误的轨迹。",
+        "[新增] 生产前物理量闸门：正式生产前校验耦合设置与 NPT 末段平均温度，未显式选择 NVE 时不允许静默保留 no/no；若 NPT 末段平均温度偏离目标超过 0.5–1.5 倍范围则立即停止并提示，避免白跑长时间生产；压力仅做异常告警、不因瞬时涨落阻断。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.95/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 20.7,
+          "sha256": "d1c03eed69586851f2920c0ddecb1595149cd633d1e2e60e10d9b06d9df4efdd",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 21700135
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.95/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 22.3,
+          "sha256": "296506952426c028f9004c889c1b265414cca177912bf3a3552ba144f533fb89",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 23410371
+        }
+      }
+    },
     {
       "version": "4.0.94",
       "release_date": "2026-10-25",
