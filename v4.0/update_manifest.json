@@ -1,6 +1,6 @@
 {
   "latest_version": "4.0.96",
-  "release_date": "2026-10-26",
+  "release_date": "2026-10-27",
   "min_version_required": "4.0.0",
   "changes": [
     "[RELEASE] 主程序版本同步升级至 x.0.96。",
@@ -11,6 +11,16 @@
     "[新增] 报告新增 PPI 方法学段落（中英双语），说明 PPI/膜蛋白体系的建模与分析方法。"
   ],
   "platforms": {
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.96/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 21.7,
+      "sha256": "504ab4cd5d6ecb578ca6292778ff8d50f40772ab258119a1dc7d02de478a97d3",
+      "files_to_replace": [
+        "main4.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 22797657
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.96/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.8,
@@ -35,7 +45,7 @@
   "versions": [
     {
       "version": "4.0.96",
-      "release_date": "2026-10-26",
+      "release_date": "2026-10-27",
       "status": "stable",
       "changes": [
         "[RELEASE] 主程序版本同步升级至 x.0.96。",
@@ -47,6 +57,16 @@
       ],
       "min_from_version": "4.0.0",
       "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.96/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 21.7,
+          "sha256": "504ab4cd5d6ecb578ca6292778ff8d50f40772ab258119a1dc7d02de478a97d3",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 22797657
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.96/LKDock_v4.0_update_Mac.zip",
           "file_size_mb": 20.8,
