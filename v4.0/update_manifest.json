@@ -1,37 +1,74 @@
 {
-  "latest_version": "4.0.95",
+  "latest_version": "4.0.96",
   "release_date": "2026-10-26",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.95。",
-    "[修复] 生产段被静默关闭温压耦合（实测 <T>≈24 K、P≈-2800 bar）：此前只要积分算法为 verlet（NVE）就无条件把生产段写成 tcoupl=no/pcoupl=no，连显式设置的 v-rescale/c-rescale 也被覆盖。现在只有“生产段温度/压力耦合=no”被显式选择时才按 NVE 运行；否则沿用全局耦合，若检测到全局仍是旧版污染的 no 则自动修正为 v-rescale/c-rescale 并给出告警。",
-    "[修复] 模拟方式预设残留：从“NVE 能量守恒”切回“推荐·稳定优先”时，会清除之前残留的生产段 no，避免出现“设定 310 K 却跑出 24 K 轨迹”。",
-    "[修复] 旧错误轨迹不再被续跑沿用：若检测到已有 md.gro/md.xtc 是在错误耦合（no/no）下产生的，即使存在断点也会强制归档旧运行，并按修复后的参数重新构建与平衡，避免继续沿用已验证错误的轨迹。",
-    "[新增] 生产前物理量闸门：正式生产前校验耦合设置与 NPT 末段平均温度，未显式选择 NVE 时不允许静默保留 no/no；若 NPT 末段平均温度偏离目标超过 0.5–1.5 倍范围则立即停止并提示，避免白跑长时间生产；压力仅做异常告警、不因瞬时涨落阻断。"
+    "[RELEASE] 主程序版本同步升级至 x.0.96。",
+    "[修复] 膜脂不再被当成小分子配体：统一把 POPC/POPE/DPPC/CHOL/PA/PC/OL 等膜脂残基排除出“配体”角色。此前 PPI 膜体系会把膜脂归入 ligand，导致配体原子数虚高（实测 n_ligand≈4 万），进而影响配体相关的分析与分组。",
+    "[新增] PPI 专用链级 RMSD 分析：输出受体链与伙伴链各自的内部骨架 RMSD、以受体拟合后的伙伴链相对姿态 RMSD，以及链间质心距离随时间变化；结果写入 1.analyses/ppi_chain_rmsd.csv 与 ppi_chain_rmsd.png。",
+    "[优化] 分析阶段按 PPI 体系分组：膜蛋白 PPI 没有小分子配体时，“配体”角色映射到另一条蛋白链而非膜脂；氢键曲线标题相应改为 “Inter-chain H-bonds per Frame”，界面接触类型覆盖 protein-protein / antibody-antigen / protein-peptide / membrane-protein。",
+    "[修复] PPI/膜蛋白体系不再误用小分子 MM-GBSA：该类体系会把膜脂当成配体分组，现在明确标记为“不适用”并给出原因，提示改用 ppi_chain_rmsd、链间氢键、界面/埋藏 SASA 评价界面。",
+    "[新增] 报告新增 PPI 方法学段落（中英双语），说明 PPI/膜蛋白体系的建模与分析方法。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.95/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 20.7,
-      "sha256": "d1c03eed69586851f2920c0ddecb1595149cd633d1e2e60e10d9b06d9df4efdd",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.96/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 20.8,
+      "sha256": "0bccf605c0339a438808fe512d2c60d8256352d0de5e87a1502c00df8721896d",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21700135
+      "size": 21758789
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.95/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 22.3,
-      "sha256": "296506952426c028f9004c889c1b265414cca177912bf3a3552ba144f533fb89",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.96/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 22.4,
+      "sha256": "16f522fb7b1ee29c778cb50936ff26779013865acd296f3201054d3f07a52139",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23410371
+      "size": 23476279
     }
   },
   "versions": [
+    {
+      "version": "4.0.96",
+      "release_date": "2026-10-26",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本同步升级至 x.0.96。",
+        "[修复] 膜脂不再被当成小分子配体：统一把 POPC/POPE/DPPC/CHOL/PA/PC/OL 等膜脂残基排除出“配体”角色。此前 PPI 膜体系会把膜脂归入 ligand，导致配体原子数虚高（实测 n_ligand≈4 万），进而影响配体相关的分析与分组。",
+        "[新增] PPI 专用链级 RMSD 分析：输出受体链与伙伴链各自的内部骨架 RMSD、以受体拟合后的伙伴链相对姿态 RMSD，以及链间质心距离随时间变化；结果写入 1.analyses/ppi_chain_rmsd.csv 与 ppi_chain_rmsd.png。",
+        "[优化] 分析阶段按 PPI 体系分组：膜蛋白 PPI 没有小分子配体时，“配体”角色映射到另一条蛋白链而非膜脂；氢键曲线标题相应改为 “Inter-chain H-bonds per Frame”，界面接触类型覆盖 protein-protein / antibody-antigen / protein-peptide / membrane-protein。",
+        "[修复] PPI/膜蛋白体系不再误用小分子 MM-GBSA：该类体系会把膜脂当成配体分组，现在明确标记为“不适用”并给出原因，提示改用 ppi_chain_rmsd、链间氢键、界面/埋藏 SASA 评价界面。",
+        "[新增] 报告新增 PPI 方法学段落（中英双语），说明 PPI/膜蛋白体系的建模与分析方法。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.96/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 20.8,
+          "sha256": "0bccf605c0339a438808fe512d2c60d8256352d0de5e87a1502c00df8721896d",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 21758789
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.96/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 22.4,
+          "sha256": "16f522fb7b1ee29c778cb50936ff26779013865acd296f3201054d3f07a52139",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 23476279
+        }
+      }
+    },
     {
       "version": "4.0.95",
       "release_date": "2026-10-26",
