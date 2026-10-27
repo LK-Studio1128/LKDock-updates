@@ -1,48 +1,72 @@
 {
-  "latest_version": "4.0.96",
+  "latest_version": "4.0.97",
   "release_date": "2026-10-27",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.96。",
-    "[修复] 膜脂不再被当成小分子配体：统一把 POPC/POPE/DPPC/CHOL/PA/PC/OL 等膜脂残基排除出“配体”角色。此前 PPI 膜体系会把膜脂归入 ligand，导致配体原子数虚高（实测 n_ligand≈4 万），进而影响配体相关的分析与分组。",
-    "[新增] PPI 专用链级 RMSD 分析：输出受体链与伙伴链各自的内部骨架 RMSD、以受体拟合后的伙伴链相对姿态 RMSD，以及链间质心距离随时间变化；结果写入 1.analyses/ppi_chain_rmsd.csv 与 ppi_chain_rmsd.png。",
-    "[优化] 分析阶段按 PPI 体系分组：膜蛋白 PPI 没有小分子配体时，“配体”角色映射到另一条蛋白链而非膜脂；氢键曲线标题相应改为 “Inter-chain H-bonds per Frame”，界面接触类型覆盖 protein-protein / antibody-antigen / protein-peptide / membrane-protein。",
-    "[修复] PPI/膜蛋白体系不再误用小分子 MM-GBSA：该类体系会把膜脂当成配体分组，现在明确标记为“不适用”并给出原因，提示改用 ppi_chain_rmsd、链间氢键、界面/埋藏 SASA 评价界面。",
-    "[新增] 报告新增 PPI 方法学段落（中英双语），说明 PPI/膜蛋白体系的建模与分析方法。"
+    "[RELEASE] 主程序版本同步升级至 x.0.97。",
+    "[修复] gmx_MMPBSA 残基分解（FINAL_DECOMP）解析不再写死列号：1.6.4（每分量 5 个统计量）与 1.7.0（每分量 7 个）都能正确取到 TOTAL 的 Avg/SD，此前解析串列会导致 Top10/Top20 热点能量错位甚至为空。",
+    "[修复] 残基分解解析正确区分 DELTAS 的受体行（R:）与配体行（L:）：热点柱状图与 CSV 只统计蛋白侧残基，不再把配体侧条目混进热点结果；原始 FINAL_DECOMP 仍保留用于审计。",
+    "[修复] NMODE 运行时失败（无法读取 *_nm.mdcrd / prmtop，Windows 与大体系常见）时自动回退：改用 interaction entropy 并保留 &decomp 重新计算，避免“GB 已完成却拿不到残基分解/Top10/Top20 热点”的情况。",
+    "[优化] 残基分解 SD 缺失或为 NaN 时按可用列回退取值，解析更健壮，不再因个别字段缺失整块结果作废。"
   ],
   "platforms": {
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.96/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 21.7,
-      "sha256": "504ab4cd5d6ecb578ca6292778ff8d50f40772ab258119a1dc7d02de478a97d3",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 22797657
-    },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.96/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.97/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.8,
-      "sha256": "0bccf605c0339a438808fe512d2c60d8256352d0de5e87a1502c00df8721896d",
+      "sha256": "7bcbe3537938fab4afd9539694587130277d0595e14d88bbc25e7b6a1bf095b3",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21758789
+      "size": 21768443
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.96/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.97/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 22.4,
-      "sha256": "16f522fb7b1ee29c778cb50936ff26779013865acd296f3201054d3f07a52139",
+      "sha256": "18cff64d8b4e0bacb9be8cc58c31b3b5b0b9fcbcff187564ee017edab88f0f05",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23476279
+      "size": 23483919
     }
   },
   "versions": [
+    {
+      "version": "4.0.97",
+      "release_date": "2026-10-27",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本同步升级至 x.0.97。",
+        "[修复] gmx_MMPBSA 残基分解（FINAL_DECOMP）解析不再写死列号：1.6.4（每分量 5 个统计量）与 1.7.0（每分量 7 个）都能正确取到 TOTAL 的 Avg/SD，此前解析串列会导致 Top10/Top20 热点能量错位甚至为空。",
+        "[修复] 残基分解解析正确区分 DELTAS 的受体行（R:）与配体行（L:）：热点柱状图与 CSV 只统计蛋白侧残基，不再把配体侧条目混进热点结果；原始 FINAL_DECOMP 仍保留用于审计。",
+        "[修复] NMODE 运行时失败（无法读取 *_nm.mdcrd / prmtop，Windows 与大体系常见）时自动回退：改用 interaction entropy 并保留 &decomp 重新计算，避免“GB 已完成却拿不到残基分解/Top10/Top20 热点”的情况。",
+        "[优化] 残基分解 SD 缺失或为 NaN 时按可用列回退取值，解析更健壮，不再因个别字段缺失整块结果作废。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.97/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 20.8,
+          "sha256": "7bcbe3537938fab4afd9539694587130277d0595e14d88bbc25e7b6a1bf095b3",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 21768443
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.97/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 22.4,
+          "sha256": "18cff64d8b4e0bacb9be8cc58c31b3b5b0b9fcbcff187564ee017edab88f0f05",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 23483919
+        }
+      }
+    },
     {
       "version": "4.0.96",
       "release_date": "2026-10-27",
