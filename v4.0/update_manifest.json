@@ -1,46 +1,72 @@
 {
-  "latest_version": "4.0.98",
-  "release_date": "2026-10-27",
+  "latest_version": "4.0.99",
+  "release_date": "2026-10-28",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.98。",
-    "[修复] GROMACS 调用不再把 grompp 写死 120 秒：此前十万原子体系、外置盘/杀毒扫描或 Windows 主机上，grompp 仍在正常运行时会被 120s 上限误杀，直接中断建膜/拓扑流程。现在 grompp 默认上限 1800s、其它 gmx 小工具 600s，并且调用方传入的较短值不会再压低该安全上限。",
-    "[新增] GROMACS 超时可在设置里覆盖：md.gromacs.grompp_timeout_sec（grompp 专用）与 md.gromacs.gmx_timeout_sec（其它小工具），未设置时回退到全局“单任务超时时间 timeout”。",
-    "[优化] 运行日志会打印本次超时保护的实际秒数与来源；真超时时同时给出“可在设置中增大单任务超时时间”的提示，便于判断是工具限制还是环境过慢。"
+    "[RELEASE] 主程序版本同步升级至 x.0.99。",
+    "[修复] 配体相对质心偏移（Relative COM drift）重做：改为“每帧把受体 Cα 叠合到首帧 + 逐帧三斜盒最小镜像 + 质量加权质心”，NPT/变盒与跨盒跳变不再产生假的漂移峰；旧的绝对 COM 偏移降级为诊断量，不再当作解离判据（报告中明确标注）。",
+    "[新增] 相对质心偏移新增统计与图：均值/峰值相对偏移、绝对偏移诊断均值，图题改为“配体相对质心偏移 / Ligand Relative Center-of-Mass Drift”，并给出锚定良好 / 口袋内调整 / 可能迁出口袋的判读；旧任务若只有 com_drift.png 也能正常出图。",
+    "[新增] COM 漂移审计字段：PBC 修正前后差异、盒变化帧数、镜像吸附帧数、是否质量加权、以及“超过半个盒子距离需用去卷绕轨迹”的半盒歧义提示，便于复核结果可信度。",
+    "[修复] 报告中的恒温器/恒压器名称不再按“auto→v-rescale”推断，而是从实际生成的 md.mdp 与 md.tpr（gmx dump）读取真实耦合参数后再写入 Methods，避免报告写法与实跑设置不一致。"
   ],
   "platforms": {
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.98/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 21.7,
-      "sha256": "8bff7dfe33a7ee01e167d09a17622609748d0a274c0f747ebe953a015b213813",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 22806264
-    },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.98/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.99/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.8,
-      "sha256": "79bc3a162c5ea2d3883408c171c50830ad0544489b619614579c180c13f41d5a",
+      "sha256": "854e900608aa5ee40282c8b3a25720ab095682f90fecb9c8d1c6c6f4aa87d319",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21777690
+      "size": 21832808
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.98/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 22.4,
-      "sha256": "8a9cdc34ee8cf73c6c1697ff443edf1b04469455dca35aa8d3e4fb9d1baade0f",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.99/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 22.5,
+      "sha256": "46622703c4cde37721580fb19ebe3246896c085bebcd62a2f19c5d2e6739e104",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23489120
+      "size": 23541622
     }
   },
   "versions": [
+    {
+      "version": "4.0.99",
+      "release_date": "2026-10-28",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本同步升级至 x.0.99。",
+        "[修复] 配体相对质心偏移（Relative COM drift）重做：改为“每帧把受体 Cα 叠合到首帧 + 逐帧三斜盒最小镜像 + 质量加权质心”，NPT/变盒与跨盒跳变不再产生假的漂移峰；旧的绝对 COM 偏移降级为诊断量，不再当作解离判据（报告中明确标注）。",
+        "[新增] 相对质心偏移新增统计与图：均值/峰值相对偏移、绝对偏移诊断均值，图题改为“配体相对质心偏移 / Ligand Relative Center-of-Mass Drift”，并给出锚定良好 / 口袋内调整 / 可能迁出口袋的判读；旧任务若只有 com_drift.png 也能正常出图。",
+        "[新增] COM 漂移审计字段：PBC 修正前后差异、盒变化帧数、镜像吸附帧数、是否质量加权、以及“超过半个盒子距离需用去卷绕轨迹”的半盒歧义提示，便于复核结果可信度。",
+        "[修复] 报告中的恒温器/恒压器名称不再按“auto→v-rescale”推断，而是从实际生成的 md.mdp 与 md.tpr（gmx dump）读取真实耦合参数后再写入 Methods，避免报告写法与实跑设置不一致。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.99/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 20.8,
+          "sha256": "854e900608aa5ee40282c8b3a25720ab095682f90fecb9c8d1c6c6f4aa87d319",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 21832808
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.99/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 22.5,
+          "sha256": "46622703c4cde37721580fb19ebe3246896c085bebcd62a2f19c5d2e6739e104",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 23541622
+        }
+      }
+    },
     {
       "version": "4.0.98",
       "release_date": "2026-10-27",
