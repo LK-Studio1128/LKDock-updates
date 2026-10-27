@@ -1,37 +1,70 @@
 {
-  "latest_version": "4.0.97",
+  "latest_version": "4.0.98",
   "release_date": "2026-10-27",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.97。",
-    "[修复] gmx_MMPBSA 残基分解（FINAL_DECOMP）解析不再写死列号：1.6.4（每分量 5 个统计量）与 1.7.0（每分量 7 个）都能正确取到 TOTAL 的 Avg/SD，此前解析串列会导致 Top10/Top20 热点能量错位甚至为空。",
-    "[修复] 残基分解解析正确区分 DELTAS 的受体行（R:）与配体行（L:）：热点柱状图与 CSV 只统计蛋白侧残基，不再把配体侧条目混进热点结果；原始 FINAL_DECOMP 仍保留用于审计。",
-    "[修复] NMODE 运行时失败（无法读取 *_nm.mdcrd / prmtop，Windows 与大体系常见）时自动回退：改用 interaction entropy 并保留 &decomp 重新计算，避免“GB 已完成却拿不到残基分解/Top10/Top20 热点”的情况。",
-    "[优化] 残基分解 SD 缺失或为 NaN 时按可用列回退取值，解析更健壮，不再因个别字段缺失整块结果作废。"
+    "[RELEASE] 主程序版本同步升级至 x.0.98。",
+    "[修复] GROMACS 调用不再把 grompp 写死 120 秒：此前十万原子体系、外置盘/杀毒扫描或 Windows 主机上，grompp 仍在正常运行时会被 120s 上限误杀，直接中断建膜/拓扑流程。现在 grompp 默认上限 1800s、其它 gmx 小工具 600s，并且调用方传入的较短值不会再压低该安全上限。",
+    "[新增] GROMACS 超时可在设置里覆盖：md.gromacs.grompp_timeout_sec（grompp 专用）与 md.gromacs.gmx_timeout_sec（其它小工具），未设置时回退到全局“单任务超时时间 timeout”。",
+    "[优化] 运行日志会打印本次超时保护的实际秒数与来源；真超时时同时给出“可在设置中增大单任务超时时间”的提示，便于判断是工具限制还是环境过慢。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.97/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.98/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.8,
-      "sha256": "7bcbe3537938fab4afd9539694587130277d0595e14d88bbc25e7b6a1bf095b3",
+      "sha256": "79bc3a162c5ea2d3883408c171c50830ad0544489b619614579c180c13f41d5a",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21768443
+      "size": 21777690
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.97/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.98/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 22.4,
-      "sha256": "18cff64d8b4e0bacb9be8cc58c31b3b5b0b9fcbcff187564ee017edab88f0f05",
+      "sha256": "8a9cdc34ee8cf73c6c1697ff443edf1b04469455dca35aa8d3e4fb9d1baade0f",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23483919
+      "size": 23489120
     }
   },
   "versions": [
+    {
+      "version": "4.0.98",
+      "release_date": "2026-10-27",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本同步升级至 x.0.98。",
+        "[修复] GROMACS 调用不再把 grompp 写死 120 秒：此前十万原子体系、外置盘/杀毒扫描或 Windows 主机上，grompp 仍在正常运行时会被 120s 上限误杀，直接中断建膜/拓扑流程。现在 grompp 默认上限 1800s、其它 gmx 小工具 600s，并且调用方传入的较短值不会再压低该安全上限。",
+        "[新增] GROMACS 超时可在设置里覆盖：md.gromacs.grompp_timeout_sec（grompp 专用）与 md.gromacs.gmx_timeout_sec（其它小工具），未设置时回退到全局“单任务超时时间 timeout”。",
+        "[优化] 运行日志会打印本次超时保护的实际秒数与来源；真超时时同时给出“可在设置中增大单任务超时时间”的提示，便于判断是工具限制还是环境过慢。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.98/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 20.8,
+          "sha256": "79bc3a162c5ea2d3883408c171c50830ad0544489b619614579c180c13f41d5a",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 21777690
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.98/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 22.4,
+          "sha256": "8a9cdc34ee8cf73c6c1697ff443edf1b04469455dca35aa8d3e4fb9d1baade0f",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 23489120
+        }
+      }
+    },
     {
       "version": "4.0.97",
       "release_date": "2026-10-27",
