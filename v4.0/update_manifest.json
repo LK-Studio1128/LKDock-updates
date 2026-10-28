@@ -11,6 +11,16 @@
     "[修复] 簇代表帧写 PDB 更稳健：中心帧写失败时按簇内 RMSD 之和依次尝试备选帧，单个坏帧不再让整簇缺失代表结构。"
   ],
   "platforms": {
+    "windows": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.0/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 22.5,
+      "sha256": "33d0afb3848bc788d1afe00062e3d4666cf34db89aaec08d6e1f97ec32132581",
+      "files_to_replace": [
+        "main4.cp311-win_amd64.pyd"
+      ],
+      "python_version": "3.11",
+      "size": 23564271
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.0/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.8,
@@ -47,6 +57,16 @@
       ],
       "min_from_version": "4.0.0",
       "platforms": {
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.0/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 22.5,
+          "sha256": "33d0afb3848bc788d1afe00062e3d4666cf34db89aaec08d6e1f97ec32132581",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 23564271
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.0/LKDock_v4.0_update_Mac.zip",
           "file_size_mb": 20.8,
