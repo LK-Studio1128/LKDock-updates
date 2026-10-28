@@ -1,37 +1,74 @@
 {
-  "latest_version": "4.0.99",
+  "latest_version": "4.1.0",
   "release_date": "2026-10-28",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本同步升级至 x.0.99。",
-    "[修复] 配体相对质心偏移（Relative COM drift）重做：改为“每帧把受体 Cα 叠合到首帧 + 逐帧三斜盒最小镜像 + 质量加权质心”，NPT/变盒与跨盒跳变不再产生假的漂移峰；旧的绝对 COM 偏移降级为诊断量，不再当作解离判据（报告中明确标注）。",
-    "[新增] 相对质心偏移新增统计与图：均值/峰值相对偏移、绝对偏移诊断均值，图题改为“配体相对质心偏移 / Ligand Relative Center-of-Mass Drift”，并给出锚定良好 / 口袋内调整 / 可能迁出口袋的判读；旧任务若只有 com_drift.png 也能正常出图。",
-    "[新增] COM 漂移审计字段：PBC 修正前后差异、盒变化帧数、镜像吸附帧数、是否质量加权、以及“超过半个盒子距离需用去卷绕轨迹”的半盒歧义提示，便于复核结果可信度。",
-    "[修复] 报告中的恒温器/恒压器名称不再按“auto→v-rescale”推断，而是从实际生成的 md.mdp 与 md.tpr（gmx dump）读取真实耦合参数后再写入 Methods，避免报告写法与实跑设置不一致。"
+    "[RELEASE] 主程序版本升级至 x.1.0（4.1.0）。",
+    "[优化] MM-PBSA 熵校正默认改为 interaction entropy（原默认 off），并把 IE 取样比例默认由 25% 提高到 50%，新配置开箱即含熵项，不再出现 -TdS “not calculated”。",
+    "[新增] NMODE 两级安全阈值：默认超过 2000 原子自动改用 interaction entropy 并记录原因；超过硬上限 5000 原子默认拒绝，需显式打开“允许强制 NMODE（不安全）”才会执行。GUI 新增“NMODE 自动降级原子数 / 硬上限 / 强制开关 / IE 取样比例”四项设置。",
+    "[新增] 熵校正结果全程可追溯：输出与实际使用的方法、降级原因、体系原子数、阈值与取样比例都会记录，并在报告中明确写出“请求 nmode，实际 interaction”这类差异；Method B 路径的熵默认值同步为 interaction。",
+    "[修复] 聚类代表帧选帧错误：代表帧改为复用 rmsd_2d.npy 的下采样帧映射（此前按 n_frames//m 重算步长，在 401/999/1001 帧等轨迹上会选到错误帧）；映射行数不匹配时按等间隔重建并给出告警。",
+    "[修复] 簇代表帧写 PDB 更稳健：中心帧写失败时按簇内 RMSD 之和依次尝试备选帧，单个坏帧不再让整簇缺失代表结构。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.99/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.0/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.8,
-      "sha256": "854e900608aa5ee40282c8b3a25720ab095682f90fecb9c8d1c6c6f4aa87d319",
+      "sha256": "db141f87f10c5f22279740faffc99ee8f71e99e56a12e43cad33ed67e3f2d750",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21832808
+      "size": 21846511
     },
-    "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.0.99/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 22.5,
-      "sha256": "46622703c4cde37721580fb19ebe3246896c085bebcd62a2f19c5d2e6739e104",
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.0/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 21.8,
+      "sha256": "e7482aaff9c4668267009cd72b15b6411f6a6a199f989b79ee1292f58f04b45d",
       "files_to_replace": [
-        "main4.cp311-win_amd64.pyd"
+        "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 23541622
+      "size": 22881734
     }
   },
   "versions": [
+    {
+      "version": "4.1.0",
+      "release_date": "2026-10-28",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.0（4.1.0）。",
+        "[优化] MM-PBSA 熵校正默认改为 interaction entropy（原默认 off），并把 IE 取样比例默认由 25% 提高到 50%，新配置开箱即含熵项，不再出现 -TdS “not calculated”。",
+        "[新增] NMODE 两级安全阈值：默认超过 2000 原子自动改用 interaction entropy 并记录原因；超过硬上限 5000 原子默认拒绝，需显式打开“允许强制 NMODE（不安全）”才会执行。GUI 新增“NMODE 自动降级原子数 / 硬上限 / 强制开关 / IE 取样比例”四项设置。",
+        "[新增] 熵校正结果全程可追溯：输出与实际使用的方法、降级原因、体系原子数、阈值与取样比例都会记录，并在报告中明确写出“请求 nmode，实际 interaction”这类差异；Method B 路径的熵默认值同步为 interaction。",
+        "[修复] 聚类代表帧选帧错误：代表帧改为复用 rmsd_2d.npy 的下采样帧映射（此前按 n_frames//m 重算步长，在 401/999/1001 帧等轨迹上会选到错误帧）；映射行数不匹配时按等间隔重建并给出告警。",
+        "[修复] 簇代表帧写 PDB 更稳健：中心帧写失败时按簇内 RMSD 之和依次尝试备选帧，单个坏帧不再让整簇缺失代表结构。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.0/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 20.8,
+          "sha256": "db141f87f10c5f22279740faffc99ee8f71e99e56a12e43cad33ed67e3f2d750",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 21846511
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.0/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 21.8,
+          "sha256": "e7482aaff9c4668267009cd72b15b6411f6a6a199f989b79ee1292f58f04b45d",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 22881734
+        }
+      }
+    },
     {
       "version": "4.0.99",
       "release_date": "2026-10-28",
