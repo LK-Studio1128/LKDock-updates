@@ -1,48 +1,74 @@
 {
-  "latest_version": "4.1.0",
-  "release_date": "2026-10-28",
+  "latest_version": "4.1.1",
+  "release_date": "2026-10-29",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.0（4.1.0）。",
-    "[优化] MM-PBSA 熵校正默认改为 interaction entropy（原默认 off），并把 IE 取样比例默认由 25% 提高到 50%，新配置开箱即含熵项，不再出现 -TdS “not calculated”。",
-    "[新增] NMODE 两级安全阈值：默认超过 2000 原子自动改用 interaction entropy 并记录原因；超过硬上限 5000 原子默认拒绝，需显式打开“允许强制 NMODE（不安全）”才会执行。GUI 新增“NMODE 自动降级原子数 / 硬上限 / 强制开关 / IE 取样比例”四项设置。",
-    "[新增] 熵校正结果全程可追溯：输出与实际使用的方法、降级原因、体系原子数、阈值与取样比例都会记录，并在报告中明确写出“请求 nmode，实际 interaction”这类差异；Method B 路径的熵默认值同步为 interaction。",
-    "[修复] 聚类代表帧选帧错误：代表帧改为复用 rmsd_2d.npy 的下采样帧映射（此前按 n_frames//m 重算步长，在 401/999/1001 帧等轨迹上会选到错误帧）；映射行数不匹配时按等间隔重建并给出告警。",
-    "[修复] 簇代表帧写 PDB 更稳健：中心帧写失败时按簇内 RMSD 之和依次尝试备选帧，单个坏帧不再让整簇缺失代表结构。"
+    "[RELEASE] 主程序版本升级至 x.1.1（4.1.1）。",
+    "[修复] 温压耦合污染的最后一处漏网：非 NVE 体系若把 NVT/NPT/生产段四个分段字段留空、而全局 tcoupl/pcoupl 是旧配置残留的 no，平衡段会静默跑成无温控/无压控。现在会检测并恢复为 v-rescale/c-rescale，并在日志中记录修复原因。",
+    "[修复] 非膜体系不再继承膜体系的压力耦合类型：蛋白/配体水溶液若残留 pcoupltype=semiisotropic/anisotropic，自动回退 isotropic（膜体系仍自动提升 semiisotropic）。",
+    "[优化] “推荐·稳定优先”预设改为硬保证 v-rescale + c-rescale + isotropic，并在切换/落盘时直接写入配置（不再依赖 UI 分片懒加载），避免界面显示推荐而实际跑成 berendsen/parrinello-rahman/no；预设切换后自动保存，避免忘记保存后读回旧值。",
+    "[新增] 质量检查（QC）增强：新增相对质心偏移阈值（均值 5 Å / 峰值 10 Å）、逐帧 PBC 审计必查项、口袋/界面接触保持率（occupancy ≥ 50%）三项检查，异常按 warn/fail 计入 QC 汇总，缺失项标为不可评估。",
+    "[修复] 报告修正：分析窗口 start≥end 时不再写成“30–1 ns”；报告中的非键方法以 GROMACS 实跑为准（no/none/cutoff_periodic 实际映射为 PME，不再显示 NO CUTOFF）；论文总览优先展示相对质心偏移，绝对 COM 仅作 PBC/整体运动诊断。"
   ],
   "platforms": {
-    "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.0/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 22.5,
-      "sha256": "33d0afb3848bc788d1afe00062e3d4666cf34db89aaec08d6e1f97ec32132581",
-      "files_to_replace": [
-        "main4.cp311-win_amd64.pyd"
-      ],
-      "python_version": "3.11",
-      "size": 23564271
-    },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.0/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.1/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.8,
-      "sha256": "db141f87f10c5f22279740faffc99ee8f71e99e56a12e43cad33ed67e3f2d750",
+      "sha256": "5ffb8085623a2cf3f2b3777b9ba624c75056ffb96fb07754987a164317659d5c",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21846511
+      "size": 21861140
     },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.0/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 21.8,
-      "sha256": "e7482aaff9c4668267009cd72b15b6411f6a6a199f989b79ee1292f58f04b45d",
+    "windows": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.1/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 22.5,
+      "sha256": "c8d8c863ed766632200fc3297d17952aace2cb4f387b6d0b2b1f1175ab25b893",
       "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
+        "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 22881734
+      "size": 23580440
     }
   },
   "versions": [
+    {
+      "version": "4.1.1",
+      "release_date": "2026-10-29",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.1（4.1.1）。",
+        "[修复] 温压耦合污染的最后一处漏网：非 NVE 体系若把 NVT/NPT/生产段四个分段字段留空、而全局 tcoupl/pcoupl 是旧配置残留的 no，平衡段会静默跑成无温控/无压控。现在会检测并恢复为 v-rescale/c-rescale，并在日志中记录修复原因。",
+        "[修复] 非膜体系不再继承膜体系的压力耦合类型：蛋白/配体水溶液若残留 pcoupltype=semiisotropic/anisotropic，自动回退 isotropic（膜体系仍自动提升 semiisotropic）。",
+        "[优化] “推荐·稳定优先”预设改为硬保证 v-rescale + c-rescale + isotropic，并在切换/落盘时直接写入配置（不再依赖 UI 分片懒加载），避免界面显示推荐而实际跑成 berendsen/parrinello-rahman/no；预设切换后自动保存，避免忘记保存后读回旧值。",
+        "[新增] 质量检查（QC）增强：新增相对质心偏移阈值（均值 5 Å / 峰值 10 Å）、逐帧 PBC 审计必查项、口袋/界面接触保持率（occupancy ≥ 50%）三项检查，异常按 warn/fail 计入 QC 汇总，缺失项标为不可评估。",
+        "[修复] 报告修正：分析窗口 start≥end 时不再写成“30–1 ns”；报告中的非键方法以 GROMACS 实跑为准（no/none/cutoff_periodic 实际映射为 PME，不再显示 NO CUTOFF）；论文总览优先展示相对质心偏移，绝对 COM 仅作 PBC/整体运动诊断。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.1/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 20.8,
+          "sha256": "5ffb8085623a2cf3f2b3777b9ba624c75056ffb96fb07754987a164317659d5c",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 21861140
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.1/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 22.5,
+          "sha256": "c8d8c863ed766632200fc3297d17952aace2cb4f387b6d0b2b1f1175ab25b893",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 23580440
+        }
+      }
+    },
     {
       "version": "4.1.0",
       "release_date": "2026-10-28",
