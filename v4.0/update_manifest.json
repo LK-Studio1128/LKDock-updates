@@ -11,6 +11,16 @@
     "[修复] 报告修正：分析窗口 start≥end 时不再写成“30–1 ns”；报告中的非键方法以 GROMACS 实跑为准（no/none/cutoff_periodic 实际映射为 PME，不再显示 NO CUTOFF）；论文总览优先展示相对质心偏移，绝对 COM 仅作 PBC/整体运动诊断。"
   ],
   "platforms": {
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.1/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 21.8,
+      "sha256": "c69d5e31ff0db34d416a03d5db941c9fb19eb5e3e8f60e02762446c6bcd97b22",
+      "files_to_replace": [
+        "main4.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 22898678
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.1/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.8,
@@ -47,6 +57,16 @@
       ],
       "min_from_version": "4.0.0",
       "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.1/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 21.8,
+          "sha256": "c69d5e31ff0db34d416a03d5db941c9fb19eb5e3e8f60e02762446c6bcd97b22",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 22898678
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.1/LKDock_v4.0_update_Mac.zip",
           "file_size_mb": 20.8,
