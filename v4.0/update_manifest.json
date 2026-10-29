@@ -1,48 +1,72 @@
 {
-  "latest_version": "4.1.1",
+  "latest_version": "4.1.2",
   "release_date": "2026-10-29",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.1（4.1.1）。",
-    "[修复] 温压耦合污染的最后一处漏网：非 NVE 体系若把 NVT/NPT/生产段四个分段字段留空、而全局 tcoupl/pcoupl 是旧配置残留的 no，平衡段会静默跑成无温控/无压控。现在会检测并恢复为 v-rescale/c-rescale，并在日志中记录修复原因。",
-    "[修复] 非膜体系不再继承膜体系的压力耦合类型：蛋白/配体水溶液若残留 pcoupltype=semiisotropic/anisotropic，自动回退 isotropic（膜体系仍自动提升 semiisotropic）。",
-    "[优化] “推荐·稳定优先”预设改为硬保证 v-rescale + c-rescale + isotropic，并在切换/落盘时直接写入配置（不再依赖 UI 分片懒加载），避免界面显示推荐而实际跑成 berendsen/parrinello-rahman/no；预设切换后自动保存，避免忘记保存后读回旧值。",
-    "[新增] 质量检查（QC）增强：新增相对质心偏移阈值（均值 5 Å / 峰值 10 Å）、逐帧 PBC 审计必查项、口袋/界面接触保持率（occupancy ≥ 50%）三项检查，异常按 warn/fail 计入 QC 汇总，缺失项标为不可评估。",
-    "[修复] 报告修正：分析窗口 start≥end 时不再写成“30–1 ns”；报告中的非键方法以 GROMACS 实跑为准（no/none/cutoff_periodic 实际映射为 PME，不再显示 NO CUTOFF）；论文总览优先展示相对质心偏移，绝对 COM 仅作 PBC/整体运动诊断。"
+    "[RELEASE] 主程序版本升级至 x.1.2（4.1.2）。",
+    "[修复] MD 续跑/完成判定改用真实积分步：旧版只要 md.gro 存在就认定“已跑满目标步数”，但 mdrun 在任意步数正常结束都会写 md.gro（例如命令行 -nsteps 600 只跑 60% 就停），会把 60% 当成 100% 完成、跳过剩余计算。现在以 md.tpr 的 nsteps 为目标，综合 md.log 的 Step/Time 最大步与 “Writing checkpoint, step N”、md.cpt 末帧时间、md.xtc 末帧时间判定 done / resume / trajectory_only / fresh，日志直接打印“真实进度 600/1000（60.0%）”。",
+    "[修复] 续跑优先用检查点，绝不从头重建：进度探测异常时仍优先 md.cpt + md.tpr 走 -cpi -append；只有 md.cpt 而无 md.xtc（首帧轨迹写出前崩溃）也不再被归档重跑，保留已完成进度；多段变温生产的每个 stage 同样按真实步数判定完成。",
+    "[修复] 完成判定不再依赖 md.gro：靠日志/轨迹判定为完成但 md.gro 缺失时，自动用 gmx trjconv -dump -1 从 md.xtc 末帧导出 final.pdb，避免“已完成却拿不到最终结构”。",
+    "[修复] 膜体系建膜兼容性：包内/系统内的 packmol-memgen 若不支持 --no_bulk_solvent（老版本 AmberTools 或随包构建器），旧版会把该参数照发过去导致建膜直接失败；现在先探测支持能力（PATH 版跑 --help、随包版读 main.py），优先选支持者，不支持时自动回退到 Packmol 同时装填水与离子并给出提示。"
   ],
   "platforms": {
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.1/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 21.8,
-      "sha256": "c69d5e31ff0db34d416a03d5db941c9fb19eb5e3e8f60e02762446c6bcd97b22",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 22898678
-    },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.1/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 20.8,
-      "sha256": "5ffb8085623a2cf3f2b3777b9ba624c75056ffb96fb07754987a164317659d5c",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.2/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 20.9,
+      "sha256": "806281c14f72d64c620f675fd6d99b05857f1528415f37f4e688ccfcac06ca4a",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21861140
+      "size": 21915075
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.1/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.2/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 22.5,
-      "sha256": "c8d8c863ed766632200fc3297d17952aace2cb4f387b6d0b2b1f1175ab25b893",
+      "sha256": "47cc1e38f768799123e2129840e9ad6629e8f33d43a7bdf43499c1d27742e624",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23580440
+      "size": 23631433
     }
   },
   "versions": [
+    {
+      "version": "4.1.2",
+      "release_date": "2026-10-29",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.2（4.1.2）。",
+        "[修复] MD 续跑/完成判定改用真实积分步：旧版只要 md.gro 存在就认定“已跑满目标步数”，但 mdrun 在任意步数正常结束都会写 md.gro（例如命令行 -nsteps 600 只跑 60% 就停），会把 60% 当成 100% 完成、跳过剩余计算。现在以 md.tpr 的 nsteps 为目标，综合 md.log 的 Step/Time 最大步与 “Writing checkpoint, step N”、md.cpt 末帧时间、md.xtc 末帧时间判定 done / resume / trajectory_only / fresh，日志直接打印“真实进度 600/1000（60.0%）”。",
+        "[修复] 续跑优先用检查点，绝不从头重建：进度探测异常时仍优先 md.cpt + md.tpr 走 -cpi -append；只有 md.cpt 而无 md.xtc（首帧轨迹写出前崩溃）也不再被归档重跑，保留已完成进度；多段变温生产的每个 stage 同样按真实步数判定完成。",
+        "[修复] 完成判定不再依赖 md.gro：靠日志/轨迹判定为完成但 md.gro 缺失时，自动用 gmx trjconv -dump -1 从 md.xtc 末帧导出 final.pdb，避免“已完成却拿不到最终结构”。",
+        "[修复] 膜体系建膜兼容性：包内/系统内的 packmol-memgen 若不支持 --no_bulk_solvent（老版本 AmberTools 或随包构建器），旧版会把该参数照发过去导致建膜直接失败；现在先探测支持能力（PATH 版跑 --help、随包版读 main.py），优先选支持者，不支持时自动回退到 Packmol 同时装填水与离子并给出提示。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.2/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 20.9,
+          "sha256": "806281c14f72d64c620f675fd6d99b05857f1528415f37f4e688ccfcac06ca4a",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 21915075
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.2/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 22.5,
+          "sha256": "47cc1e38f768799123e2129840e9ad6629e8f33d43a7bdf43499c1d27742e624",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 23631433
+        }
+      }
+    },
     {
       "version": "4.1.1",
       "release_date": "2026-10-29",
