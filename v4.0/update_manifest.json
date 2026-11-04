@@ -1,37 +1,76 @@
 {
-  "latest_version": "4.1.2",
-  "release_date": "2026-10-29",
+  "latest_version": "4.1.3",
+  "release_date": "2026-11-05",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.2（4.1.2）。",
-    "[修复] MD 续跑/完成判定改用真实积分步：旧版只要 md.gro 存在就认定“已跑满目标步数”，但 mdrun 在任意步数正常结束都会写 md.gro（例如命令行 -nsteps 600 只跑 60% 就停），会把 60% 当成 100% 完成、跳过剩余计算。现在以 md.tpr 的 nsteps 为目标，综合 md.log 的 Step/Time 最大步与 “Writing checkpoint, step N”、md.cpt 末帧时间、md.xtc 末帧时间判定 done / resume / trajectory_only / fresh，日志直接打印“真实进度 600/1000（60.0%）”。",
-    "[修复] 续跑优先用检查点，绝不从头重建：进度探测异常时仍优先 md.cpt + md.tpr 走 -cpi -append；只有 md.cpt 而无 md.xtc（首帧轨迹写出前崩溃）也不再被归档重跑，保留已完成进度；多段变温生产的每个 stage 同样按真实步数判定完成。",
-    "[修复] 完成判定不再依赖 md.gro：靠日志/轨迹判定为完成但 md.gro 缺失时，自动用 gmx trjconv -dump -1 从 md.xtc 末帧导出 final.pdb，避免“已完成却拿不到最终结构”。",
-    "[修复] 膜体系建膜兼容性：包内/系统内的 packmol-memgen 若不支持 --no_bulk_solvent（老版本 AmberTools 或随包构建器），旧版会把该参数照发过去导致建膜直接失败；现在先探测支持能力（PATH 版跑 --help、随包版读 main.py），优先选支持者，不支持时自动回退到 Packmol 同时装填水与离子并给出提示。"
+    "[RELEASE] 主程序版本升级至 x.1.3（4.1.3）。",
+    "[修复] MD/GROMACS 运行不再让电脑睡眠：所有 GROMACS 调用（mdrun/grompp/trjconv 等）现在都会申请睡眠抑制，并成对释放；Windows 上优先用兼容性最好的 ES_SYSTEM_REQUIRED，个别机器不支持时自动回退，避免长跑 MD 被系统休眠打断。",
+    "[修复] grompp 超时语义修正：用户显式设置的超时就是上限，不再被“按原子数放大”的下限覆盖；trjconv 等工具仍保留按体系规模推算的安全下限。",
+    "[修复] 氢键判定统一口径（PLIP 式：供体-受体化学类型 + 重原子距离）：结果分析表、2D LigPlus、3D PyMOL 三处共用同一套判定，数量与残基一致。",
+    "[修复] OpenBabel 自动检测/选择更可靠：pip 的 Scripts 启动器自动解析到 openbabel\\bin 原生 CLI，并显示“✅ 可用 / ⚠️ 启动失败 / ⚠️ 力场缺失”。",
+    "[修复] 复合物 PDB 配体提取更稳（给出检测到的残基与原因）；单分子 SDF 写出新增进度/失败统计。",
+    "[优化] 金属可视化默认显示所有常见金属的球体与配位虚线；PDB 元素列修正 + 配体被写成 ATOM 时的 MolBlock 兜底。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.2/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.3/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 20.9,
-      "sha256": "806281c14f72d64c620f675fd6d99b05857f1528415f37f4e688ccfcac06ca4a",
+      "sha256": "6910dafec47d08afd58343c2cda432d18f9df1f304839dd0be8b0526702077e0",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21915075
+      "size": 21920736
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.2/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.3/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 22.5,
-      "sha256": "47cc1e38f768799123e2129840e9ad6629e8f33d43a7bdf43499c1d27742e624",
+      "sha256": "64cba9f5f698b190d640a061e0e233366687352eadfc4eff18f174d46101d169",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23631433
+      "size": 23636767
     }
   },
   "versions": [
+    {
+      "version": "4.1.3",
+      "release_date": "2026-11-05",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.3（4.1.3）。",
+        "[修复] MD/GROMACS 运行不再让电脑睡眠：所有 GROMACS 调用（mdrun/grompp/trjconv 等）现在都会申请睡眠抑制，并成对释放；Windows 上优先用兼容性最好的 ES_SYSTEM_REQUIRED，个别机器不支持时自动回退，避免长跑 MD 被系统休眠打断。",
+        "[修复] grompp 超时语义修正：用户显式设置的超时就是上限，不再被“按原子数放大”的下限覆盖；trjconv 等工具仍保留按体系规模推算的安全下限。",
+        "[修复] 氢键判定统一口径（PLIP 式：供体-受体化学类型 + 重原子距离）：结果分析表、2D LigPlus、3D PyMOL 三处共用同一套判定，数量与残基一致。",
+        "[修复] OpenBabel 自动检测/选择更可靠：pip 的 Scripts 启动器自动解析到 openbabel\\bin 原生 CLI，并显示“✅ 可用 / ⚠️ 启动失败 / ⚠️ 力场缺失”。",
+        "[修复] 复合物 PDB 配体提取更稳（给出检测到的残基与原因）；单分子 SDF 写出新增进度/失败统计。",
+        "[优化] 金属可视化默认显示所有常见金属的球体与配位虚线；PDB 元素列修正 + 配体被写成 ATOM 时的 MolBlock 兜底。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.3/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 20.9,
+          "sha256": "6910dafec47d08afd58343c2cda432d18f9df1f304839dd0be8b0526702077e0",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 21920736
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.3/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 22.5,
+          "sha256": "64cba9f5f698b190d640a061e0e233366687352eadfc4eff18f174d46101d169",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 23636767
+        }
+      }
+    },
     {
       "version": "4.1.2",
       "release_date": "2026-10-29",

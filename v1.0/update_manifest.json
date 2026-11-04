@@ -1,35 +1,36 @@
 {
-  "latest_version": "1.0.94",
-  "release_date": "2026-10-25",
+  "latest_version": "1.1.3",
+  "release_date": "2026-11-05",
   "min_version_required": "1.0.0",
   "changes": [
-    "[新增] 在线更新支持历史版本选择：可更新到最新版，也可回退到指定 x.0.x 版本。",
-    "[新增] 更新窗口显示当前版本、历史版本、平台可用性和版本状态。",
-    "[安全] 下载后继续执行 SHA256 校验，替换前自动备份当前主程序模块。"
+    "[RELEASE] 主程序版本升级至 x.1.3（1.1.3）。",
+    "[修复] OpenBabel 自动检测/选择更可靠：pip 安装的 Scripts\\obabel.exe 常是 Python 启动器（运行会抛 traceback），现在会自动优先解析到 openbabel\\bin 下的原生命令行程序；检测结果直接标注“✅ 可用 / ⚠️ 可执行文件启动失败 / ⚠️ 力场参数未找到”，不再出现选了一个用不了的 obabel。",
+    "[优化] 金属可视化默认显示所有常见金属的球体与配位虚线（此前部分金属需手动勾选）。",
+    "[修复] PDB 元素列修正：从 pdbqt/PQR 转换或写回的 PDB 正确补全元素列，避免下游按元素判断（金属配位、氢键、PyMOL 表示）出错。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.94/LKDock_v1.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.1.3/LKDock_v1.0_update_Mac.zip",
       "file_size_mb": 2.3,
-      "sha256": "0e5f769ebf4d4b75d8c2477dc5c47f1d2867c44e671f8197c21ea2abbda8e111",
+      "sha256": "48ccd918b90e1bcab170b1c07c31cfd5812d3717c506ec516173cadb93c8e124",
       "files_to_replace": [
         "main1.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 2430028
+      "size": 2445290
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.94/LKDock_v1.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.1.3/LKDock_v1.0_update_Win.zip",
       "file_size_mb": 2.8,
-      "sha256": "f3d6ab884cf5576943c12ecf8b0b8bd57a0de02348c59889fc54fc3ec769c7d3",
+      "sha256": "50d1b2dc58045d7393b3d14768e492d8828487720296178deb2f4d54d581afdc",
       "files_to_replace": [
         "main1.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 2970753
+      "size": 2984380
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.0.94/LKDock_v1.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.1.3/LKDock_v1.0_update_Linux.zip",
       "file_size_mb": 0,
       "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "files_to_replace": [
@@ -39,6 +40,49 @@
     }
   },
   "versions": [
+    {
+      "version": "1.1.3",
+      "release_date": "2026-11-05",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.3（1.1.3）。",
+        "[修复] OpenBabel 自动检测/选择更可靠：pip 安装的 Scripts\\obabel.exe 常是 Python 启动器（运行会抛 traceback），现在会自动优先解析到 openbabel\\bin 下的原生命令行程序；检测结果直接标注“✅ 可用 / ⚠️ 可执行文件启动失败 / ⚠️ 力场参数未找到”，不再出现选了一个用不了的 obabel。",
+        "[优化] 金属可视化默认显示所有常见金属的球体与配位虚线（此前部分金属需手动勾选）。",
+        "[修复] PDB 元素列修正：从 pdbqt/PQR 转换或写回的 PDB 正确补全元素列，避免下游按元素判断（金属配位、氢键、PyMOL 表示）出错。"
+      ],
+      "min_from_version": "1.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.1.3/LKDock_v1.0_update_Mac.zip",
+          "file_size_mb": 2.3,
+          "sha256": "48ccd918b90e1bcab170b1c07c31cfd5812d3717c506ec516173cadb93c8e124",
+          "files_to_replace": [
+            "main1.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 2445290
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.1.3/LKDock_v1.0_update_Win.zip",
+          "file_size_mb": 2.8,
+          "sha256": "50d1b2dc58045d7393b3d14768e492d8828487720296178deb2f4d54d581afdc",
+          "files_to_replace": [
+            "main1.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 2984380
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.1.3/LKDock_v1.0_update_Linux.zip",
+          "file_size_mb": 0,
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "files_to_replace": [
+            "main1"
+          ],
+          "python_version": "3.11"
+        }
+      }
+    },
     {
       "version": "1.0.94",
       "release_date": "2026-10-25",

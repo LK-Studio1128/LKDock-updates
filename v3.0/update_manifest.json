@@ -1,45 +1,74 @@
 {
-  "latest_version": "3.0.94",
-  "release_date": "2026-10-25",
+  "latest_version": "3.1.3",
+  "release_date": "2026-11-05",
   "min_version_required": "3.0.0",
   "changes": [
-    "[新增] 在线更新支持历史版本选择：可更新到最新版，也可回退到指定 x.0.x 版本。",
-    "[新增] 更新窗口显示当前版本、历史版本、平台可用性和版本状态。",
-    "[安全] 下载后继续执行 SHA256 校验，替换前自动备份当前主程序模块。"
+    "[RELEASE] 主程序版本升级至 x.1.3（3.1.3）。",
+    "[修复] OpenBabel 自动检测/选择更可靠：pip 的 Scripts 启动器会自动解析到 openbabel\\bin 原生 CLI，检测结果显示“✅ 可用 / ⚠️ 启动失败 / ⚠️ 力场缺失”。",
+    "[修复] 氢键判定统一口径（PLIP 式：供体-受体化学类型 + 重原子距离）：结果分析表、2D LigPlus、3D PyMOL 三处共用同一套判定，氢键数量与残基在三处一致，不再各算一套。",
+    "[修复] 复合物 PDB 配体提取更稳：按残基分组键识别配体，失败时给出检测到的残基清单；单分子 SDF 写出新增进度/失败统计日志。",
+    "[优化] 金属可视化默认显示所有常见金属的球体与配位虚线。",
+    "[修复] PDB 元素列修正 + 配体被写成 ATOM 的 MolBlock 兜底。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.94/LKDock_v3.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.3/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 8.7,
-      "sha256": "33c09fff71d4903f282ccec4e4ed90ef2cef43ac16a3d78a9ead7a2b785239f6",
+      "sha256": "88ed54986c5d016f78a1c4b877c479cb9dd77aec38e126721765f02818d5e7dd",
       "files_to_replace": [
         "main3.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 9073766
+      "size": 9091564
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.94/LKDock_v3.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.3/LKDock_v3.0_update_Win.zip",
       "file_size_mb": 9.5,
-      "sha256": "48ea4288a2c9ac7aa3eeb06107b848d58ffc9e522f4cc33827fe7e183146fda4",
+      "sha256": "0c7682be851cda3566f43e956edf908b4ce2648454320611b9aa3b476a3b1f72",
       "files_to_replace": [
         "main3.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 9933615
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.0.94/LKDock_v3.0_update_Linux.zip",
-      "file_size_mb": 8.9,
-      "sha256": "3dc07e50b92a3f7afca6490a0a72fd5e09c4d5b6c4dfb373dde9101c747bec17",
-      "files_to_replace": [
-        "main3.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 9361448
+      "size": 9957491
     }
   },
   "versions": [
+    {
+      "version": "3.1.3",
+      "release_date": "2026-11-05",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.3（3.1.3）。",
+        "[修复] OpenBabel 自动检测/选择更可靠：pip 的 Scripts 启动器会自动解析到 openbabel\\bin 原生 CLI，检测结果显示“✅ 可用 / ⚠️ 启动失败 / ⚠️ 力场缺失”。",
+        "[修复] 氢键判定统一口径（PLIP 式：供体-受体化学类型 + 重原子距离）：结果分析表、2D LigPlus、3D PyMOL 三处共用同一套判定，氢键数量与残基在三处一致，不再各算一套。",
+        "[修复] 复合物 PDB 配体提取更稳：按残基分组键识别配体，失败时给出检测到的残基清单；单分子 SDF 写出新增进度/失败统计日志。",
+        "[优化] 金属可视化默认显示所有常见金属的球体与配位虚线。",
+        "[修复] PDB 元素列修正 + 配体被写成 ATOM 的 MolBlock 兜底。"
+      ],
+      "min_from_version": "3.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.3/LKDock_v3.0_update_Mac.zip",
+          "file_size_mb": 8.7,
+          "sha256": "88ed54986c5d016f78a1c4b877c479cb9dd77aec38e126721765f02818d5e7dd",
+          "files_to_replace": [
+            "main3.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 9091564
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.3/LKDock_v3.0_update_Win.zip",
+          "file_size_mb": 9.5,
+          "sha256": "0c7682be851cda3566f43e956edf908b4ce2648454320611b9aa3b476a3b1f72",
+          "files_to_replace": [
+            "main3.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 9957491
+        }
+      }
+    },
     {
       "version": "3.0.94",
       "release_date": "2026-10-25",

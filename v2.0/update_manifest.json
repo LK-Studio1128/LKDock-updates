@@ -1,45 +1,74 @@
 {
-  "latest_version": "2.0.94",
-  "release_date": "2026-10-25",
+  "latest_version": "2.1.3",
+  "release_date": "2026-11-05",
   "min_version_required": "2.0.0",
   "changes": [
-    "[新增] 在线更新支持历史版本选择：可更新到最新版，也可回退到指定 x.0.x 版本。",
-    "[新增] 更新窗口显示当前版本、历史版本、平台可用性和版本状态。",
-    "[安全] 下载后继续执行 SHA256 校验，替换前自动备份当前主程序模块。"
+    "[RELEASE] 主程序版本升级至 x.1.3（2.1.3）。",
+    "[修复] OpenBabel 自动检测/选择更可靠：pip 的 Scripts 启动器会自动解析到 openbabel\\bin 原生 CLI，检测结果显示“✅ 可用 / ⚠️ 启动失败 / ⚠️ 力场缺失”。",
+    "[修复] 复合物 PDB 配体提取更稳：按残基分组键识别配体，提取失败时给出“检测到残基”清单与解析原因，而不是只报“无法提取配体”。",
+    "[新增] 单分子 SDF 写出日志与统计：实时保存进度、成功/失败计数与失败样例、输出目录都会打印，便于排查虚拟筛选中间产物。",
+    "[优化] 金属可视化默认显示所有常见金属的球体与配位虚线。",
+    "[修复] 部分 PDB 写出器把配体标成 ATOM 时的兼容兜底（改用原始 MolBlock 保底），并修正 PDB 元素列。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.94/LKDock_v2.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.3/LKDock_v2.0_update_Mac.zip",
       "file_size_mb": 5.7,
-      "sha256": "f344d04a8129ffbca3c8ff404cf029cb2c81f974139f3b32826c8daf4af69f45",
+      "sha256": "1758f65c2c0600b6a4f26de3a94fd7fc81edb2127fa9236f2d1297a52e299eae",
       "files_to_replace": [
         "main2.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 5963268
+      "size": 5981810
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.94/LKDock_v2.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.3/LKDock_v2.0_update_Win.zip",
       "file_size_mb": 6.2,
-      "sha256": "4ae02f2a63650242c26601b93c8b5db74e730d04c18303ba687de280e7a9f5ca",
+      "sha256": "6b891d5126e7f56a24020764593411663513ac07f6fb23572a050fe89544e9c2",
       "files_to_replace": [
         "main2.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 6535876
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.0.94/LKDock_v2.0_update_Linux.zip",
-      "file_size_mb": 5.9,
-      "sha256": "a42629283319bd00919dca0bdf719d2ec1a8f2af46521b73c14d344340a411d7",
-      "files_to_replace": [
-        "main2.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 6229140
+      "size": 6551715
     }
   },
   "versions": [
+    {
+      "version": "2.1.3",
+      "release_date": "2026-11-05",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.3（2.1.3）。",
+        "[修复] OpenBabel 自动检测/选择更可靠：pip 的 Scripts 启动器会自动解析到 openbabel\\bin 原生 CLI，检测结果显示“✅ 可用 / ⚠️ 启动失败 / ⚠️ 力场缺失”。",
+        "[修复] 复合物 PDB 配体提取更稳：按残基分组键识别配体，提取失败时给出“检测到残基”清单与解析原因，而不是只报“无法提取配体”。",
+        "[新增] 单分子 SDF 写出日志与统计：实时保存进度、成功/失败计数与失败样例、输出目录都会打印，便于排查虚拟筛选中间产物。",
+        "[优化] 金属可视化默认显示所有常见金属的球体与配位虚线。",
+        "[修复] 部分 PDB 写出器把配体标成 ATOM 时的兼容兜底（改用原始 MolBlock 保底），并修正 PDB 元素列。"
+      ],
+      "min_from_version": "2.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.3/LKDock_v2.0_update_Mac.zip",
+          "file_size_mb": 5.7,
+          "sha256": "1758f65c2c0600b6a4f26de3a94fd7fc81edb2127fa9236f2d1297a52e299eae",
+          "files_to_replace": [
+            "main2.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 5981810
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.3/LKDock_v2.0_update_Win.zip",
+          "file_size_mb": 6.2,
+          "sha256": "6b891d5126e7f56a24020764593411663513ac07f6fb23572a050fe89544e9c2",
+          "files_to_replace": [
+            "main2.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 6551715
+        }
+      }
+    },
     {
       "version": "2.0.94",
       "release_date": "2026-10-25",
