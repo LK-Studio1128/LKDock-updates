@@ -11,6 +11,16 @@
     "[修复] PDB 元素列修正 + 配体被写成 ATOM 的 MolBlock 兜底。"
   ],
   "platforms": {
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.3/LKDock_v3.0_update_Linux.zip",
+      "file_size_mb": 8.9,
+      "sha256": "8301bd15c8e7b40a076931e15e86f3f7a6477ef4bec95b2446fe1b3323bc8aff",
+      "files_to_replace": [
+        "main3.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 9382422
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.3/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 8.7,
@@ -47,6 +57,16 @@
       ],
       "min_from_version": "3.0.0",
       "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.3/LKDock_v3.0_update_Linux.zip",
+          "file_size_mb": 8.9,
+          "sha256": "8301bd15c8e7b40a076931e15e86f3f7a6477ef4bec95b2446fe1b3323bc8aff",
+          "files_to_replace": [
+            "main3.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 9382422
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.3/LKDock_v3.0_update_Mac.zip",
           "file_size_mb": 8.7,
