@@ -1,49 +1,74 @@
 {
-  "latest_version": "4.1.3",
+  "latest_version": "4.1.4",
   "release_date": "2026-11-05",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.3（4.1.3）。",
-    "[修复] MD/GROMACS 运行不再让电脑睡眠：所有 GROMACS 调用（mdrun/grompp/trjconv 等）现在都会申请睡眠抑制，并成对释放；Windows 上优先用兼容性最好的 ES_SYSTEM_REQUIRED，个别机器不支持时自动回退，避免长跑 MD 被系统休眠打断。",
-    "[修复] grompp 超时语义修正：用户显式设置的超时就是上限，不再被“按原子数放大”的下限覆盖；trjconv 等工具仍保留按体系规模推算的安全下限。",
-    "[修复] 氢键判定统一口径（PLIP 式：供体-受体化学类型 + 重原子距离）：结果分析表、2D LigPlus、3D PyMOL 三处共用同一套判定，数量与残基一致。",
-    "[修复] OpenBabel 自动检测/选择更可靠：pip 的 Scripts 启动器自动解析到 openbabel\\bin 原生 CLI，并显示“✅ 可用 / ⚠️ 启动失败 / ⚠️ 力场缺失”。",
-    "[修复] 复合物 PDB 配体提取更稳（给出检测到的残基与原因）；单分子 SDF 写出新增进度/失败统计。",
-    "[优化] 金属可视化默认显示所有常见金属的球体与配位虚线；PDB 元素列修正 + 配体被写成 ATOM 时的 MolBlock 兜底。"
+    "[RELEASE] 主程序版本升级至 x.1.4（4.1.4）。",
+    "[修复] 报告插图改用“真实结果图集”：嵌入分析/虚拟筛选/PyMOL 实际生成的图片（优先级去重、最多 12 张、逐张图注、按比例缩放），缺图时用真实数据自动兜底；确保走含图 PDF 路径。",
+    "[修复] PDF 中文字体：报告生成前注册可用的中文字体（打包字体优先、系统字体兜底），并过滤掉 fontconfig 误返回的非中文字体，避免报告中文乱码/方块。",
+    "[修复] MM-PBSA 非标准配体识别：官方/外部体系常用非标准配体残基名（如 36X）。现在优先使用 LKDock 记录里的配体残基名；若只有一个紧凑的“非蛋白/非溶剂/非离子”索引组，则判定为配体 —— 避免旧逻辑回退到 Other/non-Protein（含水与离子）导致 gmx_MMPBSA 报 “does not support water/ions”。",
+    "[修复] RDKit 数据资源提前绑定（RDDataDir 指向随包 Data）；支持直接选择复合物/配体文件做药效团。",
+    "[优化] 报告Top能量条目按数值解析并排序后出图，避免文本型能量导致图缺失。"
   ],
   "platforms": {
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.3/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 21.9,
-      "sha256": "36b34e155e99a7c2c72bbecd1ba5b6cd5c6699a960dc3cf48c6781aa51b725f0",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 22959488
-    },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.3/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 20.9,
-      "sha256": "6910dafec47d08afd58343c2cda432d18f9df1f304839dd0be8b0526702077e0",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.4/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 21.0,
+      "sha256": "4272355710f74149f9d32db2ab95cdd1c24775da9d6bdf0fae94d421237d75a1",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21920736
+      "size": 21987534
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.3/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 22.5,
-      "sha256": "64cba9f5f698b190d640a061e0e233366687352eadfc4eff18f174d46101d169",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.4/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 22.6,
+      "sha256": "8f7003f4c72d003ebcdd712ae50c9516a92eceee04414be1c3ceff7ad58073b4",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23636767
+      "size": 23705456
     }
   },
   "versions": [
+    {
+      "version": "4.1.4",
+      "release_date": "2026-11-05",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.4（4.1.4）。",
+        "[修复] 报告插图改用“真实结果图集”：嵌入分析/虚拟筛选/PyMOL 实际生成的图片（优先级去重、最多 12 张、逐张图注、按比例缩放），缺图时用真实数据自动兜底；确保走含图 PDF 路径。",
+        "[修复] PDF 中文字体：报告生成前注册可用的中文字体（打包字体优先、系统字体兜底），并过滤掉 fontconfig 误返回的非中文字体，避免报告中文乱码/方块。",
+        "[修复] MM-PBSA 非标准配体识别：官方/外部体系常用非标准配体残基名（如 36X）。现在优先使用 LKDock 记录里的配体残基名；若只有一个紧凑的“非蛋白/非溶剂/非离子”索引组，则判定为配体 —— 避免旧逻辑回退到 Other/non-Protein（含水与离子）导致 gmx_MMPBSA 报 “does not support water/ions”。",
+        "[修复] RDKit 数据资源提前绑定（RDDataDir 指向随包 Data）；支持直接选择复合物/配体文件做药效团。",
+        "[优化] 报告Top能量条目按数值解析并排序后出图，避免文本型能量导致图缺失。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.4/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 21.0,
+          "sha256": "4272355710f74149f9d32db2ab95cdd1c24775da9d6bdf0fae94d421237d75a1",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 21987534
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.4/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 22.6,
+          "sha256": "8f7003f4c72d003ebcdd712ae50c9516a92eceee04414be1c3ceff7ad58073b4",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 23705456
+        }
+      }
+    },
     {
       "version": "4.1.3",
       "release_date": "2026-11-05",

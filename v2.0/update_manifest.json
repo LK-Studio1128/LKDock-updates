@@ -1,48 +1,72 @@
 {
-  "latest_version": "2.1.3",
+  "latest_version": "2.1.4",
   "release_date": "2026-11-05",
   "min_version_required": "2.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.3（2.1.3）。",
-    "[修复] OpenBabel 自动检测/选择更可靠：pip 的 Scripts 启动器会自动解析到 openbabel\\bin 原生 CLI，检测结果显示“✅ 可用 / ⚠️ 启动失败 / ⚠️ 力场缺失”。",
-    "[修复] 复合物 PDB 配体提取更稳：按残基分组键识别配体，提取失败时给出“检测到残基”清单与解析原因，而不是只报“无法提取配体”。",
-    "[新增] 单分子 SDF 写出日志与统计：实时保存进度、成功/失败计数与失败样例、输出目录都会打印，便于排查虚拟筛选中间产物。",
-    "[优化] 金属可视化默认显示所有常见金属的球体与配位虚线。",
-    "[修复] 部分 PDB 写出器把配体标成 ATOM 时的兼容兜底（改用原始 MolBlock 保底），并修正 PDB 元素列。"
+    "[RELEASE] 主程序版本升级至 x.1.4（2.1.4）。",
+    "[修复] 报告插图改用“真实结果图集”：嵌入分析/虚拟筛选/PyMOL 实际生成的图片，按优先级去重、最多 12 张并带图注，不再只有热图；缺图时用真实数据自动兜底。",
+    "[修复] RDKit 数据资源提前绑定：启动时即把 RDDataDir 指向随包 Data 目录，药效团之外其它用到 RDKit 数据文件（如特征定义）的功能不再因路径未设而失败。",
+    "[新增] 支持直接选择“蛋白-配体复合物/配体文件”做药效团：复用已有的复合物药效团提取逻辑，直接给出可展示与匹配的特征点。",
+    "[优化] 报告图片按比例缩放、带图注，并确保走含图 PDF 路径。"
   ],
   "platforms": {
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.3/LKDock_v2.0_update_Linux.zip",
-      "file_size_mb": 5.6,
-      "sha256": "3e9994d62bfcb670b561977ae0317df8c115b233af4beba4f08740e99962318e",
-      "files_to_replace": [
-        "main2.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 5828060
-    },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.3/LKDock_v2.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.4/LKDock_v2.0_update_Mac.zip",
       "file_size_mb": 5.7,
-      "sha256": "1758f65c2c0600b6a4f26de3a94fd7fc81edb2127fa9236f2d1297a52e299eae",
+      "sha256": "1eaf1a6cee2f9bd9d2bf969a2ecc87458d5604c44f1b94c796d5a929957e2e01",
       "files_to_replace": [
         "main2.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 5981810
+      "size": 6026429
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.3/LKDock_v2.0_update_Win.zip",
-      "file_size_mb": 6.2,
-      "sha256": "6b891d5126e7f56a24020764593411663513ac07f6fb23572a050fe89544e9c2",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.4/LKDock_v2.0_update_Win.zip",
+      "file_size_mb": 6.3,
+      "sha256": "e83dc714466259464167924c3045afbe621722fa89d4fece682cafb1cd8ce939",
       "files_to_replace": [
         "main2.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 6551715
+      "size": 6611233
     }
   },
   "versions": [
+    {
+      "version": "2.1.4",
+      "release_date": "2026-11-05",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.4（2.1.4）。",
+        "[修复] 报告插图改用“真实结果图集”：嵌入分析/虚拟筛选/PyMOL 实际生成的图片，按优先级去重、最多 12 张并带图注，不再只有热图；缺图时用真实数据自动兜底。",
+        "[修复] RDKit 数据资源提前绑定：启动时即把 RDDataDir 指向随包 Data 目录，药效团之外其它用到 RDKit 数据文件（如特征定义）的功能不再因路径未设而失败。",
+        "[新增] 支持直接选择“蛋白-配体复合物/配体文件”做药效团：复用已有的复合物药效团提取逻辑，直接给出可展示与匹配的特征点。",
+        "[优化] 报告图片按比例缩放、带图注，并确保走含图 PDF 路径。"
+      ],
+      "min_from_version": "2.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.4/LKDock_v2.0_update_Mac.zip",
+          "file_size_mb": 5.7,
+          "sha256": "1eaf1a6cee2f9bd9d2bf969a2ecc87458d5604c44f1b94c796d5a929957e2e01",
+          "files_to_replace": [
+            "main2.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 6026429
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.4/LKDock_v2.0_update_Win.zip",
+          "file_size_mb": 6.3,
+          "sha256": "e83dc714466259464167924c3045afbe621722fa89d4fece682cafb1cd8ce939",
+          "files_to_replace": [
+            "main2.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 6611233
+        }
+      }
+    },
     {
       "version": "2.1.3",
       "release_date": "2026-11-05",
