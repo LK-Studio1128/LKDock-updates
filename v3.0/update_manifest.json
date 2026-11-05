@@ -1,6 +1,6 @@
 {
   "latest_version": "3.1.4",
-  "release_date": "2026-11-05",
+  "release_date": "2026-11-06",
   "min_version_required": "3.0.0",
   "changes": [
     "[RELEASE] 主程序版本升级至 x.1.4（3.1.4）。",
@@ -10,6 +10,16 @@
     "[优化] 确保报告走含图 PDF 路径。"
   ],
   "platforms": {
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.4/LKDock_v3.0_update_Linux.zip",
+      "file_size_mb": 9.0,
+      "sha256": "4c017cd10adfd26d394966b440941508ed43423a53f4fbcfc7588e9035a8c1bd",
+      "files_to_replace": [
+        "main3.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 9430423
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.4/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 8.7,
@@ -34,7 +44,7 @@
   "versions": [
     {
       "version": "3.1.4",
-      "release_date": "2026-11-05",
+      "release_date": "2026-11-06",
       "status": "stable",
       "changes": [
         "[RELEASE] 主程序版本升级至 x.1.4（3.1.4）。",
@@ -45,6 +55,16 @@
       ],
       "min_from_version": "3.0.0",
       "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.4/LKDock_v3.0_update_Linux.zip",
+          "file_size_mb": 9.0,
+          "sha256": "4c017cd10adfd26d394966b440941508ed43423a53f4fbcfc7588e9035a8c1bd",
+          "files_to_replace": [
+            "main3.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 9430423
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.4/LKDock_v3.0_update_Mac.zip",
           "file_size_mb": 8.7,

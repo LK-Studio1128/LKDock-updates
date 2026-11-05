@@ -1,6 +1,6 @@
 {
   "latest_version": "2.1.4",
-  "release_date": "2026-11-05",
+  "release_date": "2026-11-06",
   "min_version_required": "2.0.0",
   "changes": [
     "[RELEASE] 主程序版本升级至 x.1.4（2.1.4）。",
@@ -10,6 +10,16 @@
     "[优化] 报告图片按比例缩放、带图注，并确保走含图 PDF 路径。"
   ],
   "platforms": {
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.4/LKDock_v2.0_update_Linux.zip",
+      "file_size_mb": 5.6,
+      "sha256": "2ed75d269a80d116d7f3d8a4afb91ffa3def631d667fc335d27849bf9c46030c",
+      "files_to_replace": [
+        "main2.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 5878864
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.4/LKDock_v2.0_update_Mac.zip",
       "file_size_mb": 5.7,
@@ -34,7 +44,7 @@
   "versions": [
     {
       "version": "2.1.4",
-      "release_date": "2026-11-05",
+      "release_date": "2026-11-06",
       "status": "stable",
       "changes": [
         "[RELEASE] 主程序版本升级至 x.1.4（2.1.4）。",
@@ -45,6 +55,16 @@
       ],
       "min_from_version": "2.0.0",
       "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.4/LKDock_v2.0_update_Linux.zip",
+          "file_size_mb": 5.6,
+          "sha256": "2ed75d269a80d116d7f3d8a4afb91ffa3def631d667fc335d27849bf9c46030c",
+          "files_to_replace": [
+            "main2.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 5878864
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.4/LKDock_v2.0_update_Mac.zip",
           "file_size_mb": 5.7,
