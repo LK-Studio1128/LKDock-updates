@@ -1,9 +1,9 @@
 {
-  "latest_version": "4.1.4",
+  "latest_version": "4.1.5",
   "release_date": "2026-11-06",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.4（4.1.4）。",
+    "[RELEASE] 主程序版本升级至 x.1.5（4.1.5）。",
     "[修复] 报告插图改用“真实结果图集”：嵌入分析/虚拟筛选/PyMOL 实际生成的图片（优先级去重、最多 12 张、逐张图注、按比例缩放），缺图时用真实数据自动兜底；确保走含图 PDF 路径。",
     "[修复] PDF 中文字体：报告生成前注册可用的中文字体（打包字体优先、系统字体兜底），并过滤掉 fontconfig 误返回的非中文字体，避免报告中文乱码/方块。",
     "[修复] MM-PBSA 非标准配体识别：官方/外部体系常用非标准配体残基名（如 36X）。现在优先使用 LKDock 记录里的配体残基名；若只有一个紧凑的“非蛋白/非溶剂/非离子”索引组，则判定为配体 —— 避免旧逻辑回退到 Other/non-Protein（含水与离子）导致 gmx_MMPBSA 报 “does not support water/ions”。",
@@ -11,38 +11,64 @@
     "[优化] 报告Top能量条目按数值解析并排序后出图，避免文本型能量导致图缺失。"
   ],
   "platforms": {
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.4/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 22.0,
-      "sha256": "633b61c4bb4f7a1015cf79053c7370d3526aa356d3a0c27860ca9d4a5725b4e4",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 23027317
-    },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.4/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.5/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 21.0,
-      "sha256": "4272355710f74149f9d32db2ab95cdd1c24775da9d6bdf0fae94d421237d75a1",
+      "sha256": "2f43bb91e4bddce13f0f73f13ffc4038882a3469e64a881775a6a5250cc7ba4d",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 21987534
+      "size": 22018262
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.4/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.5/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 22.6,
-      "sha256": "8f7003f4c72d003ebcdd712ae50c9516a92eceee04414be1c3ceff7ad58073b4",
+      "sha256": "6882fdb29c4f229546feff8ce3969cf71a1a59ffa7c634e673f2b74cd61f91eb",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23705456
+      "size": 23744544
     }
   },
   "versions": [
+    {
+      "version": "4.1.5",
+      "release_date": "2026-11-06",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.5（4.1.5）。",
+        "[修复] 报告插图改用“真实结果图集”：嵌入分析/虚拟筛选/PyMOL 实际生成的图片（优先级去重、最多 12 张、逐张图注、按比例缩放），缺图时用真实数据自动兜底；确保走含图 PDF 路径。",
+        "[修复] PDF 中文字体：报告生成前注册可用的中文字体（打包字体优先、系统字体兜底），并过滤掉 fontconfig 误返回的非中文字体，避免报告中文乱码/方块。",
+        "[修复] MM-PBSA 非标准配体识别：官方/外部体系常用非标准配体残基名（如 36X）。现在优先使用 LKDock 记录里的配体残基名；若只有一个紧凑的“非蛋白/非溶剂/非离子”索引组，则判定为配体 —— 避免旧逻辑回退到 Other/non-Protein（含水与离子）导致 gmx_MMPBSA 报 “does not support water/ions”。",
+        "[修复] RDKit 数据资源提前绑定（RDDataDir 指向随包 Data）；支持直接选择复合物/配体文件做药效团。",
+        "[优化] 报告Top能量条目按数值解析并排序后出图，避免文本型能量导致图缺失。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.5/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 21.0,
+          "sha256": "2f43bb91e4bddce13f0f73f13ffc4038882a3469e64a881775a6a5250cc7ba4d",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 22018262
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.5/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 22.6,
+          "sha256": "6882fdb29c4f229546feff8ce3969cf71a1a59ffa7c634e673f2b74cd61f91eb",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 23744544
+        }
+      }
+    },
     {
       "version": "4.1.4",
       "release_date": "2026-11-06",

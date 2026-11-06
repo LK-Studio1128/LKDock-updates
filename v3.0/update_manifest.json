@@ -1,47 +1,72 @@
 {
-  "latest_version": "3.1.4",
+  "latest_version": "3.1.5",
   "release_date": "2026-11-06",
   "min_version_required": "3.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.4（3.1.4）。",
+    "[RELEASE] 主程序版本升级至 x.1.5（3.1.5）。",
     "[修复] 报告插图改用“真实结果图集”：嵌入分析/虚拟筛选/PyMOL 实际生成的图片，按优先级去重、最多 12 张并带图注；缺图时用真实数据自动兜底，图片按比例缩放不变形。",
     "[修复] RDKit 数据资源提前绑定：启动时把 RDDataDir 指向随包 Data，避免其它依赖 RDKit 数据文件的功能因路径未设而报错。",
     "[新增] 支持直接选择“蛋白-配体复合物/配体文件”做药效团：复用复合物药效团提取逻辑，直接给出特征点。",
     "[优化] 确保报告走含图 PDF 路径。"
   ],
   "platforms": {
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.4/LKDock_v3.0_update_Linux.zip",
-      "file_size_mb": 9.0,
-      "sha256": "4c017cd10adfd26d394966b440941508ed43423a53f4fbcfc7588e9035a8c1bd",
-      "files_to_replace": [
-        "main3.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 9430423
-    },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.4/LKDock_v3.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.5/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 8.7,
-      "sha256": "588182ed30e0a67b2e21105831663d1f5490ae86dd287c75b6f0b990d09262ec",
+      "sha256": "a204029467ea4ffe94dc2f34494e15747af7f0efb489ae22f5737e272a6a9c51",
       "files_to_replace": [
         "main3.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 9135734
+      "size": 9149000
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.4/LKDock_v3.0_update_Win.zip",
-      "file_size_mb": 9.5,
-      "sha256": "a040cb4548aad9b6fdbb4cddb44e6b83cb85b9e64c6bb91f654f9e4a81efc261",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.5/LKDock_v3.0_update_Win.zip",
+      "file_size_mb": 9.6,
+      "sha256": "d4af31c994d1e98dd61be743ac30606fcd35a405fb040e0264d0cc3f6cdaa86f",
       "files_to_replace": [
         "main3.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 10012166
+      "size": 10024800
     }
   },
   "versions": [
+    {
+      "version": "3.1.5",
+      "release_date": "2026-11-06",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.5（3.1.5）。",
+        "[修复] 报告插图改用“真实结果图集”：嵌入分析/虚拟筛选/PyMOL 实际生成的图片，按优先级去重、最多 12 张并带图注；缺图时用真实数据自动兜底，图片按比例缩放不变形。",
+        "[修复] RDKit 数据资源提前绑定：启动时把 RDDataDir 指向随包 Data，避免其它依赖 RDKit 数据文件的功能因路径未设而报错。",
+        "[新增] 支持直接选择“蛋白-配体复合物/配体文件”做药效团：复用复合物药效团提取逻辑，直接给出特征点。",
+        "[优化] 确保报告走含图 PDF 路径。"
+      ],
+      "min_from_version": "3.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.5/LKDock_v3.0_update_Mac.zip",
+          "file_size_mb": 8.7,
+          "sha256": "a204029467ea4ffe94dc2f34494e15747af7f0efb489ae22f5737e272a6a9c51",
+          "files_to_replace": [
+            "main3.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 9149000
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.5/LKDock_v3.0_update_Win.zip",
+          "file_size_mb": 9.6,
+          "sha256": "d4af31c994d1e98dd61be743ac30606fcd35a405fb040e0264d0cc3f6cdaa86f",
+          "files_to_replace": [
+            "main3.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 10024800
+        }
+      }
+    },
     {
       "version": "3.1.4",
       "release_date": "2026-11-06",
