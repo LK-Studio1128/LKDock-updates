@@ -11,6 +11,16 @@
     "[优化] 报告Top能量条目按数值解析并排序后出图，避免文本型能量导致图缺失。"
   ],
   "platforms": {
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.5/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 22.0,
+      "sha256": "06c63dad7d9ad49eb62d0bf8ebdffbd99503193e0b94db0d8da308dc2ab45432",
+      "files_to_replace": [
+        "main4.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 23059545
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.5/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 21.0,
@@ -47,6 +57,16 @@
       ],
       "min_from_version": "4.0.0",
       "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.5/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 22.0,
+          "sha256": "06c63dad7d9ad49eb62d0bf8ebdffbd99503193e0b94db0d8da308dc2ab45432",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 23059545
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.5/LKDock_v4.0_update_Mac.zip",
           "file_size_mb": 21.0,

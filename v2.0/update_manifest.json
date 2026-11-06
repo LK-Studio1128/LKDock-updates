@@ -10,6 +10,16 @@
     "[优化] 报告图片按比例缩放、带图注，并确保走含图 PDF 路径。"
   ],
   "platforms": {
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.5/LKDock_v2.0_update_Linux.zip",
+      "file_size_mb": 5.6,
+      "sha256": "5328bc442562f457e7a119b0320480eda9d856af8fd2335992940721d5b02beb",
+      "files_to_replace": [
+        "main2.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 5891669
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.5/LKDock_v2.0_update_Mac.zip",
       "file_size_mb": 5.8,
@@ -45,6 +55,16 @@
       ],
       "min_from_version": "2.0.0",
       "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.5/LKDock_v2.0_update_Linux.zip",
+          "file_size_mb": 5.6,
+          "sha256": "5328bc442562f457e7a119b0320480eda9d856af8fd2335992940721d5b02beb",
+          "files_to_replace": [
+            "main2.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 5891669
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.5/LKDock_v2.0_update_Mac.zip",
           "file_size_mb": 5.8,
