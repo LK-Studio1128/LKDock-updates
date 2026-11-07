@@ -1,38 +1,74 @@
 {
-  "latest_version": "4.1.6",
-  "release_date": "2026-11-07",
+  "latest_version": "4.1.7",
+  "release_date": "2026-11-08",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.6（4.1.6）。",
-    "[修复] 报告插图改用“真实结果图集”：嵌入分析/虚拟筛选/PyMOL 实际生成的图片（优先级去重、最多 12 张、逐张图注、按比例缩放），缺图时用真实数据自动兜底；确保走含图 PDF 路径。",
-    "[修复] PDF 中文字体：报告生成前注册可用的中文字体（打包字体优先、系统字体兜底），并过滤掉 fontconfig 误返回的非中文字体，避免报告中文乱码/方块。",
-    "[修复] MM-PBSA 非标准配体识别：官方/外部体系常用非标准配体残基名（如 36X）。现在优先使用 LKDock 记录里的配体残基名；若只有一个紧凑的“非蛋白/非溶剂/非离子”索引组，则判定为配体 —— 避免旧逻辑回退到 Other/non-Protein（含水与离子）导致 gmx_MMPBSA 报 “does not support water/ions”。",
-    "[修复] RDKit 数据资源提前绑定（RDDataDir 指向随包 Data）；支持直接选择复合物/配体文件做药效团。",
-    "[优化] 报告Top能量条目按数值解析并排序后出图，避免文本型能量导致图缺失。"
+    "[RELEASE] 主程序版本升级至 x.1.7（4.1.7）。",
+    "[修复] 蛋白-RNA/DNA 复合物 pdb2gmx：自动清理标准残基中的模板外重原子（如 ASP 543 OE1、ALA 316 CD1）；首次调用及所有修复/换力场/-missing 重试统一走模板外原子恢复路径。",
+    "[修复] 核酸端基与链方向判断：保留真实 5′ 磷酸，按链选择 5TER/5PHO，避免正常 5′→3′ RNA 被误判为反向链。",
+    "[修复] 原子重排同步迁移 TER，避免 TER 落入残基内部而拆坏核酸链。",
+    "[修复] 畸形端基 OXT 清理；核酸体系 EM 采用更保守的 0.005 nm 步长。",
+    "[修复] manifest 输入内容签名隔离：输入变化时清除新旧条目中的 simulation/topology/analysis；分析阶段拒绝自动关联其他 run（如 7Z2X 旧轨迹）。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.6/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.7/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 21.1,
-      "sha256": "7f0fee63592cebd857f7b8ffb131bb2e63ceb8245180857d411618b0a3be48e9",
+      "sha256": "4c5315671add63d2fa294b8cce14c10f08b301a982d688f7e2feb9feb55d2b52",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 22086967
+      "size": 22152433
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.6/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 22.7,
-      "sha256": "5cd094e4603c94ee1a70559d2e7b864e7760ce2189db9f60e52a8f2c7a060aab",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.7/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 22.8,
+      "sha256": "59706d8b841716e3f17a859c6ac403ada6ba1e8e1c8b248446899e55561d4b4c",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 23817215
+      "size": 23875109
     }
   },
   "versions": [
+    {
+      "version": "4.1.7",
+      "release_date": "2026-11-08",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.7（4.1.7）。",
+        "[修复] 蛋白-RNA/DNA 复合物 pdb2gmx：自动清理标准残基中的模板外重原子（如 ASP 543 OE1、ALA 316 CD1）；首次调用及所有修复/换力场/-missing 重试统一走模板外原子恢复路径。",
+        "[修复] 核酸端基与链方向判断：保留真实 5′ 磷酸，按链选择 5TER/5PHO，避免正常 5′→3′ RNA 被误判为反向链。",
+        "[修复] 原子重排同步迁移 TER，避免 TER 落入残基内部而拆坏核酸链。",
+        "[修复] 畸形端基 OXT 清理；核酸体系 EM 采用更保守的 0.005 nm 步长。",
+        "[修复] manifest 输入内容签名隔离：输入变化时清除新旧条目中的 simulation/topology/analysis；分析阶段拒绝自动关联其他 run（如 7Z2X 旧轨迹）。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.7/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 21.1,
+          "sha256": "4c5315671add63d2fa294b8cce14c10f08b301a982d688f7e2feb9feb55d2b52",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 22152433
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.7/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 22.8,
+          "sha256": "59706d8b841716e3f17a859c6ac403ada6ba1e8e1c8b248446899e55561d4b4c",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 23875109
+        }
+      }
+    },
     {
       "version": "4.1.6",
       "release_date": "2026-11-07",
