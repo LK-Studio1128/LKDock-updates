@@ -10,6 +10,16 @@
     "[优化] 确保报告走含图 PDF 路径。"
   ],
   "platforms": {
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.7/LKDock_v3.0_update_Linux.zip",
+      "file_size_mb": 9.0,
+      "sha256": "c3f19418b43cc5c3fb94bb48faeb0583acae7c68364fc7e25cef912b60e4242b",
+      "files_to_replace": [
+        "main3.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 9440936
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.7/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 8.7,
@@ -45,6 +55,16 @@
       ],
       "min_from_version": "3.0.0",
       "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.7/LKDock_v3.0_update_Linux.zip",
+          "file_size_mb": 9.0,
+          "sha256": "c3f19418b43cc5c3fb94bb48faeb0583acae7c68364fc7e25cef912b60e4242b",
+          "files_to_replace": [
+            "main3.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 9440936
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.7/LKDock_v3.0_update_Mac.zip",
           "file_size_mb": 8.7,

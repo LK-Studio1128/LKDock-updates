@@ -11,6 +11,16 @@
     "[修复] manifest 输入内容签名隔离：输入变化时清除新旧条目中的 simulation/topology/analysis；分析阶段拒绝自动关联其他 run（如 7Z2X 旧轨迹）。"
   ],
   "platforms": {
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.7/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 22.1,
+      "sha256": "f631c30671fd92d3be3c1a6332c18d969172b2edc223875aded779fc787dc4ba",
+      "files_to_replace": [
+        "main4.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 23201030
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.7/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 21.1,
@@ -47,6 +57,16 @@
       ],
       "min_from_version": "4.0.0",
       "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.7/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 22.1,
+          "sha256": "f631c30671fd92d3be3c1a6332c18d969172b2edc223875aded779fc787dc4ba",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 23201030
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.7/LKDock_v4.0_update_Mac.zip",
           "file_size_mb": 21.1,
