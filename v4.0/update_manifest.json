@@ -1,9 +1,9 @@
 {
-  "latest_version": "4.1.10",
-  "release_date": "2026-11-11",
+  "latest_version": "4.1.11",
+  "release_date": "2026-11-12",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.10（4.1.10）。",
+    "[RELEASE] 主程序版本升级至 x.1.11（4.1.11）。",
     "[修复] 蛋白-RNA/DNA 复合物 pdb2gmx：自动清理标准残基中的模板外重原子（如 ASP 543 OE1、ALA 316 CD1）；首次调用及所有修复/换力场/-missing 重试统一走模板外原子恢复路径。",
     "[修复] 核酸端基与链方向判断：保留真实 5′ 磷酸，按链选择 5TER/5PHO，避免正常 5′→3′ RNA 被误判为反向链。",
     "[修复] 原子重排同步迁移 TER，避免 TER 落入残基内部而拆坏核酸链。",
@@ -12,27 +12,83 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.10/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 21.4,
-      "sha256": "47c93481fe6ae7e6bd96c7b80bd9f5b80d1f0eb3ddba2e6f57812a13e925bcca",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.11/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 21.5,
+      "sha256": "3ba6cb05a95d96e2f7884e59c4e35b4a19e95a0048874f721ffd86cb9fb6ca99",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 22450988
+      "size": 22496391
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.10/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.11/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 23.1,
-      "sha256": "1ebcecb96fbf3190452f9ddec3bf2008685457da40e55cd95e35b1f165480c2b",
+      "sha256": "ea59405f5dc5909764b826ecd9668cbf80a13295b852078115e95f7f01281e9b",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 24187415
+      "size": 24229511
+    },
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.11/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 22.5,
+      "sha256": "111a95aa3311a6204c48078325dcdc03011470983f1d850b4d4d582187b365d4",
+      "files_to_replace": [
+        "main4.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 23563229
     }
   },
   "versions": [
+    {
+      "version": "4.1.11",
+      "release_date": "2026-11-12",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.11（4.1.11）。",
+        "[修复] 蛋白-RNA/DNA 复合物 pdb2gmx：自动清理标准残基中的模板外重原子（如 ASP 543 OE1、ALA 316 CD1）；首次调用及所有修复/换力场/-missing 重试统一走模板外原子恢复路径。",
+        "[修复] 核酸端基与链方向判断：保留真实 5′ 磷酸，按链选择 5TER/5PHO，避免正常 5′→3′ RNA 被误判为反向链。",
+        "[修复] 原子重排同步迁移 TER，避免 TER 落入残基内部而拆坏核酸链。",
+        "[修复] 畸形端基 OXT 清理；核酸体系 EM 采用更保守的 0.005 nm 步长。",
+        "[修复] manifest 输入内容签名隔离：输入变化时清除新旧条目中的 simulation/topology/analysis；分析阶段拒绝自动关联其他 run（如 7Z2X 旧轨迹）。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.11/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 21.5,
+          "sha256": "3ba6cb05a95d96e2f7884e59c4e35b4a19e95a0048874f721ffd86cb9fb6ca99",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 22496391
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.11/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 23.1,
+          "sha256": "ea59405f5dc5909764b826ecd9668cbf80a13295b852078115e95f7f01281e9b",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 24229511
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.11/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 22.5,
+          "sha256": "111a95aa3311a6204c48078325dcdc03011470983f1d850b4d4d582187b365d4",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 23563229
+        }
+      }
+    },
     {
       "version": "4.1.10",
       "release_date": "2026-11-11",
