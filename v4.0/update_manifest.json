@@ -1,9 +1,9 @@
 {
-  "latest_version": "4.1.15",
+  "latest_version": "4.1.16",
   "release_date": "2026-11-13",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.15（4.1.15）。",
+    "[RELEASE] 主程序版本升级至 x.1.16（4.1.16）。",
     "[修复] 蛋白-RNA/DNA 复合物 pdb2gmx：自动清理标准残基中的模板外重原子（如 ASP 543 OE1、ALA 316 CD1）；首次调用及所有修复/换力场/-missing 重试统一走模板外原子恢复路径。",
     "[修复] 核酸端基与链方向判断：保留真实 5′ 磷酸，按链选择 5TER/5PHO，避免正常 5′→3′ RNA 被误判为反向链。",
     "[修复] 原子重排同步迁移 TER，避免 TER 落入残基内部而拆坏核酸链。",
@@ -12,27 +12,63 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.15/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.16/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 21.6,
-      "sha256": "82ee77aeb608e7b35854d7c555c67e39d0ecfe17ee295606c37945134a31d2ee",
+      "sha256": "ced8a990869483eabcd4d9c47c989dd128a81ef5be506c2aea6f7ac95aff2b00",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 22647383
+      "size": 22647377
     },
-    "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.15/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 23.3,
-      "sha256": "0c90961bca80a418cfc9ae6e569aeccb55b64ee0d208913d19a386e02aa6da9d",
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.16/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 22.6,
+      "sha256": "54befe7c6c1960995b0c5b736a4c0c106fc23d6bfc2e7cb49950be2ee61fd031",
       "files_to_replace": [
-        "main4.cp311-win_amd64.pyd"
+        "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 24386814
+      "size": 23725145
     }
   },
   "versions": [
+    {
+      "version": "4.1.16",
+      "release_date": "2026-11-13",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.16（4.1.16）。",
+        "[修复] 蛋白-RNA/DNA 复合物 pdb2gmx：自动清理标准残基中的模板外重原子（如 ASP 543 OE1、ALA 316 CD1）；首次调用及所有修复/换力场/-missing 重试统一走模板外原子恢复路径。",
+        "[修复] 核酸端基与链方向判断：保留真实 5′ 磷酸，按链选择 5TER/5PHO，避免正常 5′→3′ RNA 被误判为反向链。",
+        "[修复] 原子重排同步迁移 TER，避免 TER 落入残基内部而拆坏核酸链。",
+        "[修复] 畸形端基 OXT 清理；核酸体系 EM 采用更保守的 0.005 nm 步长。",
+        "[修复] manifest 输入内容签名隔离：输入变化时清除新旧条目中的 simulation/topology/analysis；分析阶段拒绝自动关联其他 run（如 7Z2X 旧轨迹）。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.16/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 21.6,
+          "sha256": "ced8a990869483eabcd4d9c47c989dd128a81ef5be506c2aea6f7ac95aff2b00",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 22647377
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.16/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 22.6,
+          "sha256": "54befe7c6c1960995b0c5b736a4c0c106fc23d6bfc2e7cb49950be2ee61fd031",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 23725145
+        }
+      }
+    },
     {
       "version": "4.1.15",
       "release_date": "2026-11-13",

@@ -1,9 +1,9 @@
 {
-  "latest_version": "1.1.7",
-  "release_date": "2026-11-08",
+  "latest_version": "1.1.16",
+  "release_date": "2026-11-13",
   "min_version_required": "1.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.7（1.1.7）。",
+    "[RELEASE] 主程序版本升级至 x.1.16（1.1.16）。",
     "[修复] 报告插图改用“真实结果图集”：PDF/报告会嵌入本次分析、虚拟筛选、PyMOL 实际生成的图片（按固定优先级去重、最多 12 张，逐张带图注），不再只有一张热图。",
     "[修复] 缺失分析图时自动补图：若 LigPlus 或可选分析图未生成，会用真实数据生成兜底图，避免报告出现空白占位。",
     "[修复] 报告图片按比例缩放嵌入，长宽比不再被拉伸变形。",
@@ -11,27 +11,17 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.1.7/LKDock_v1.0_update_Mac.zip",
-      "file_size_mb": 2.3,
-      "sha256": "fcc097478fdcdcedf34950d12eb9ae40e6d3c0df14f24868627469a8605136ae",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.1.16/LKDock_v1.0_update_Mac.zip",
+      "file_size_mb": 2.4,
+      "sha256": "5d37f309feaeef141b7d35cb1b7a1895ae09524c809bc4e1e2ad24062919cb38",
       "files_to_replace": [
         "main1.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 2410753
-    },
-    "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.1.7/LKDock_v1.0_update_Win.zip",
-      "file_size_mb": 2.8,
-      "sha256": "9bb26edc1fa26e902b183cdced3ed82fa029a780717c26db131e555942c7df9c",
-      "files_to_replace": [
-        "main1.cp311-win_amd64.pyd"
-      ],
-      "python_version": "3.11",
-      "size": 2987793
+      "size": 2471798
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.1.7/LKDock_v1.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.1.16/LKDock_v1.0_update_Linux.zip",
       "file_size_mb": 0,
       "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
       "files_to_replace": [
@@ -41,6 +31,40 @@
     }
   },
   "versions": [
+    {
+      "version": "1.1.16",
+      "release_date": "2026-11-13",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.16（1.1.16）。",
+        "[修复] 报告插图改用“真实结果图集”：PDF/报告会嵌入本次分析、虚拟筛选、PyMOL 实际生成的图片（按固定优先级去重、最多 12 张，逐张带图注），不再只有一张热图。",
+        "[修复] 缺失分析图时自动补图：若 LigPlus 或可选分析图未生成，会用真实数据生成兜底图，避免报告出现空白占位。",
+        "[修复] 报告图片按比例缩放嵌入，长宽比不再被拉伸变形。",
+        "[优化] 修正报告“活跃的定义”必须走含图 PDF 路径（历史重复定义仅作保留），确保用户拿到的 PDF 一定带图。"
+      ],
+      "min_from_version": "1.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.1.16/LKDock_v1.0_update_Mac.zip",
+          "file_size_mb": 2.4,
+          "sha256": "5d37f309feaeef141b7d35cb1b7a1895ae09524c809bc4e1e2ad24062919cb38",
+          "files_to_replace": [
+            "main1.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 2471798
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v1.1.16/LKDock_v1.0_update_Linux.zip",
+          "file_size_mb": 0,
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "files_to_replace": [
+            "main1"
+          ],
+          "python_version": "3.11"
+        }
+      }
+    },
     {
       "version": "1.1.7",
       "release_date": "2026-11-08",
