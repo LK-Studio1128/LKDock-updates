@@ -1,47 +1,123 @@
 {
-  "latest_version": "2.1.16",
-  "release_date": "2026-11-13",
+  "latest_version": "2.1.18",
+  "release_date": "2026-11-15",
   "min_version_required": "2.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.16（2.1.16）。",
-    "[修复] 报告插图改用“真实结果图集”：嵌入分析/虚拟筛选/PyMOL 实际生成的图片，按优先级去重、最多 12 张并带图注，不再只有热图；缺图时用真实数据自动兜底。",
-    "[修复] RDKit 数据资源提前绑定：启动时即把 RDDataDir 指向随包 Data 目录，药效团之外其它用到 RDKit 数据文件（如特征定义）的功能不再因路径未设而失败。",
-    "[新增] 支持直接选择“蛋白-配体复合物/配体文件”做药效团：复用已有的复合物药效团提取逻辑，直接给出可展示与匹配的特征点。",
-    "[优化] 报告图片按比例缩放、带图注，并确保走含图 PDF 路径。"
+    "[RELEASE] 主程序版本升级至 x.1.18（2.1.18）。",
+    "[修复] 学术报告嵌入本次生成的真实 PyMOL 三维结合模式图，并按分析图、LigPlus 2D、PyMOL style/coloring 分类限额取图，避免二维图占满上限；HTML 图片改为内嵌数据。",
+    "[修复] 虚拟筛选统一导出 screening_all_molecules.csv、screening_results.csv、molecules_statistics.csv，保留规则/药效团拒绝原因；关闭评分及选择 Excel 时仍正确保存 CSV。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.16/LKDock_v2.0_update_Mac.zip",
-      "file_size_mb": 5.8,
-      "sha256": "1ad8139a91c9ff8ab53faf84735af94816cfde08f3e9f674805b7e7f51fc505d",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.18/LKDock_v2.0_update_Mac.zip",
+      "file_size_mb": 5.9,
+      "sha256": "17adaaad455bffa5a82941dcf8b4757c6981cf1765cbfeafa539695fd04f2275",
       "files_to_replace": [
         "main2.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 6093775
+      "size": 6148739
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.16/LKDock_v2.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.18/LKDock_v2.0_update_Win.zip",
       "file_size_mb": 6.4,
-      "sha256": "b150a8bca37952935eca97e392fe93f06ad1e27e67f830838e6c7aa4adad9984",
+      "sha256": "8c11cbe6c5ef8c0c5f706c594fada28d82ff3d8d381c4be7b162528a7c18f619",
       "files_to_replace": [
         "main2.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 6687200
+      "size": 6742780
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.16/LKDock_v2.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.18/LKDock_v2.0_update_Linux.zip",
       "file_size_mb": 5.7,
-      "sha256": "d842d4ce6446e122844059efa3bd78866bdc7fce0e3c59b8f46dba3c629ac77b",
+      "sha256": "174e911ac3cfd33d0a35175870f640a379b26113b118d3f0a38179164e881f55",
       "files_to_replace": [
         "main2.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 5956188
+      "size": 6008554
     }
   },
   "versions": [
+    {
+      "version": "2.1.18",
+      "release_date": "2026-11-15",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.18（2.1.18）。",
+        "[修复] 学术报告嵌入本次生成的真实 PyMOL 三维结合模式图，并按分析图、LigPlus 2D、PyMOL style/coloring 分类限额取图，避免二维图占满上限；HTML 图片改为内嵌数据。",
+        "[修复] 虚拟筛选统一导出 screening_all_molecules.csv、screening_results.csv、molecules_statistics.csv，保留规则/药效团拒绝原因；关闭评分及选择 Excel 时仍正确保存 CSV。"
+      ],
+      "min_from_version": "2.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.18/LKDock_v2.0_update_Mac.zip",
+          "file_size_mb": 5.9,
+          "sha256": "17adaaad455bffa5a82941dcf8b4757c6981cf1765cbfeafa539695fd04f2275",
+          "files_to_replace": [
+            "main2.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 6148739
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.18/LKDock_v2.0_update_Win.zip",
+          "file_size_mb": 6.4,
+          "sha256": "8c11cbe6c5ef8c0c5f706c594fada28d82ff3d8d381c4be7b162528a7c18f619",
+          "files_to_replace": [
+            "main2.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 6742780
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.18/LKDock_v2.0_update_Linux.zip",
+          "file_size_mb": 5.7,
+          "sha256": "174e911ac3cfd33d0a35175870f640a379b26113b118d3f0a38179164e881f55",
+          "files_to_replace": [
+            "main2.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 6008554
+        }
+      }
+    },
+    {
+      "version": "2.1.17",
+      "release_date": "2026-11-14",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.17（2.1.17）。",
+        "[修复] 报告插图改用“真实结果图集”：嵌入分析/虚拟筛选/PyMOL 实际生成的图片，按优先级去重、最多 12 张并带图注，不再只有热图；缺图时用真实数据自动兜底。",
+        "[修复] RDKit 数据资源提前绑定：启动时即把 RDDataDir 指向随包 Data 目录，药效团之外其它用到 RDKit 数据文件（如特征定义）的功能不再因路径未设而失败。",
+        "[新增] 支持直接选择“蛋白-配体复合物/配体文件”做药效团：复用已有的复合物药效团提取逻辑，直接给出可展示与匹配的特征点。",
+        "[优化] 报告图片按比例缩放、带图注，并确保走含图 PDF 路径。"
+      ],
+      "min_from_version": "2.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.17/LKDock_v2.0_update_Mac.zip",
+          "file_size_mb": 5.8,
+          "sha256": "b162002d39e3cffd86bc8779ba399fd97e4cd23b83c5a5dbf69c3eaec342a831",
+          "files_to_replace": [
+            "main2.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 6130490
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.17/LKDock_v2.0_update_Win.zip",
+          "file_size_mb": 6.4,
+          "sha256": "082739f821be4e6cfe9870be7470bb6d43ec32b27216b5a7b5a394b796fd9b31",
+          "files_to_replace": [
+            "main2.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 6721484
+        }
+      }
+    },
     {
       "version": "2.1.16",
       "release_date": "2026-11-13",
