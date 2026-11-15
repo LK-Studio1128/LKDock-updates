@@ -1,36 +1,70 @@
 {
-  "latest_version": "4.1.19",
+  "latest_version": "4.1.20",
   "release_date": "2026-11-15",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.19（4.1.19）。",
-    "[修复] 统一 UTF-8 输入输出与 open() 默认编码，修复中文 Windows（cp936）和 Linux C/POSIX locale 下日志、报告及配置文件读写乱码与 UnicodeEncodeError。",
-    "[修复] 修正 PackMol-MemGen 的 AMBERHOME 根目录解析，提升膜体系参数化环境定位稳定性。",
-    "[优化] 同步更新内置虚拟筛选 lite worker，保持主程序与 worker 版本一致。"
+    "[RELEASE] 主程序版本升级至 x.1.20（4.1.20）。",
+    "[修复] 学术报告 PDF/HTML 改为全量嵌入本次实际生成的分析图与 PyMOL 三维图，移除固定图片数量限额，避免报告漏图。",
+    "[修复] 新增图片有效性校验：自动跳过无法解码、全透明、全白或全黑的空白图，并在图片清单中记录 HTML 内嵌状态与跳过原因。",
+    "[修复] PDF 报告兼容非 Web 格式图片，必要时自动转成 PNG 后再嵌入，避免 ReportLab 插图失败。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.19/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.20/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 21.7,
-      "sha256": "517074d13940abacb12ce39c67f4dcbe349435830f0d57d303e0ebf48aa73c77",
+      "sha256": "cdf31946bfbb77ab9485f9630a66666590fd9d9abf57eb2f23e75dad74ccb8a3",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 22772684
+      "size": 22799962
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.19/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.20/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 23.4,
-      "sha256": "7e036532d1e558e4cd60e6e675722afbf74144e3e2dcad226acedb035f54e3a1",
+      "sha256": "8480a3b393ebd70b18eb364b216a9f6d8885ebbb3528d94d53cb9c82a48c9933",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 24521197
+      "size": 24543308
     }
   },
   "versions": [
+    {
+      "version": "4.1.20",
+      "release_date": "2026-11-15",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.20（4.1.20）。",
+        "[修复] 学术报告 PDF/HTML 改为全量嵌入本次实际生成的分析图与 PyMOL 三维图，移除固定图片数量限额，避免报告漏图。",
+        "[修复] 新增图片有效性校验：自动跳过无法解码、全透明、全白或全黑的空白图，并在图片清单中记录 HTML 内嵌状态与跳过原因。",
+        "[修复] PDF 报告兼容非 Web 格式图片，必要时自动转成 PNG 后再嵌入，避免 ReportLab 插图失败。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.20/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 21.7,
+          "sha256": "cdf31946bfbb77ab9485f9630a66666590fd9d9abf57eb2f23e75dad74ccb8a3",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 22799962
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.20/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 23.4,
+          "sha256": "8480a3b393ebd70b18eb364b216a9f6d8885ebbb3528d94d53cb9c82a48c9933",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 24543308
+        }
+      }
+    },
     {
       "version": "4.1.19",
       "release_date": "2026-11-15",
