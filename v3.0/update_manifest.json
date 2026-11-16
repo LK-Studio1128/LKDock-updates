@@ -1,6 +1,6 @@
 {
   "latest_version": "3.1.23",
-  "release_date": "2026-11-16",
+  "release_date": "2026-11-17",
   "min_version_required": "3.0.0",
   "changes": [
     "[RELEASE] 主程序版本升级至 x.1.23（3.1.23）。",
@@ -9,6 +9,16 @@
     "[新增] 报告同步生成可视化全量归档 ZIP 与图片清单，便于追溯实际生成的全部图片。"
   ],
   "platforms": {
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.23/LKDock_v3.0_update_Linux.zip",
+      "file_size_mb": 9.2,
+      "sha256": "2cd8805403b562e7077e388f27464b38a4d2bd9f94208e2fca91220119a51074",
+      "files_to_replace": [
+        "main3.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 9661719
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.23/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 8.9,
@@ -33,7 +43,7 @@
   "versions": [
     {
       "version": "3.1.23",
-      "release_date": "2026-11-16",
+      "release_date": "2026-11-17",
       "status": "stable",
       "changes": [
         "[RELEASE] 主程序版本升级至 x.1.23（3.1.23）。",
@@ -43,6 +53,16 @@
       ],
       "min_from_version": "3.0.0",
       "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.23/LKDock_v3.0_update_Linux.zip",
+          "file_size_mb": 9.2,
+          "sha256": "2cd8805403b562e7077e388f27464b38a4d2bd9f94208e2fca91220119a51074",
+          "files_to_replace": [
+            "main3.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 9661719
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.23/LKDock_v3.0_update_Mac.zip",
           "file_size_mb": 8.9,

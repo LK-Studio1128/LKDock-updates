@@ -1,6 +1,6 @@
 {
   "latest_version": "4.1.23",
-  "release_date": "2026-11-16",
+  "release_date": "2026-11-17",
   "min_version_required": "4.0.0",
   "changes": [
     "[RELEASE] 主程序版本升级至 x.1.23（4.1.23）。",
@@ -10,6 +10,16 @@
     "[优化] 报告 2D/PyMOL/PPI 图片全量嵌入，新增 TIFF 等非 Web 格式转换、坏图检测和可视化全量归档。"
   ],
   "platforms": {
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.23/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 23.2,
+      "sha256": "1e3ce8c233269ba108e796fe5cbb020b3117febba577931db12033595936cef8",
+      "files_to_replace": [
+        "main4.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 24357908
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.23/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 22.2,
@@ -34,7 +44,7 @@
   "versions": [
     {
       "version": "4.1.23",
-      "release_date": "2026-11-16",
+      "release_date": "2026-11-17",
       "status": "stable",
       "changes": [
         "[RELEASE] 主程序版本升级至 x.1.23（4.1.23）。",
@@ -45,6 +55,16 @@
       ],
       "min_from_version": "4.0.0",
       "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.23/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 23.2,
+          "sha256": "1e3ce8c233269ba108e796fe5cbb020b3117febba577931db12033595936cef8",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 24357908
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.23/LKDock_v4.0_update_Mac.zip",
           "file_size_mb": 22.2,
