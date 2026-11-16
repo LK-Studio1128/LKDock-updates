@@ -1,36 +1,72 @@
 {
-  "latest_version": "4.1.21",
-  "release_date": "2026-11-15",
+  "latest_version": "4.1.22",
+  "release_date": "2026-11-16",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.21（4.1.21）。",
-    "[修复] 2D 相互作用图目录增加 2D_interaction / 2D / 2D可视化 兼容回退；报告改为全量嵌入实际生成的 2D 图，取消前 12 张限制。",
-    "[修复] PPI PDF 报告改为收录当前目录全部可视化图片，取消前 10 张限制；无法读取的图片会跳过并记录，避免整段报告插图失败。",
-    "[优化] 统一 PDF/HTML 图片完整性与异常处理，减少报告图片漏嵌、空白图和路径不一致问题。"
+    "[RELEASE] 主程序版本升级至 x.1.22（4.1.22）。",
+    "[新增] MD 组分分析支持 auto/按链/合并模式，新增逐组分 RMSD、Rg 曲线及自定义图例颜色，并修复用户取消勾选的 RMSD 类型被自动补回的问题。",
+    "[新增] Pocket-local MD 支持按配体空间邻域真实截取蛋白，可配置邻域半径、残基数量、侧翼残基和强制保留残基，并在裁剪失败时严格中止。",
+    "[修复] EM 收敛判定改为读取最后一次 Maximum force，避免重跑日志叠加导致成功结果被误判为未收敛。",
+    "[修复] 正确识别 GROMACS 多 [settles] 拓扑声明冲突，避免错误进入 LINCS/SETTLE 坏接触或 CUDA 回退流程。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.21/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 21.7,
-      "sha256": "c2f6e287d7bca89d92cc4032d392a782900d17cb18f868a913fcc820d97489e4",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.22/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 22.1,
+      "sha256": "ca5d0b62404929b03b15bd792221792f2e590fdfd6cf0f222864544dbec514cc",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 22799313
+      "size": 23122351
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.21/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 23.4,
-      "sha256": "b63c42e99692471144ccf5c000f5b5531567a7a74c7af3d3fbd556e1abacbeeb",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.22/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 23.8,
+      "sha256": "2aa933ff8f5a1944bd8007dd35bfc4c0cd2d91bd3b9dcb3a65bd223e80972fe2",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 24549057
+      "size": 24935806
     }
   },
   "versions": [
+    {
+      "version": "4.1.22",
+      "release_date": "2026-11-16",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.22（4.1.22）。",
+        "[新增] MD 组分分析支持 auto/按链/合并模式，新增逐组分 RMSD、Rg 曲线及自定义图例颜色，并修复用户取消勾选的 RMSD 类型被自动补回的问题。",
+        "[新增] Pocket-local MD 支持按配体空间邻域真实截取蛋白，可配置邻域半径、残基数量、侧翼残基和强制保留残基，并在裁剪失败时严格中止。",
+        "[修复] EM 收敛判定改为读取最后一次 Maximum force，避免重跑日志叠加导致成功结果被误判为未收敛。",
+        "[修复] 正确识别 GROMACS 多 [settles] 拓扑声明冲突，避免错误进入 LINCS/SETTLE 坏接触或 CUDA 回退流程。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.22/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 22.1,
+          "sha256": "ca5d0b62404929b03b15bd792221792f2e590fdfd6cf0f222864544dbec514cc",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 23122351
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.22/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 23.8,
+          "sha256": "2aa933ff8f5a1944bd8007dd35bfc4c0cd2d91bd3b9dcb3a65bd223e80972fe2",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 24935806
+        }
+      }
+    },
     {
       "version": "4.1.21",
       "release_date": "2026-11-15",
