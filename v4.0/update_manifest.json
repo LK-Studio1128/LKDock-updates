@@ -1,37 +1,72 @@
 {
-  "latest_version": "4.1.22",
+  "latest_version": "4.1.23",
   "release_date": "2026-11-16",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.22（4.1.22）。",
-    "[新增] MD 组分分析支持 auto/按链/合并模式，新增逐组分 RMSD、Rg 曲线及自定义图例颜色，并修复用户取消勾选的 RMSD 类型被自动补回的问题。",
-    "[新增] Pocket-local MD 支持按配体空间邻域真实截取蛋白，可配置邻域半径、残基数量、侧翼残基和强制保留残基，并在裁剪失败时严格中止。",
-    "[修复] EM 收敛判定改为读取最后一次 Maximum force，避免重跑日志叠加导致成功结果被误判为未收敛。",
-    "[修复] 正确识别 GROMACS 多 [settles] 拓扑声明冲突，避免错误进入 LINCS/SETTLE 坏接触或 CUDA 回退流程。"
+    "[RELEASE] 主程序版本升级至 x.1.23（4.1.23）。",
+    "[修复] 纯小分子 A/B 分别参数化后强制增加初始安全间距，避免重原子重叠导致 EM 局部极小和后续 LINCS 爆炸。",
+    "[修复] 离子液体自动检测改为按显式正形式电荷判断，避免普通含氮中性配体被误判为有机阳离子。",
+    "[修复] 3+ 组分或多拷贝小分子体系自动归类为 small-molecule-mixture，并强制走支持多组分的 GROMACS 构建路径。",
+    "[优化] 报告 2D/PyMOL/PPI 图片全量嵌入，新增 TIFF 等非 Web 格式转换、坏图检测和可视化全量归档。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.22/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 22.1,
-      "sha256": "ca5d0b62404929b03b15bd792221792f2e590fdfd6cf0f222864544dbec514cc",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.23/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 22.2,
+      "sha256": "e05a6dfe36870a7bd57e4a79c2d83c8144cd4d1d7a854b530c96f34d73a42b18",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 23122351
+      "size": 23232332
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.22/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 23.8,
-      "sha256": "2aa933ff8f5a1944bd8007dd35bfc4c0cd2d91bd3b9dcb3a65bd223e80972fe2",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.23/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 23.9,
+      "sha256": "2eab6605c698f696a0cf0b34ab73e040eee98537cfdec5c4e9f7defcb121e07b",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 24935806
+      "size": 25038252
     }
   },
   "versions": [
+    {
+      "version": "4.1.23",
+      "release_date": "2026-11-16",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.23（4.1.23）。",
+        "[修复] 纯小分子 A/B 分别参数化后强制增加初始安全间距，避免重原子重叠导致 EM 局部极小和后续 LINCS 爆炸。",
+        "[修复] 离子液体自动检测改为按显式正形式电荷判断，避免普通含氮中性配体被误判为有机阳离子。",
+        "[修复] 3+ 组分或多拷贝小分子体系自动归类为 small-molecule-mixture，并强制走支持多组分的 GROMACS 构建路径。",
+        "[优化] 报告 2D/PyMOL/PPI 图片全量嵌入，新增 TIFF 等非 Web 格式转换、坏图检测和可视化全量归档。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.23/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 22.2,
+          "sha256": "e05a6dfe36870a7bd57e4a79c2d83c8144cd4d1d7a854b530c96f34d73a42b18",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 23232332
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.23/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 23.9,
+          "sha256": "2eab6605c698f696a0cf0b34ab73e040eee98537cfdec5c4e9f7defcb121e07b",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 25038252
+        }
+      }
+    },
     {
       "version": "4.1.22",
       "release_date": "2026-11-16",

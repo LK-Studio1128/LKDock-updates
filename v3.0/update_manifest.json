@@ -1,45 +1,70 @@
 {
-  "latest_version": "3.1.18",
-  "release_date": "2026-11-15",
+  "latest_version": "3.1.23",
+  "release_date": "2026-11-16",
   "min_version_required": "3.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.18（3.1.18）。",
-    "[修复] 学术报告嵌入本次生成的真实 PyMOL 三维结合模式图，并按分析图、LigPlus 2D、PyMOL style/coloring 分类限额取图，避免二维图占满上限；HTML 图片改为内嵌数据。",
-    "[修复] 虚拟筛选统一导出 screening_all_molecules.csv、screening_results.csv、molecules_statistics.csv，保留规则/药效团拒绝原因；关闭评分及选择 Excel 时仍正确保存 CSV。"
+    "[RELEASE] 主程序版本升级至 x.1.23（3.1.23）。",
+    "[修复] 学术报告 2D 相互作用图增加 2D_interaction / 2D / 2D可视化 目录兼容，并改为全量嵌入实际生成的 2D 图。",
+    "[修复] PyMOL、PPI 与分析图改为全量嵌入 PDF/HTML，取消固定数量限额；新增坏图、空白图检测和内嵌状态记录。",
+    "[新增] 报告同步生成可视化全量归档 ZIP 与图片清单，便于追溯实际生成的全部图片。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.18/LKDock_v3.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.23/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 8.9,
-      "sha256": "7c84023b16a40917a52d51bf5af0a0d46c5c9d3d077b9a55821e99ca20e15d1e",
+      "sha256": "cc7faa23e1662fd2566da3da462c0db33da0cfaa12744ab668c1bfbad0253656",
       "files_to_replace": [
         "main3.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 9299805
+      "size": 9337907
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.18/LKDock_v3.0_update_Win.zip",
-      "file_size_mb": 9.7,
-      "sha256": "63e96ec2a23cce85e87792a919761eb57b283fc3b38a400843e03936e8caf205",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.23/LKDock_v3.0_update_Win.zip",
+      "file_size_mb": 9.8,
+      "sha256": "db74343f158195cfd35ab3b099e7eb86369ca5589e6ef1ef9fdc95bfdfc67210",
       "files_to_replace": [
         "main3.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 10195582
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.18/LKDock_v3.0_update_Linux.zip",
-      "file_size_mb": 9.2,
-      "sha256": "1d89ecdb942ce21dd4cd47df48d9176bd0fd06ed56d5d17d7d227be24dd88014",
-      "files_to_replace": [
-        "main3.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 9604627
+      "size": 10257156
     }
   },
   "versions": [
+    {
+      "version": "3.1.23",
+      "release_date": "2026-11-16",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.23（3.1.23）。",
+        "[修复] 学术报告 2D 相互作用图增加 2D_interaction / 2D / 2D可视化 目录兼容，并改为全量嵌入实际生成的 2D 图。",
+        "[修复] PyMOL、PPI 与分析图改为全量嵌入 PDF/HTML，取消固定数量限额；新增坏图、空白图检测和内嵌状态记录。",
+        "[新增] 报告同步生成可视化全量归档 ZIP 与图片清单，便于追溯实际生成的全部图片。"
+      ],
+      "min_from_version": "3.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.23/LKDock_v3.0_update_Mac.zip",
+          "file_size_mb": 8.9,
+          "sha256": "cc7faa23e1662fd2566da3da462c0db33da0cfaa12744ab668c1bfbad0253656",
+          "files_to_replace": [
+            "main3.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 9337907
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.23/LKDock_v3.0_update_Win.zip",
+          "file_size_mb": 9.8,
+          "sha256": "db74343f158195cfd35ab3b099e7eb86369ca5589e6ef1ef9fdc95bfdfc67210",
+          "files_to_replace": [
+            "main3.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 10257156
+        }
+      }
+    },
     {
       "version": "3.1.18",
       "release_date": "2026-11-15",
