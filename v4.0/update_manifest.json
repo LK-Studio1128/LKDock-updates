@@ -1,36 +1,70 @@
 {
-  "latest_version": "4.1.24",
+  "latest_version": "4.1.25",
   "release_date": "2026-11-17",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.24（4.1.24）。",
-    "[修复] 新增受体金属完整性恢复与元素规范化，避免 PDBQT→PDB 转换丢失金属或把蛋白 CA 误判为钙。",
-    "[修复] MD 轨迹 PBC 连续性与分组还原、配体/多链 RMSD 和残基 RMSF 标注增强，减少盒长跳变和方波伪影。",
-    "[优化] 报告 2D/PyMOL/PPI/分析图全量嵌入并生成可视化归档；继续保留小分子混合体系和配体初始间距修复。"
+    "[RELEASE] 主程序版本升级至 x.1.25（4.1.25）。",
+    "[新增] MD 界面分析新增接触对逐帧距离、占有率、残基-残基配对统计、接触矩阵热图及 CSV 汇总。",
+    "[新增] 增强盐桥、主链/侧链二面角、PCA 投影和聚类分配分析，补充逐残基统计、时间序列图与可追溯 CSV。",
+    "[优化] MD 分析图统一使用链/残基标签和稳定配色，继续保留 PBC 连续性、RMSD/RMSF、受体金属恢复及报告可视化归档修复。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.24/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 22.3,
-      "sha256": "f0f02ab612fcd997b468d1fcdd826f09172dc92c126f3d948405f8b44d709498",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.25/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 22.5,
+      "sha256": "d4976c104821e01cac2499117147ecda7058cb4915e5c69f210db05f26c14fea",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 23354645
+      "size": 23564816
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.24/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 24.0,
-      "sha256": "0c9158d627deb343ade10b8e9b85cfa339865a6f5a6a76192f0d8bfc8e8543dd",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.25/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 24.2,
+      "sha256": "e7d2be5c206d48ded99a2a2f14bfb57986b883838ee353a1d5546c68c240a696",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 25165538
+      "size": 25401466
     }
   },
   "versions": [
+    {
+      "version": "4.1.25",
+      "release_date": "2026-11-17",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.25（4.1.25）。",
+        "[新增] MD 界面分析新增接触对逐帧距离、占有率、残基-残基配对统计、接触矩阵热图及 CSV 汇总。",
+        "[新增] 增强盐桥、主链/侧链二面角、PCA 投影和聚类分配分析，补充逐残基统计、时间序列图与可追溯 CSV。",
+        "[优化] MD 分析图统一使用链/残基标签和稳定配色，继续保留 PBC 连续性、RMSD/RMSF、受体金属恢复及报告可视化归档修复。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.25/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 22.5,
+          "sha256": "d4976c104821e01cac2499117147ecda7058cb4915e5c69f210db05f26c14fea",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 23564816
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.25/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 24.2,
+          "sha256": "e7d2be5c206d48ded99a2a2f14bfb57986b883838ee353a1d5546c68c240a696",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 25401466
+        }
+      }
+    },
     {
       "version": "4.1.24",
       "release_date": "2026-11-17",
