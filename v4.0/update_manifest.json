@@ -9,6 +9,16 @@
     "[优化] MD 分析图统一使用链/残基标签和稳定配色，继续保留 PBC 连续性、RMSD/RMSF、受体金属恢复及报告可视化归档修复。"
   ],
   "platforms": {
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.25/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 23.5,
+      "sha256": "7273a76590e2126b00f43a5b2444fb9ae4f4c67e68b7a0f7edacf93a8c7f213b",
+      "files_to_replace": [
+        "main4.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 24688747
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.25/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 22.5,
@@ -43,6 +53,16 @@
       ],
       "min_from_version": "4.0.0",
       "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.25/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 23.5,
+          "sha256": "7273a76590e2126b00f43a5b2444fb9ae4f4c67e68b7a0f7edacf93a8c7f213b",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 24688747
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.25/LKDock_v4.0_update_Mac.zip",
           "file_size_mb": 22.5,
