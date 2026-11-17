@@ -1,47 +1,70 @@
 {
-  "latest_version": "4.1.23",
+  "latest_version": "4.1.24",
   "release_date": "2026-11-17",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.23（4.1.23）。",
-    "[修复] 纯小分子 A/B 分别参数化后强制增加初始安全间距，避免重原子重叠导致 EM 局部极小和后续 LINCS 爆炸。",
-    "[修复] 离子液体自动检测改为按显式正形式电荷判断，避免普通含氮中性配体被误判为有机阳离子。",
-    "[修复] 3+ 组分或多拷贝小分子体系自动归类为 small-molecule-mixture，并强制走支持多组分的 GROMACS 构建路径。",
-    "[优化] 报告 2D/PyMOL/PPI 图片全量嵌入，新增 TIFF 等非 Web 格式转换、坏图检测和可视化全量归档。"
+    "[RELEASE] 主程序版本升级至 x.1.24（4.1.24）。",
+    "[修复] 新增受体金属完整性恢复与元素规范化，避免 PDBQT→PDB 转换丢失金属或把蛋白 CA 误判为钙。",
+    "[修复] MD 轨迹 PBC 连续性与分组还原、配体/多链 RMSD 和残基 RMSF 标注增强，减少盒长跳变和方波伪影。",
+    "[优化] 报告 2D/PyMOL/PPI/分析图全量嵌入并生成可视化归档；继续保留小分子混合体系和配体初始间距修复。"
   ],
   "platforms": {
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.23/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 23.2,
-      "sha256": "1e3ce8c233269ba108e796fe5cbb020b3117febba577931db12033595936cef8",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 24357908
-    },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.23/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 22.2,
-      "sha256": "e05a6dfe36870a7bd57e4a79c2d83c8144cd4d1d7a854b530c96f34d73a42b18",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.24/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 22.3,
+      "sha256": "f0f02ab612fcd997b468d1fcdd826f09172dc92c126f3d948405f8b44d709498",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 23232332
+      "size": 23354645
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.23/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 23.9,
-      "sha256": "2eab6605c698f696a0cf0b34ab73e040eee98537cfdec5c4e9f7defcb121e07b",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.24/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 24.0,
+      "sha256": "0c9158d627deb343ade10b8e9b85cfa339865a6f5a6a76192f0d8bfc8e8543dd",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 25038252
+      "size": 25165538
     }
   },
   "versions": [
+    {
+      "version": "4.1.24",
+      "release_date": "2026-11-17",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.24（4.1.24）。",
+        "[修复] 新增受体金属完整性恢复与元素规范化，避免 PDBQT→PDB 转换丢失金属或把蛋白 CA 误判为钙。",
+        "[修复] MD 轨迹 PBC 连续性与分组还原、配体/多链 RMSD 和残基 RMSF 标注增强，减少盒长跳变和方波伪影。",
+        "[优化] 报告 2D/PyMOL/PPI/分析图全量嵌入并生成可视化归档；继续保留小分子混合体系和配体初始间距修复。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.24/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 22.3,
+          "sha256": "f0f02ab612fcd997b468d1fcdd826f09172dc92c126f3d948405f8b44d709498",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 23354645
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.24/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 24.0,
+          "sha256": "0c9158d627deb343ade10b8e9b85cfa339865a6f5a6a76192f0d8bfc8e8543dd",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 25165538
+        }
+      }
+    },
     {
       "version": "4.1.23",
       "release_date": "2026-11-17",

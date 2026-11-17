@@ -1,45 +1,70 @@
 {
-  "latest_version": "2.1.18",
-  "release_date": "2026-11-15",
+  "latest_version": "2.1.24",
+  "release_date": "2026-11-17",
   "min_version_required": "2.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.18（2.1.18）。",
-    "[修复] 学术报告嵌入本次生成的真实 PyMOL 三维结合模式图，并按分析图、LigPlus 2D、PyMOL style/coloring 分类限额取图，避免二维图占满上限；HTML 图片改为内嵌数据。",
-    "[修复] 虚拟筛选统一导出 screening_all_molecules.csv、screening_results.csv、molecules_statistics.csv，保留规则/药效团拒绝原因；关闭评分及选择 Excel 时仍正确保存 CSV。"
+    "[RELEASE] 主程序版本升级至 x.1.24（2.1.24）。",
+    "[修复] 新增受体金属完整性恢复：PDBQT→PDB 转换后自动恢复 Zn/Fe/Mg/Ca 等金属，按坐标和链匹配，避免蛋白 CA 被误判为钙。",
+    "[修复] 统一金属 HETATM 元素字段和编号，兼容多链受体及 OpenBabel 重排后的金属记录。",
+    "[优化] 报告 2D/PyMOL/PPI/分析图全量嵌入 PDF/HTML，并生成可视化全量归档 ZIP 与图片清单。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.18/LKDock_v2.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.24/LKDock_v2.0_update_Mac.zip",
       "file_size_mb": 5.9,
-      "sha256": "17adaaad455bffa5a82941dcf8b4757c6981cf1765cbfeafa539695fd04f2275",
+      "sha256": "489a0697d161794f50811abf36840a18ebdffaad5b07b21fadb0c76b7cc5616c",
       "files_to_replace": [
         "main2.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 6148739
+      "size": 6230725
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.18/LKDock_v2.0_update_Win.zip",
-      "file_size_mb": 6.4,
-      "sha256": "8c11cbe6c5ef8c0c5f706c594fada28d82ff3d8d381c4be7b162528a7c18f619",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.24/LKDock_v2.0_update_Win.zip",
+      "file_size_mb": 6.5,
+      "sha256": "39a502314b8a4d4fc917f6c312cca91c8d24b6b49c7c8c6e3539ef0ef82a1818",
       "files_to_replace": [
         "main2.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 6742780
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.18/LKDock_v2.0_update_Linux.zip",
-      "file_size_mb": 5.7,
-      "sha256": "174e911ac3cfd33d0a35175870f640a379b26113b118d3f0a38179164e881f55",
-      "files_to_replace": [
-        "main2.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 6008554
+      "size": 6833364
     }
   },
   "versions": [
+    {
+      "version": "2.1.24",
+      "release_date": "2026-11-17",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.24（2.1.24）。",
+        "[修复] 新增受体金属完整性恢复：PDBQT→PDB 转换后自动恢复 Zn/Fe/Mg/Ca 等金属，按坐标和链匹配，避免蛋白 CA 被误判为钙。",
+        "[修复] 统一金属 HETATM 元素字段和编号，兼容多链受体及 OpenBabel 重排后的金属记录。",
+        "[优化] 报告 2D/PyMOL/PPI/分析图全量嵌入 PDF/HTML，并生成可视化全量归档 ZIP 与图片清单。"
+      ],
+      "min_from_version": "2.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.24/LKDock_v2.0_update_Mac.zip",
+          "file_size_mb": 5.9,
+          "sha256": "489a0697d161794f50811abf36840a18ebdffaad5b07b21fadb0c76b7cc5616c",
+          "files_to_replace": [
+            "main2.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 6230725
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.24/LKDock_v2.0_update_Win.zip",
+          "file_size_mb": 6.5,
+          "sha256": "39a502314b8a4d4fc917f6c312cca91c8d24b6b49c7c8c6e3539ef0ef82a1818",
+          "files_to_replace": [
+            "main2.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 6833364
+        }
+      }
+    },
     {
       "version": "2.1.18",
       "release_date": "2026-11-15",

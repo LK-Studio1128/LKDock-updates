@@ -1,46 +1,70 @@
 {
-  "latest_version": "3.1.23",
+  "latest_version": "3.1.24",
   "release_date": "2026-11-17",
   "min_version_required": "3.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.23（3.1.23）。",
-    "[修复] 学术报告 2D 相互作用图增加 2D_interaction / 2D / 2D可视化 目录兼容，并改为全量嵌入实际生成的 2D 图。",
-    "[修复] PyMOL、PPI 与分析图改为全量嵌入 PDF/HTML，取消固定数量限额；新增坏图、空白图检测和内嵌状态记录。",
-    "[新增] 报告同步生成可视化全量归档 ZIP 与图片清单，便于追溯实际生成的全部图片。"
+    "[RELEASE] 主程序版本升级至 x.1.24（3.1.24）。",
+    "[修复] 新增受体金属完整性恢复与元素规范化，避免 PDBQT→PDB 转换丢失金属或把蛋白 CA 误判为钙。",
+    "[修复] MD 轨迹分析增强 PBC 连续性和分组还原，改善多链/配体 RMSD 假性跳变及残基 RMSF 标注。",
+    "[优化] 报告 2D/PyMOL/PPI/分析图全量嵌入，保留坏图检测、HTML 内嵌状态和可视化归档清单。"
   ],
   "platforms": {
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.23/LKDock_v3.0_update_Linux.zip",
-      "file_size_mb": 9.2,
-      "sha256": "2cd8805403b562e7077e388f27464b38a4d2bd9f94208e2fca91220119a51074",
-      "files_to_replace": [
-        "main3.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 9661719
-    },
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.23/LKDock_v3.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.24/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 8.9,
-      "sha256": "cc7faa23e1662fd2566da3da462c0db33da0cfaa12744ab668c1bfbad0253656",
+      "sha256": "4fc20b3d35e965c63acfa85bbc1f93952198c5266be6f51ae78c0b9cab0cd892",
       "files_to_replace": [
         "main3.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 9337907
+      "size": 9377480
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.23/LKDock_v3.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.24/LKDock_v3.0_update_Win.zip",
       "file_size_mb": 9.8,
-      "sha256": "db74343f158195cfd35ab3b099e7eb86369ca5589e6ef1ef9fdc95bfdfc67210",
+      "sha256": "6c437c3934b8a83e48c236bb6ae44166d71bba267607d5aca1e90003fac86230",
       "files_to_replace": [
         "main3.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 10257156
+      "size": 10294012
     }
   },
   "versions": [
+    {
+      "version": "3.1.24",
+      "release_date": "2026-11-17",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.24（3.1.24）。",
+        "[修复] 新增受体金属完整性恢复与元素规范化，避免 PDBQT→PDB 转换丢失金属或把蛋白 CA 误判为钙。",
+        "[修复] MD 轨迹分析增强 PBC 连续性和分组还原，改善多链/配体 RMSD 假性跳变及残基 RMSF 标注。",
+        "[优化] 报告 2D/PyMOL/PPI/分析图全量嵌入，保留坏图检测、HTML 内嵌状态和可视化归档清单。"
+      ],
+      "min_from_version": "3.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.24/LKDock_v3.0_update_Mac.zip",
+          "file_size_mb": 8.9,
+          "sha256": "4fc20b3d35e965c63acfa85bbc1f93952198c5266be6f51ae78c0b9cab0cd892",
+          "files_to_replace": [
+            "main3.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 9377480
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.24/LKDock_v3.0_update_Win.zip",
+          "file_size_mb": 9.8,
+          "sha256": "6c437c3934b8a83e48c236bb6ae44166d71bba267607d5aca1e90003fac86230",
+          "files_to_replace": [
+            "main3.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 10294012
+        }
+      }
+    },
     {
       "version": "3.1.23",
       "release_date": "2026-11-17",
