@@ -1,26 +1,90 @@
 {
-  "latest_version": "4.1.26",
+  "latest_version": "4.1.27",
   "release_date": "2026-11-18",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.26（4.1.26）。",
-    "[修复] Linux 上 MD 接触图、RMSD 2D、盐桥、驻留时间、B-factor 等重型分析改为独立子进程执行，避免线程池与 MDAnalysis/NumPy 长循环导致死锁或崩溃。",
-    "[优化] 长轨迹接触图/RMSD 2D 自动抽帧并限制点数，盐桥与驻留时间按实际步长和帧时间计算，降低内存与计算量。",
-    "[优化] 重型分析子进程增加结果文件、错误摘要和警告回传；15GB 无 swap 构建机启用低内存 GCC 参数保证稳定编译。"
+    "[RELEASE] 主程序版本升级至 x.1.27（4.1.27）。",
+    "[新增] 统一 MD 质子化流程：支持 preserve_input / propka_auto / manual / report_only 模式，按 pH、歧义窗口和手动覆盖生成映射清单。",
+    "[修复] 完善 AMBER 扩展质子化残基（HID/HIE/HIP/GLH/ASH/LYN/CYM 等）恢复与拓扑校验，末端 LYN 自动回退 LYS，OpenMM 路径同步支持显式质子化 variants。",
+    "[优化] 质子化准备、应用和拓扑验证结果统一写入报告/清单；继续保留 Linux 重型 MD 分析子进程隔离和低内存编译支持。"
   ],
   "platforms": {
+    "macos": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.27/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 22.6,
+      "sha256": "b25b4601798598ebef4ce382ef90b4088940199727c1c52c68389c697c50ea7b",
+      "files_to_replace": [
+        "main4.cpython-311-darwin.so"
+      ],
+      "python_version": "3.11",
+      "size": 23656662
+    },
+    "windows": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.27/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 24.9,
+      "sha256": "00e91d815ab700f598681d34c3fbecfb00e5ba113428daef36ec04d31e41c215",
+      "files_to_replace": [
+        "main4.cp311-win_amd64.pyd"
+      ],
+      "python_version": "3.11",
+      "size": 26132431
+    },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.26/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 24.8,
-      "sha256": "38039bfd21194f2798726f75f24ae57ef0693472e0cbf7828d229101846d3e0e",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.27/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 24.0,
+      "sha256": "0d3cd5483d17e7eadb7001e06187d654481d0932e13bd6467856ab0cf746417f",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 26027721
+      "size": 25133394
     }
   },
   "versions": [
+    {
+      "version": "4.1.27",
+      "release_date": "2026-11-18",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.27（4.1.27）。",
+        "[新增] 统一 MD 质子化流程：支持 preserve_input / propka_auto / manual / report_only 模式，按 pH、歧义窗口和手动覆盖生成映射清单。",
+        "[修复] 完善 AMBER 扩展质子化残基（HID/HIE/HIP/GLH/ASH/LYN/CYM 等）恢复与拓扑校验，末端 LYN 自动回退 LYS，OpenMM 路径同步支持显式质子化 variants。",
+        "[优化] 质子化准备、应用和拓扑验证结果统一写入报告/清单；继续保留 Linux 重型 MD 分析子进程隔离和低内存编译支持。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.27/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 22.6,
+          "sha256": "b25b4601798598ebef4ce382ef90b4088940199727c1c52c68389c697c50ea7b",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 23656662
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.27/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 24.9,
+          "sha256": "00e91d815ab700f598681d34c3fbecfb00e5ba113428daef36ec04d31e41c215",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 26132431
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.27/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 24.0,
+          "sha256": "0d3cd5483d17e7eadb7001e06187d654481d0932e13bd6467856ab0cf746417f",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 25133394
+        }
+      }
+    },
     {
       "version": "4.1.26",
       "release_date": "2026-11-18",
