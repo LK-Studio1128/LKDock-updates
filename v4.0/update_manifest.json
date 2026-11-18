@@ -1,46 +1,70 @@
 {
-  "latest_version": "4.1.28",
+  "latest_version": "4.1.29",
   "release_date": "2026-11-18",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.28（4.1.28）。",
-    "[修复] MD 质子化 pH 统一从顶层配置读取并同步到 protonation 配置，避免 UI/报告与加氢流程使用不同 pH。",
-    "[修复] 重新准备质子化映射时保留已有 base mapping，避免手动/PROPKA 映射被二次准备覆盖。",
-    "[修复] 质子化拓扑校验将预期外的额外状态（常见于二硫键 CYX）记录为忽略警告，不再误判为拓扑失败。"
+    "[RELEASE] 主程序版本升级至 x.1.29（4.1.29）。",
+    "[优化] 虚拟筛选结果统一归一化为名称/属性/详情结构，ADMET、综合评分、输出 SDF 等字段可稳定回填到 CSV/Excel/HTML 与结果 SDF。",
+    "[修复] 增强已有 screening 结果表补全逻辑，避免 ADMET/Score 列为空或名称匹配时丢失条目；新增筛选结果导出适配层。",
+    "[修复] GROMACS 无 OpenMP 构建时自动把 -ntomp>1 回退为 1；NVE + 2fs + h-bonds 等兼容性提示去重，减少日志刷屏。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.28/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.29/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 22.6,
-      "sha256": "832dca9e22cf162e10a64582c833f36a48d57827356c40bac9cfc7a009a61ad8",
+      "sha256": "6f2edc5e1ba257b9963f6d535ab9b16ec931c812e4d3f741ae3f79489a00d842",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 23660523
+      "size": 23713303
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.28/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 24.9,
-      "sha256": "afc6baa76f2aea49735480cbee2e99e91ea6666b29ec86e2e3a4d4cfa67a77ed",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.29/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 25.0,
+      "sha256": "371bbbec5c5bc9b49c14786f0cd37e242a5f6efe88cbb6c73458a97e83ab5ac6",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 26134650
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.28/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 24.0,
-      "sha256": "fb1978bfcd0db7b98be47cefe08b67fd26df2ef39d122de082fe29948a6dd761",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 25135181
+      "size": 26205363
     }
   },
   "versions": [
+    {
+      "version": "4.1.29",
+      "release_date": "2026-11-18",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.29（4.1.29）。",
+        "[优化] 虚拟筛选结果统一归一化为名称/属性/详情结构，ADMET、综合评分、输出 SDF 等字段可稳定回填到 CSV/Excel/HTML 与结果 SDF。",
+        "[修复] 增强已有 screening 结果表补全逻辑，避免 ADMET/Score 列为空或名称匹配时丢失条目；新增筛选结果导出适配层。",
+        "[修复] GROMACS 无 OpenMP 构建时自动把 -ntomp>1 回退为 1；NVE + 2fs + h-bonds 等兼容性提示去重，减少日志刷屏。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.29/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 22.6,
+          "sha256": "6f2edc5e1ba257b9963f6d535ab9b16ec931c812e4d3f741ae3f79489a00d842",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 23713303
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.29/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 25.0,
+          "sha256": "371bbbec5c5bc9b49c14786f0cd37e242a5f6efe88cbb6c73458a97e83ab5ac6",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 26205363
+        }
+      }
+    },
     {
       "version": "4.1.28",
       "release_date": "2026-11-18",
