@@ -1,46 +1,50 @@
 {
-  "latest_version": "4.1.25",
-  "release_date": "2026-11-17",
+  "latest_version": "4.1.26",
+  "release_date": "2026-11-18",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.25（4.1.25）。",
-    "[新增] MD 界面分析新增接触对逐帧距离、占有率、残基-残基配对统计、接触矩阵热图及 CSV 汇总。",
-    "[新增] 增强盐桥、主链/侧链二面角、PCA 投影和聚类分配分析，补充逐残基统计、时间序列图与可追溯 CSV。",
-    "[优化] MD 分析图统一使用链/残基标签和稳定配色，继续保留 PBC 连续性、RMSD/RMSF、受体金属恢复及报告可视化归档修复。"
+    "[RELEASE] 主程序版本升级至 x.1.26（4.1.26）。",
+    "[修复] Linux 上 MD 接触图、RMSD 2D、盐桥、驻留时间、B-factor 等重型分析改为独立子进程执行，避免线程池与 MDAnalysis/NumPy 长循环导致死锁或崩溃。",
+    "[优化] 长轨迹接触图/RMSD 2D 自动抽帧并限制点数，盐桥与驻留时间按实际步长和帧时间计算，降低内存与计算量。",
+    "[优化] 重型分析子进程增加结果文件、错误摘要和警告回传；15GB 无 swap 构建机启用低内存 GCC 参数保证稳定编译。"
   ],
   "platforms": {
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.25/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 23.5,
-      "sha256": "7273a76590e2126b00f43a5b2444fb9ae4f4c67e68b7a0f7edacf93a8c7f213b",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.26/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 24.8,
+      "sha256": "38039bfd21194f2798726f75f24ae57ef0693472e0cbf7828d229101846d3e0e",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 24688747
-    },
-    "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.25/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 22.5,
-      "sha256": "d4976c104821e01cac2499117147ecda7058cb4915e5c69f210db05f26c14fea",
-      "files_to_replace": [
-        "main4.cpython-311-darwin.so"
-      ],
-      "python_version": "3.11",
-      "size": 23564816
-    },
-    "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.25/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 24.2,
-      "sha256": "e7d2be5c206d48ded99a2a2f14bfb57986b883838ee353a1d5546c68c240a696",
-      "files_to_replace": [
-        "main4.cp311-win_amd64.pyd"
-      ],
-      "python_version": "3.11",
-      "size": 25401466
+      "size": 26027721
     }
   },
   "versions": [
+    {
+      "version": "4.1.26",
+      "release_date": "2026-11-18",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.26（4.1.26）。",
+        "[修复] Linux 上 MD 接触图、RMSD 2D、盐桥、驻留时间、B-factor 等重型分析改为独立子进程执行，避免线程池与 MDAnalysis/NumPy 长循环导致死锁或崩溃。",
+        "[优化] 长轨迹接触图/RMSD 2D 自动抽帧并限制点数，盐桥与驻留时间按实际步长和帧时间计算，降低内存与计算量。",
+        "[优化] 重型分析子进程增加结果文件、错误摘要和警告回传；15GB 无 swap 构建机启用低内存 GCC 参数保证稳定编译。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.26/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 24.8,
+          "sha256": "38039bfd21194f2798726f75f24ae57ef0693472e0cbf7828d229101846d3e0e",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 26027721
+        }
+      }
+    },
     {
       "version": "4.1.25",
       "release_date": "2026-11-17",
