@@ -1,46 +1,90 @@
 {
-  "latest_version": "4.1.27",
+  "latest_version": "4.1.28",
   "release_date": "2026-11-18",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.27（4.1.27）。",
-    "[新增] 统一 MD 质子化流程：支持 preserve_input / propka_auto / manual / report_only 模式，按 pH、歧义窗口和手动覆盖生成映射清单。",
-    "[修复] 完善 AMBER 扩展质子化残基（HID/HIE/HIP/GLH/ASH/LYN/CYM 等）恢复与拓扑校验，末端 LYN 自动回退 LYS，OpenMM 路径同步支持显式质子化 variants。",
-    "[优化] 质子化准备、应用和拓扑验证结果统一写入报告/清单；继续保留 Linux 重型 MD 分析子进程隔离和低内存编译支持。"
+    "[RELEASE] 主程序版本升级至 x.1.28（4.1.28）。",
+    "[修复] MD 质子化 pH 统一从顶层配置读取并同步到 protonation 配置，避免 UI/报告与加氢流程使用不同 pH。",
+    "[修复] 重新准备质子化映射时保留已有 base mapping，避免手动/PROPKA 映射被二次准备覆盖。",
+    "[修复] 质子化拓扑校验将预期外的额外状态（常见于二硫键 CYX）记录为忽略警告，不再误判为拓扑失败。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.27/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.28/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 22.6,
-      "sha256": "b25b4601798598ebef4ce382ef90b4088940199727c1c52c68389c697c50ea7b",
+      "sha256": "832dca9e22cf162e10a64582c833f36a48d57827356c40bac9cfc7a009a61ad8",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 23656662
+      "size": 23660523
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.27/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.28/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 24.9,
-      "sha256": "00e91d815ab700f598681d34c3fbecfb00e5ba113428daef36ec04d31e41c215",
+      "sha256": "afc6baa76f2aea49735480cbee2e99e91ea6666b29ec86e2e3a4d4cfa67a77ed",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 26132431
+      "size": 26134650
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.27/LKDock_v4.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.28/LKDock_v4.0_update_Linux.zip",
       "file_size_mb": 24.0,
-      "sha256": "0d3cd5483d17e7eadb7001e06187d654481d0932e13bd6467856ab0cf746417f",
+      "sha256": "fb1978bfcd0db7b98be47cefe08b67fd26df2ef39d122de082fe29948a6dd761",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 25133394
+      "size": 25135181
     }
   },
   "versions": [
+    {
+      "version": "4.1.28",
+      "release_date": "2026-11-18",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.28（4.1.28）。",
+        "[修复] MD 质子化 pH 统一从顶层配置读取并同步到 protonation 配置，避免 UI/报告与加氢流程使用不同 pH。",
+        "[修复] 重新准备质子化映射时保留已有 base mapping，避免手动/PROPKA 映射被二次准备覆盖。",
+        "[修复] 质子化拓扑校验将预期外的额外状态（常见于二硫键 CYX）记录为忽略警告，不再误判为拓扑失败。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.28/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 22.6,
+          "sha256": "832dca9e22cf162e10a64582c833f36a48d57827356c40bac9cfc7a009a61ad8",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 23660523
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.28/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 24.9,
+          "sha256": "afc6baa76f2aea49735480cbee2e99e91ea6666b29ec86e2e3a4d4cfa67a77ed",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 26134650
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.28/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 24.0,
+          "sha256": "fb1978bfcd0db7b98be47cefe08b67fd26df2ef39d122de082fe29948a6dd761",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 25135181
+        }
+      }
+    },
     {
       "version": "4.1.27",
       "release_date": "2026-11-18",
