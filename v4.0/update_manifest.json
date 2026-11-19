@@ -1,36 +1,90 @@
 {
-  "latest_version": "4.1.30",
+  "latest_version": "4.1.31",
   "release_date": "2026-11-19",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.30（4.1.30）。",
-    "[修复] 硼及特殊元素配体在 AM1-BCC/sqm 不支持时，自动回退到 RDKit Gasteiger + GAFF2 类比参数化，并记录所用方法、特殊元素和警告。",
-    "[修复] 修正 Amber atomic_ions.lib 铁离子命名对应关系（FE=Fe3+、FE2=Fe2+），避免铁离子价态和参数错配。",
-    "[修复] 配体-配体/多组分小分子体系补充额外组分嵌入日志，并对各组分参数化警告去重汇总，便于定位混合体系构建问题。"
+    "[RELEASE] 主程序版本升级至 x.1.31（4.1.31）。",
+    "[优化] 强化 MD 分析报告的分级评价、附录、动态图片说明、讨论/结论/参考文献与 PDF/DOCX/HTML 输出。",
+    "[修复] 完善质子化 pH/映射/AMBER 与 OpenMM variants 校验，并修复硼/特殊元素 GAFF 回退及 Fe 离子价态命名。",
+    "[优化] 虚拟筛选 ADMET/评分/SDF 导出、配体混合体系告警、Linux 重型分析子进程隔离和 PBC/RMSD 稳定性继续增强。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.30/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.31/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 22.6,
-      "sha256": "512df389809d687411f6638e6135c9adecc9f9e62f5f9912061648efaed67554",
+      "sha256": "76877ef0e51a0514f2dcfce5c33116fc9c43e01dffab8dea6ee3fac77a1b3fb4",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 23734380
+      "size": 23744038
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.30/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 24.4,
-      "sha256": "2c656bfa49640b25f0dc88911fbaf596394fbe018cbae9e25684249df7b91d80",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.31/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 25.0,
+      "sha256": "55c23378be443ddf79faedf2fe74d0a4f49a61b449a1edec5304d4991f7e8ac4",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 25596164
+      "size": 26231800
+    },
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.31/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 23.8,
+      "sha256": "a23bac41fb51b3e3a3236039ad8c194c7b1ac4b433f2db79df7c5afc09a1eed1",
+      "files_to_replace": [
+        "main4.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 24958019
     }
   },
   "versions": [
+    {
+      "version": "4.1.31",
+      "release_date": "2026-11-19",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.31（4.1.31）。",
+        "[优化] 强化 MD 分析报告的分级评价、附录、动态图片说明、讨论/结论/参考文献与 PDF/DOCX/HTML 输出。",
+        "[修复] 完善质子化 pH/映射/AMBER 与 OpenMM variants 校验，并修复硼/特殊元素 GAFF 回退及 Fe 离子价态命名。",
+        "[优化] 虚拟筛选 ADMET/评分/SDF 导出、配体混合体系告警、Linux 重型分析子进程隔离和 PBC/RMSD 稳定性继续增强。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.31/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 22.6,
+          "sha256": "76877ef0e51a0514f2dcfce5c33116fc9c43e01dffab8dea6ee3fac77a1b3fb4",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 23744038
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.31/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 25.0,
+          "sha256": "55c23378be443ddf79faedf2fe74d0a4f49a61b449a1edec5304d4991f7e8ac4",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 26231800
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.31/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 23.8,
+          "sha256": "a23bac41fb51b3e3a3236039ad8c194c7b1ac4b433f2db79df7c5afc09a1eed1",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 24958019
+        }
+      }
+    },
     {
       "version": "4.1.30",
       "release_date": "2026-11-19",
