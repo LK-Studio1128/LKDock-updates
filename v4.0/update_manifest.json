@@ -1,36 +1,70 @@
 {
-  "latest_version": "4.1.29",
-  "release_date": "2026-11-18",
+  "latest_version": "4.1.30",
+  "release_date": "2026-11-19",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.29（4.1.29）。",
-    "[优化] 虚拟筛选结果统一归一化为名称/属性/详情结构，ADMET、综合评分、输出 SDF 等字段可稳定回填到 CSV/Excel/HTML 与结果 SDF。",
-    "[修复] 增强已有 screening 结果表补全逻辑，避免 ADMET/Score 列为空或名称匹配时丢失条目；新增筛选结果导出适配层。",
-    "[修复] GROMACS 无 OpenMP 构建时自动把 -ntomp>1 回退为 1；NVE + 2fs + h-bonds 等兼容性提示去重，减少日志刷屏。"
+    "[RELEASE] 主程序版本升级至 x.1.30（4.1.30）。",
+    "[修复] 硼及特殊元素配体在 AM1-BCC/sqm 不支持时，自动回退到 RDKit Gasteiger + GAFF2 类比参数化，并记录所用方法、特殊元素和警告。",
+    "[修复] 修正 Amber atomic_ions.lib 铁离子命名对应关系（FE=Fe3+、FE2=Fe2+），避免铁离子价态和参数错配。",
+    "[修复] 配体-配体/多组分小分子体系补充额外组分嵌入日志，并对各组分参数化警告去重汇总，便于定位混合体系构建问题。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.29/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.30/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 22.6,
-      "sha256": "6f2edc5e1ba257b9963f6d535ab9b16ec931c812e4d3f741ae3f79489a00d842",
+      "sha256": "512df389809d687411f6638e6135c9adecc9f9e62f5f9912061648efaed67554",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 23713303
+      "size": 23734380
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.29/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 25.0,
-      "sha256": "371bbbec5c5bc9b49c14786f0cd37e242a5f6efe88cbb6c73458a97e83ab5ac6",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.30/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 24.4,
+      "sha256": "2c656bfa49640b25f0dc88911fbaf596394fbe018cbae9e25684249df7b91d80",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 26205363
+      "size": 25596164
     }
   },
   "versions": [
+    {
+      "version": "4.1.30",
+      "release_date": "2026-11-19",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.30（4.1.30）。",
+        "[修复] 硼及特殊元素配体在 AM1-BCC/sqm 不支持时，自动回退到 RDKit Gasteiger + GAFF2 类比参数化，并记录所用方法、特殊元素和警告。",
+        "[修复] 修正 Amber atomic_ions.lib 铁离子命名对应关系（FE=Fe3+、FE2=Fe2+），避免铁离子价态和参数错配。",
+        "[修复] 配体-配体/多组分小分子体系补充额外组分嵌入日志，并对各组分参数化警告去重汇总，便于定位混合体系构建问题。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.30/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 22.6,
+          "sha256": "512df389809d687411f6638e6135c9adecc9f9e62f5f9912061648efaed67554",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 23734380
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.30/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 24.4,
+          "sha256": "2c656bfa49640b25f0dc88911fbaf596394fbe018cbae9e25684249df7b91d80",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 25596164
+        }
+      }
+    },
     {
       "version": "4.1.29",
       "release_date": "2026-11-18",
