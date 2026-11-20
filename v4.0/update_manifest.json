@@ -1,46 +1,90 @@
 {
-  "latest_version": "4.1.31",
-  "release_date": "2026-11-19",
+  "latest_version": "4.1.32",
+  "release_date": "2026-11-20",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.31（4.1.31）。",
-    "[优化] 强化 MD 分析报告的分级评价、附录、动态图片说明、讨论/结论/参考文献与 PDF/DOCX/HTML 输出。",
-    "[修复] 完善质子化 pH/映射/AMBER 与 OpenMM variants 校验，并修复硼/特殊元素 GAFF 回退及 Fe 离子价态命名。",
-    "[优化] 虚拟筛选 ADMET/评分/SDF 导出、配体混合体系告警、Linux 重型分析子进程隔离和 PBC/RMSD 稳定性继续增强。"
+    "[RELEASE] 主程序版本升级至 x.1.32（4.1.32）。",
+    "[新增] MD 分析汇总支持局部重跑累积，保留历史分析项；增强 gmx_native 子分析与多字段图片扫描合并。",
+    "[优化] 新增“图—数—文一致”技术报告（HTML/PDF/Word），并增加旧版报告格式动态迁移。",
+    "[修复] 完善末端质子化支持、配体-配体额外组分嵌入、硼/特殊元素参数化及 Fe 离子价态处理。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.31/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 22.6,
-      "sha256": "76877ef0e51a0514f2dcfce5c33116fc9c43e01dffab8dea6ee3fac77a1b3fb4",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.32/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 23.1,
+      "sha256": "b67da9fba42f2bb12ca43aa105dfaee281eca950bce21fec19cb1d0e0512a1ed",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 23744038
+      "size": 24221461
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.31/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 25.0,
-      "sha256": "55c23378be443ddf79faedf2fe74d0a4f49a61b449a1edec5304d4991f7e8ac4",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.32/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 25.5,
+      "sha256": "cca261b64a33e01eb4112df7491f9b10c10f48b1399fe907eb5c9dd5d6594591",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 26231800
+      "size": 26771809
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.31/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 23.8,
-      "sha256": "a23bac41fb51b3e3a3236039ad8c194c7b1ac4b433f2db79df7c5afc09a1eed1",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.32/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 24.5,
+      "sha256": "b48a019671df859dfe335c23f7b7cbf4bd107876e4f05830263a313a4bf7cedd",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 24958019
+      "size": 25739649
     }
   },
   "versions": [
+    {
+      "version": "4.1.32",
+      "release_date": "2026-11-20",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.32（4.1.32）。",
+        "[新增] MD 分析汇总支持局部重跑累积，保留历史分析项；增强 gmx_native 子分析与多字段图片扫描合并。",
+        "[优化] 新增“图—数—文一致”技术报告（HTML/PDF/Word），并增加旧版报告格式动态迁移。",
+        "[修复] 完善末端质子化支持、配体-配体额外组分嵌入、硼/特殊元素参数化及 Fe 离子价态处理。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.32/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 23.1,
+          "sha256": "b67da9fba42f2bb12ca43aa105dfaee281eca950bce21fec19cb1d0e0512a1ed",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 24221461
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.32/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 25.5,
+          "sha256": "cca261b64a33e01eb4112df7491f9b10c10f48b1399fe907eb5c9dd5d6594591",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 26771809
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.32/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 24.5,
+          "sha256": "b48a019671df859dfe335c23f7b7cbf4bd107876e4f05830263a313a4bf7cedd",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 25739649
+        }
+      }
+    },
     {
       "version": "4.1.31",
       "release_date": "2026-11-19",
