@@ -1,9 +1,10 @@
 {
-  "latest_version": "4.1.35",
-  "release_date": "2026-11-22",
+  "latest_version": "4.1.36",
+  "release_date": "2026-11-23",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.35（4.1.35）。",
+    "[RELEASE] 主程序版本升级至 x.1.36（4.1.36）。",
+    "[更新] 同步本轮主程序修复与优化内容。",
     "[修复] pH 保存/重载改为顶层 md.pH 优先，修复设置 pH 11 后回显变回 7.4。",
     "[修复] Amber 末端 ASH/GLH/LYN 自动生成本地端基模板，链端 LYN 不再回退为 LYS。",
     "[修复] 本地末端子力场的 tip3p/tip4p/ions ITP 被误当作配体并改写 SOL 原子名，修复溶剂化后 grompp 的 OW/MW 错位。",
@@ -11,37 +12,63 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.35/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 23.3,
-      "sha256": "f28c69550c03d4967ed08bd9fc9c2a445e25c4e0b0b66322e77bf592b9ccfdda",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.36/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 23.4,
+      "sha256": "0a1ef414e17bf364ce22bd409ff0bed1f55f4ab44597edea1695a74ae1d5b3ee",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 24478138
+      "size": 24527686
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.35/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 25.8,
-      "sha256": "edeb4f28bf97b905a33476b757e1e8d4eb400c1065a084d8e8f4421bcff2544f",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.36/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 25.9,
+      "sha256": "9db49a225141fda97d01c2bf12e2985de1ebbdbe99ca9ea4e4f86c28e6ec02f3",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 27062111
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.35/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 24.6,
-      "sha256": "f0f5a328228654be29e98925a0b959ce7ea335ef81d6ca92f08b2cd8b9373058",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 25753089
+      "size": 27106964
     }
   },
   "versions": [
+    {
+      "version": "4.1.36",
+      "release_date": "2026-11-23",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.36（4.1.36）。",
+        "[更新] 同步本轮主程序修复与优化内容。",
+        "[修复] pH 保存/重载改为顶层 md.pH 优先，修复设置 pH 11 后回显变回 7.4。",
+        "[修复] Amber 末端 ASH/GLH/LYN 自动生成本地端基模板，链端 LYN 不再回退为 LYS。",
+        "[修复] 本地末端子力场的 tip3p/tip4p/ions ITP 被误当作配体并改写 SOL 原子名，修复溶剂化后 grompp 的 OW/MW 错位。",
+        "[修复] GLH/ASH/LYN/CYM 等质子化变体不再被误抽取为配体；GROMACS 2026 的 gmx angle 改为 CA 四原子索引调用。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.36/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 23.4,
+          "sha256": "0a1ef414e17bf364ce22bd409ff0bed1f55f4ab44597edea1695a74ae1d5b3ee",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 24527686
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.36/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 25.9,
+          "sha256": "9db49a225141fda97d01c2bf12e2985de1ebbdbe99ca9ea4e4f86c28e6ec02f3",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 27106964
+        }
+      }
+    },
     {
       "version": "4.1.35",
       "release_date": "2026-11-22",
