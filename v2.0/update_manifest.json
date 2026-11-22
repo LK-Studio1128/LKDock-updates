@@ -1,46 +1,90 @@
 {
-  "latest_version": "2.1.31",
-  "release_date": "2026-11-19",
+  "latest_version": "2.2.34",
+  "release_date": "2026-11-22",
   "min_version_required": "2.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.31（2.1.31）。",
+    "[RELEASE] 主程序版本升级至 x.2.34（2.2.34）。",
     "[修复] 受体金属完整性恢复与 HETATM 元素字段/编号规范化，兼容多链受体及 OpenBabel 重排。",
     "[优化] 学术报告 2D/PyMOL/PPI/分析图全量嵌入，并生成可视化归档 ZIP、图片清单和 HTML 内嵌状态。",
     "[优化] 虚拟筛选结果表、漏斗图、ADMET/评分字段和 SDF 输出链路增强。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.31/LKDock_v2.0_update_Mac.zip",
-      "file_size_mb": 6.0,
-      "sha256": "bc7ae6c6cd2bd77440c7f0fa36807312acc52bf1750f2cdaa8f493dfd500462e",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.2.34/LKDock_v2.0_update_Mac.zip",
+      "file_size_mb": 6.1,
+      "sha256": "61f9f14cb16d01382fba517c377e41f69a6b27ee2cd0bfc6983b4fa72ab9ca7c",
       "files_to_replace": [
         "main2.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 6291209
+      "size": 6351695
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.31/LKDock_v2.0_update_Win.zip",
-      "file_size_mb": 6.7,
-      "sha256": "c51f9a288e8efbd2a1089c8f565fc06e8e13eb7032b66a984cd8ccde04cce5d0",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.2.34/LKDock_v2.0_update_Win.zip",
+      "file_size_mb": 6.8,
+      "sha256": "10cc7358ada245c0c98230deba21f4ebfc4032a31f7d6c2a7e4906ddc29e21f3",
       "files_to_replace": [
         "main2.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 7067771
+      "size": 7149871
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.31/LKDock_v2.0_update_Linux.zip",
-      "file_size_mb": 5.9,
-      "sha256": "3fcfd1db57a2d664de881a09f7616583fb6332e51a78d7d355d577a29bae50f9",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.2.34/LKDock_v2.0_update_Linux.zip",
+      "file_size_mb": 6.0,
+      "sha256": "dc7e3fa8faf5883f478ee8a8a41c872a1986c3cff1f735dbde88829bc4b95970",
       "files_to_replace": [
         "main2.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 6180513
+      "size": 6258526
     }
   },
   "versions": [
+    {
+      "version": "2.2.34",
+      "release_date": "2026-11-22",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.2.34（2.2.34）。",
+        "[修复] 受体金属完整性恢复与 HETATM 元素字段/编号规范化，兼容多链受体及 OpenBabel 重排。",
+        "[优化] 学术报告 2D/PyMOL/PPI/分析图全量嵌入，并生成可视化归档 ZIP、图片清单和 HTML 内嵌状态。",
+        "[优化] 虚拟筛选结果表、漏斗图、ADMET/评分字段和 SDF 输出链路增强。"
+      ],
+      "min_from_version": "2.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.2.34/LKDock_v2.0_update_Mac.zip",
+          "file_size_mb": 6.1,
+          "sha256": "61f9f14cb16d01382fba517c377e41f69a6b27ee2cd0bfc6983b4fa72ab9ca7c",
+          "files_to_replace": [
+            "main2.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 6351695
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.2.34/LKDock_v2.0_update_Win.zip",
+          "file_size_mb": 6.8,
+          "sha256": "10cc7358ada245c0c98230deba21f4ebfc4032a31f7d6c2a7e4906ddc29e21f3",
+          "files_to_replace": [
+            "main2.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 7149871
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.2.34/LKDock_v2.0_update_Linux.zip",
+          "file_size_mb": 6.0,
+          "sha256": "dc7e3fa8faf5883f478ee8a8a41c872a1986c3cff1f735dbde88829bc4b95970",
+          "files_to_replace": [
+            "main2.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 6258526
+        }
+      }
+    },
     {
       "version": "2.1.31",
       "release_date": "2026-11-19",
