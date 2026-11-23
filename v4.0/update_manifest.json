@@ -1,12 +1,13 @@
 {
-  "latest_version": "4.1.37",
+  "latest_version": "4.1.38",
   "release_date": "2026-11-23",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.37（4.1.37）。",
+    "[RELEASE] 主程序版本升级至 x.1.38（4.1.38）。",
+    "[修复] 同步 4.1.37 之后的主程序修复：MD 分析轨迹/TPR 校验、MM-PBSA/MM-GBSA 兼容性、报告真实结果图筛选等。",
+    "[更新] 同步本轮主程序修复与优化内容。",
     "[修复] 虚拟筛选药效团在缺少 RDKit BaseFeatures.fdef 的环境中直接报错，导致全部分子被标记为 PHARMACOPHORE_ERROR；现由主程序模块内置并自动释放该特征文件。",
     "[修复] 4.1.36 的可执行模块早于该修复生成，已在 4.1.37 重新纳入内置特征文件，不再依赖外置脚本或构建机 RDKit 路径。",
-    "[更新] 同步本轮主程序修复与优化内容。",
     "[修复] pH 保存/重载改为顶层 md.pH 优先，修复设置 pH 11 后回显变回 7.4。",
     "[修复] Amber 末端 ASH/GLH/LYN 自动生成本地端基模板，链端 LYN 不再回退为 LYS。",
     "[修复] 本地末端子力场的 tip3p/tip4p/ions ITP 被误当作配体并改写 SOL 原子名，修复溶剂化后 grompp 的 OW/MW 错位。",
@@ -14,27 +15,66 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.37/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.38/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 23.5,
-      "sha256": "4f08b01a170aad7f37063e3107bdfd73c215f1e547352645231b76fab71650de",
+      "sha256": "724fddb67c7decae19859aa63e203a7bf91f7cb28e29f9127f7addd55f798406",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 24653718
+      "size": 24659103
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.37/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 25.3,
-      "sha256": "62c7b19ce5e1b3e4d4bb77b0f389076f10f5f0193b87939dd41b74536d2acf4a",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.38/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 26.0,
+      "sha256": "4730c70da9b0cfa6bcd5e252e69096517c2ca923850d0924b732b1444b89885b",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 26579619
+      "size": 27236704
     }
   },
   "versions": [
+    {
+      "version": "4.1.38",
+      "release_date": "2026-11-23",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.38（4.1.38）。",
+        "[修复] 同步 4.1.37 之后的主程序修复：MD 分析轨迹/TPR 校验、MM-PBSA/MM-GBSA 兼容性、报告真实结果图筛选等。",
+        "[更新] 同步本轮主程序修复与优化内容。",
+        "[修复] 虚拟筛选药效团在缺少 RDKit BaseFeatures.fdef 的环境中直接报错，导致全部分子被标记为 PHARMACOPHORE_ERROR；现由主程序模块内置并自动释放该特征文件。",
+        "[修复] 4.1.36 的可执行模块早于该修复生成，已在 4.1.37 重新纳入内置特征文件，不再依赖外置脚本或构建机 RDKit 路径。",
+        "[修复] pH 保存/重载改为顶层 md.pH 优先，修复设置 pH 11 后回显变回 7.4。",
+        "[修复] Amber 末端 ASH/GLH/LYN 自动生成本地端基模板，链端 LYN 不再回退为 LYS。",
+        "[修复] 本地末端子力场的 tip3p/tip4p/ions ITP 被误当作配体并改写 SOL 原子名，修复溶剂化后 grompp 的 OW/MW 错位。",
+        "[修复] GLH/ASH/LYN/CYM 等质子化变体不再被误抽取为配体；GROMACS 2026 的 gmx angle 改为 CA 四原子索引调用。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.38/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 23.5,
+          "sha256": "724fddb67c7decae19859aa63e203a7bf91f7cb28e29f9127f7addd55f798406",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 24659103
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.38/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 26.0,
+          "sha256": "4730c70da9b0cfa6bcd5e252e69096517c2ca923850d0924b732b1444b89885b",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 27236704
+        }
+      }
+    },
     {
       "version": "4.1.37",
       "release_date": "2026-11-23",
