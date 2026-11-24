@@ -1,11 +1,11 @@
 {
-  "latest_version": "4.1.40",
+  "latest_version": "4.1.41",
   "release_date": "2026-11-24",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.40（4.1.40）。",
+    "[RELEASE] 主程序版本升级至 x.1.41（4.1.41）。",
     "[修复] 同步本轮主程序修复：MD 分析、MM-PBSA/MM-GBSA 与报告链路稳定性增强。",
-    "[更新] 同步 4.1.39 之后的修复与优化内容。",
+    "[更新] 同步 4.1.40 之后的修复与优化内容。",
     "[修复] 同步 4.1.37 之后的主程序修复：MD 分析轨迹/TPR 校验、MM-PBSA/MM-GBSA 兼容性、报告真实结果图筛选等。",
     "[修复] 虚拟筛选药效团在缺少 RDKit BaseFeatures.fdef 的环境中直接报错，导致全部分子被标记为 PHARMACOPHORE_ERROR；现由主程序模块内置并自动释放该特征文件。",
     "[修复] 4.1.36 的可执行模块早于该修复生成，已在 4.1.37 重新纳入内置特征文件，不再依赖外置脚本或构建机 RDKit 路径。",
@@ -16,37 +16,87 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.40/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.41/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 23.6,
-      "sha256": "fd7e4d2b152b19ea86f651aa75c88920679d13f0ac3536b0d4af386e31259af3",
+      "sha256": "eb5a919abc82588392da23beacf26b68fc2946e8caf28bb9ec0980dae19b5fcf",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 24719080
+      "size": 24744094
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.40/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.41/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 26.0,
-      "sha256": "03c7ddd5d3d2048d10e3e3007e928c720176a0005a8d1862ad409e8cde79d033",
+      "sha256": "c3c59a7621f968ecda9584a565b1708ebee311f38f8affdb0c18426bab59710a",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 27267828
+      "size": 27290620
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.40/LKDock_v4.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.41/LKDock_v4.0_update_Linux.zip",
       "file_size_mb": 24.8,
-      "sha256": "bdbe8a641c17329fceb8392bd6f56397c3f0b7ddda04b037161349d1e598b33a",
+      "sha256": "23af91ef5f1b471ced6bdd052318be6619e30a09f475a9ad36534184fcccdc54",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 25961681
+      "size": 25975578
     }
   },
   "versions": [
+    {
+      "version": "4.1.41",
+      "release_date": "2026-11-24",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 x.1.41（4.1.41）。",
+        "[修复] 同步本轮主程序修复：MD 分析、MM-PBSA/MM-GBSA 与报告链路稳定性增强。",
+        "[更新] 同步 4.1.40 之后的修复与优化内容。",
+        "[修复] 同步 4.1.37 之后的主程序修复：MD 分析轨迹/TPR 校验、MM-PBSA/MM-GBSA 兼容性、报告真实结果图筛选等。",
+        "[修复] 虚拟筛选药效团在缺少 RDKit BaseFeatures.fdef 的环境中直接报错，导致全部分子被标记为 PHARMACOPHORE_ERROR；现由主程序模块内置并自动释放该特征文件。",
+        "[修复] 4.1.36 的可执行模块早于该修复生成，已在 4.1.37 重新纳入内置特征文件，不再依赖外置脚本或构建机 RDKit 路径。",
+        "[修复] pH 保存/重载改为顶层 md.pH 优先，修复设置 pH 11 后回显变回 7.4。",
+        "[修复] Amber 末端 ASH/GLH/LYN 自动生成本地端基模板，链端 LYN 不再回退为 LYS。",
+        "[修复] 本地末端子力场的 tip3p/tip4p/ions ITP 被误当作配体并改写 SOL 原子名，修复溶剂化后 grompp 的 OW/MW 错位。",
+        "[修复] GLH/ASH/LYN/CYM 等质子化变体不再被误抽取为配体；GROMACS 2026 的 gmx angle 改为 CA 四原子索引调用。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.41/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 23.6,
+          "sha256": "eb5a919abc82588392da23beacf26b68fc2946e8caf28bb9ec0980dae19b5fcf",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 24744094
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.41/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 26.0,
+          "sha256": "c3c59a7621f968ecda9584a565b1708ebee311f38f8affdb0c18426bab59710a",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 27290620
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.41/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 24.8,
+          "sha256": "23af91ef5f1b471ced6bdd052318be6619e30a09f475a9ad36534184fcccdc54",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 25975578
+        }
+      }
+    },
     {
       "version": "4.1.40",
       "release_date": "2026-11-24",
