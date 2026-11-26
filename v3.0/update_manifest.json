@@ -10,6 +10,16 @@
     "[优化] 报告 2D/PyMOL/PPI/分析图全量嵌入、坏图检测和可视化归档清单。"
   ],
   "platforms": {
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.44/LKDock_v3.0_update_Linux.zip",
+      "file_size_mb": 9.8,
+      "sha256": "b0598c6f301928468d82956510ab493bece6fa6f92c4dc975d864c15a5357c91",
+      "files_to_replace": [
+        "main3.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 10258915
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.44/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 9.4,
@@ -45,6 +55,16 @@
       ],
       "min_from_version": "3.0.0",
       "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.44/LKDock_v3.0_update_Linux.zip",
+          "file_size_mb": 9.8,
+          "sha256": "b0598c6f301928468d82956510ab493bece6fa6f92c4dc975d864c15a5357c91",
+          "files_to_replace": [
+            "main3.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 10258915
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.44/LKDock_v3.0_update_Mac.zip",
           "file_size_mb": 9.4,

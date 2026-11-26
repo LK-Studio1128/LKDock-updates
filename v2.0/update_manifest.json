@@ -10,6 +10,16 @@
     "[优化] 虚拟筛选结果表、漏斗图、ADMET/评分字段和 SDF 输出链路增强。"
   ],
   "platforms": {
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.44/LKDock_v2.0_update_Linux.zip",
+      "file_size_mb": 6.5,
+      "sha256": "36e92906052cad16f382a5fd93082c46ce701278d2610cd1dfc0859bb46467ac",
+      "files_to_replace": [
+        "main2.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 6851728
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.44/LKDock_v2.0_update_Mac.zip",
       "file_size_mb": 6.6,
@@ -168,6 +178,16 @@
       ],
       "min_from_version": "2.0.0",
       "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.44/LKDock_v2.0_update_Linux.zip",
+          "file_size_mb": 6.5,
+          "sha256": "36e92906052cad16f382a5fd93082c46ce701278d2610cd1dfc0859bb46467ac",
+          "files_to_replace": [
+            "main2.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 6851728
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.44/LKDock_v2.0_update_Mac.zip",
           "file_size_mb": 6.6,

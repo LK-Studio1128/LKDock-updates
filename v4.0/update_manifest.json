@@ -16,6 +16,16 @@
     "[修复] GLH/ASH/LYN/CYM 等质子化变体不再被误抽取为配体；GROMACS 2026 的 gmx angle 改为 CA 四原子索引调用。"
   ],
   "platforms": {
+    "linux": {
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.44/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 25.7,
+      "sha256": "ef21a0e5ea113cbb0a89a21308370b948b0f6b514bb8f1fc795efdc8ed2be8aa",
+      "files_to_replace": [
+        "main4.cpython-311-x86_64-linux-gnu.so"
+      ],
+      "python_version": "3.11",
+      "size": 26973596
+    },
     "macos": {
       "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.44/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 24.5,
@@ -57,6 +67,16 @@
       ],
       "min_from_version": "4.0.0",
       "platforms": {
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.44/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 25.7,
+          "sha256": "ef21a0e5ea113cbb0a89a21308370b948b0f6b514bb8f1fc795efdc8ed2be8aa",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 26973596
+        },
         "macos": {
           "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.44/LKDock_v4.0_update_Mac.zip",
           "file_size_mb": 24.5,
