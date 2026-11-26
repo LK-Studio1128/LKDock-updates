@@ -1,9 +1,9 @@
 {
-  "latest_version": "3.1.36",
-  "release_date": "2026-11-23",
+  "latest_version": "3.1.44",
+  "release_date": "2026-11-26",
   "min_version_required": "3.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.1.36（3.1.36）。",
+    "[RELEASE] 主程序版本升级至 3.1.44。",
     "[更新] 同步本轮主程序修复与优化内容。",
     "[修复] 受体金属完整性恢复与元素规范化，避免 PDBQT→PDB 转换丢失金属或误判蛋白 CA。",
     "[修复] MD 轨迹 PBC 连续性、分组还原、RMSD/RMSF 及残基标注增强。",
@@ -11,27 +11,62 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.36/LKDock_v3.0_update_Mac.zip",
-      "file_size_mb": 9.3,
-      "sha256": "95dcc778d5e76e90af17443e70c6d7a52c829a305a3b9e434455a1b7b7c5cb54",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.44/LKDock_v3.0_update_Mac.zip",
+      "file_size_mb": 9.4,
+      "sha256": "4affd683e73125296cce37a900a318d29d010d3892ce7d0b9acfdf1f20bf40ea",
       "files_to_replace": [
         "main3.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 9700181
+      "size": 9893581
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.36/LKDock_v3.0_update_Win.zip",
-      "file_size_mb": 10.4,
-      "sha256": "bd7be2a5ba83c5f17ad743de3cdc2b38c4a0fb689bc896edaca8fb4a74255cee",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.44/LKDock_v3.0_update_Win.zip",
+      "file_size_mb": 10.6,
+      "sha256": "80155429f92b964d4307f259cc6ae766469946468c6061865dec7f5725d6b911",
       "files_to_replace": [
         "main3.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 10907686
+      "size": 11119341
     }
   },
   "versions": [
+    {
+      "version": "3.1.44",
+      "release_date": "2026-11-26",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 3.1.44。",
+        "[更新] 同步本轮主程序修复与优化内容。",
+        "[修复] 受体金属完整性恢复与元素规范化，避免 PDBQT→PDB 转换丢失金属或误判蛋白 CA。",
+        "[修复] MD 轨迹 PBC 连续性、分组还原、RMSD/RMSF 及残基标注增强。",
+        "[优化] 报告 2D/PyMOL/PPI/分析图全量嵌入、坏图检测和可视化归档清单。"
+      ],
+      "min_from_version": "3.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.44/LKDock_v3.0_update_Mac.zip",
+          "file_size_mb": 9.4,
+          "sha256": "4affd683e73125296cce37a900a318d29d010d3892ce7d0b9acfdf1f20bf40ea",
+          "files_to_replace": [
+            "main3.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 9893581
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.44/LKDock_v3.0_update_Win.zip",
+          "file_size_mb": 10.6,
+          "sha256": "80155429f92b964d4307f259cc6ae766469946468c6061865dec7f5725d6b911",
+          "files_to_replace": [
+            "main3.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 11119341
+        }
+      }
+    },
     {
       "version": "3.1.36",
       "release_date": "2026-11-23",

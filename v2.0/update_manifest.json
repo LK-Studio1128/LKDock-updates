@@ -1,9 +1,9 @@
 {
-  "latest_version": "2.2.36",
-  "release_date": "2026-11-23",
+  "latest_version": "2.1.44",
+  "release_date": "2026-11-26",
   "min_version_required": "2.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 x.2.36（2.2.36）。",
+    "[RELEASE] 主程序版本升级至 2.1.44。",
     "[更新] 同步本轮主程序修复与优化内容。",
     "[修复] 受体金属完整性恢复与 HETATM 元素字段/编号规范化，兼容多链受体及 OpenBabel 重排。",
     "[优化] 学术报告 2D/PyMOL/PPI/分析图全量嵌入，并生成可视化归档 ZIP、图片清单和 HTML 内嵌状态。",
@@ -11,24 +11,24 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.2.36/LKDock_v2.0_update_Mac.zip",
-      "file_size_mb": 6.1,
-      "sha256": "e95f00c57501d27e76c1bcec4f2846971d18f02c1b7d454f6665f6d0c76bdbc8",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.44/LKDock_v2.0_update_Mac.zip",
+      "file_size_mb": 6.6,
+      "sha256": "9486b8a0ab5aff6040a16fa82845ac717f546616fa879cd7e47edd289c9d71e3",
       "files_to_replace": [
         "main2.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 6438571
+      "size": 6919244
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.2.36/LKDock_v2.0_update_Win.zip",
-      "file_size_mb": 6.9,
-      "sha256": "cc60e38469d365129d00893dcecac0ac438f43986e87968c6e22671b0e89dab6",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.44/LKDock_v2.0_update_Win.zip",
+      "file_size_mb": 7.4,
+      "sha256": "d0833d63976f1090a045cf2a8271ed6afbb19ab6932bd3b2f8379183b407ba7c",
       "files_to_replace": [
         "main2.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 7231942
+      "size": 7772939
     }
   },
   "versions": [
@@ -152,6 +152,41 @@
           ],
           "python_version": "3.11",
           "size": 6258526
+        }
+      }
+    },
+    {
+      "version": "2.1.44",
+      "release_date": "2026-11-26",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 2.1.44。",
+        "[更新] 同步本轮主程序修复与优化内容。",
+        "[修复] 受体金属完整性恢复与 HETATM 元素字段/编号规范化，兼容多链受体及 OpenBabel 重排。",
+        "[优化] 学术报告 2D/PyMOL/PPI/分析图全量嵌入，并生成可视化归档 ZIP、图片清单和 HTML 内嵌状态。",
+        "[优化] 虚拟筛选结果表、漏斗图、ADMET/评分字段和 SDF 输出链路增强。"
+      ],
+      "min_from_version": "2.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.44/LKDock_v2.0_update_Mac.zip",
+          "file_size_mb": 6.6,
+          "sha256": "9486b8a0ab5aff6040a16fa82845ac717f546616fa879cd7e47edd289c9d71e3",
+          "files_to_replace": [
+            "main2.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 6919244
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v2.1.44/LKDock_v2.0_update_Win.zip",
+          "file_size_mb": 7.4,
+          "sha256": "d0833d63976f1090a045cf2a8271ed6afbb19ab6932bd3b2f8379183b407ba7c",
+          "files_to_replace": [
+            "main2.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 7772939
         }
       }
     },
