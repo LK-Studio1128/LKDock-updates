@@ -1,9 +1,11 @@
 {
-  "latest_version": "4.1.47",
+  "latest_version": "4.1.48",
   "release_date": "2026-11-27",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 4.1.47。",
+    "[RELEASE] 主程序版本升级至 4.1.48。",
+    "[新增] 4.0 辅因子力场库继续内嵌于 main4，不依赖外置资源即可释放 HEM 等参数。",
+    "[更新] 同步本轮主程序修复与优化内容。",
     "[新增] 4.0 内置辅因子力场库，支持 HEM/NAD/FAD/COA/NDP/PLP/SAM 等常用辅因子自动匹配与本地参数释放。",
     "[更新] 同步本轮主程序修复与优化内容。",
     "[修复] HEM_HIS 的 12 个 hem* 原子类型随内嵌 HEM.itp 一起释放，并在所有 moleculetype 之前生成/校验 HEM_atomtypes.itp 引用，修复 grompp 的 Atomtype hemfe not found。",
@@ -24,37 +26,97 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.47/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.48/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 24.9,
-      "sha256": "131c6404959987fa1a430c69b11e79fcd7bd23a976a75dbe712f51012961db81",
+      "sha256": "286b85fd4e97757696a02c793e6e6337fe331a015188717bd7b31ed6a47c32dc",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 26093022
+      "size": 26090863
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.47/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.48/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 27.4,
-      "sha256": "409a0fdbd3edb6a8ccd6b61438648e8adf5e39969eab2b6ec2765a27a8ba3c7b",
+      "sha256": "8cdc4769f80b5ab7dc00ad4a9a8877d45a88ebfad3e68d1352a593f31faa7db3",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 28780175
+      "size": 28782739
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.47/LKDock_v4.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.48/LKDock_v4.0_update_Linux.zip",
       "file_size_mb": 25.7,
-      "sha256": "8576b26d5749e0aa6a3935a2c888393778b347fa79cd6869fa85274483ae1b69",
+      "sha256": "7a3144688b61a181f6a92dfaf125653edfc949aec66a2c801242bdc60258702d",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 26900983
+      "size": 26902545
     }
   },
   "versions": [
+    {
+      "version": "4.1.48",
+      "release_date": "2026-11-27",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 4.1.48。",
+        "[新增] 4.0 辅因子力场库继续内嵌于 main4，不依赖外置资源即可释放 HEM 等参数。",
+        "[更新] 同步本轮主程序修复与优化内容。",
+        "[新增] 4.0 内置辅因子力场库，支持 HEM/NAD/FAD/COA/NDP/PLP/SAM 等常用辅因子自动匹配与本地参数释放。",
+        "[更新] 同步本轮主程序修复与优化内容。",
+        "[修复] HEM_HIS 的 12 个 hem* 原子类型随内嵌 HEM.itp 一起释放，并在所有 moleculetype 之前生成/校验 HEM_atomtypes.itp 引用，修复 grompp 的 Atomtype hemfe not found。",
+        "[修复] 辅因子注入后新增原子类型完整性校验：逐个核对 ITP 使用的类型、独立 atomtypes 文件、include 顺序；缺失时在任何 MD 阶段前明确阻断。",
+        "[修复] EM 首轮达到步数上限且 Fmax 超过硬门禁时，自动从最低能量 em.gro 做有界重启续算（默认 5000 步/轮、最多 6 轮），保留原硬门禁、约束、HEM 和体系组成，不再把 500 步诊断值误判为最终失败。",
+        "[更新] 默认仍走 main4 内嵌辅因子库；外部 resources/cofactors 仅作为兼容兜底，编译版无需依赖外置参数文件。",
+        "[说明] 保留四链 + 4×HEM + 配体联合拓扑；Fe–His 仍使用 cross-molecule func=6 谐振，不宣称已具备完整金属中心键角/电荷重分布模型。",
+        "[修复] 同步本轮修复：PDBFixer 氢/NaN 与 SEQRES 处理、受体链序列修复、MODRES/AF 映射及 MD 完整性增强。",
+        "[更新] 同步 4.1.44 之后的修复与优化内容。",
+        "[修复] 同步本轮主程序修复：MD 分析、MM-PBSA/MM-GBSA 与报告链路稳定性增强。",
+        "[修复] 同步 4.1.37 之后的主程序修复：MD 分析轨迹/TPR 校验、MM-PBSA/MM-GBSA 兼容性、报告真实结果图筛选等。",
+        "[修复] 虚拟筛选药效团在缺少 RDKit BaseFeatures.fdef 的环境中直接报错，导致全部分子被标记为 PHARMACOPHORE_ERROR；现由主程序模块内置并自动释放该特征文件。",
+        "[修复] 4.1.36 的可执行模块早于该修复生成，已在 4.1.37 重新纳入内置特征文件，不再依赖外置脚本或构建机 RDKit 路径。",
+        "[修复] pH 保存/重载改为顶层 md.pH 优先，修复设置 pH 11 后回显变回 7.4。",
+        "[修复] Amber 末端 ASH/GLH/LYN 自动生成本地端基模板，链端 LYN 不再回退为 LYS。",
+        "[修复] 本地末端子力场的 tip3p/tip4p/ions ITP 被误当作配体并改写 SOL 原子名，修复溶剂化后 grompp 的 OW/MW 错位。",
+        "[修复] GLH/ASH/LYN/CYM 等质子化变体不再被误抽取为配体；GROMACS 2026 的 gmx angle 改为 CA 四原子索引调用。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.48/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 24.9,
+          "sha256": "286b85fd4e97757696a02c793e6e6337fe331a015188717bd7b31ed6a47c32dc",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 26090863
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.48/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 27.4,
+          "sha256": "8cdc4769f80b5ab7dc00ad4a9a8877d45a88ebfad3e68d1352a593f31faa7db3",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 28782739
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.48/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 25.7,
+          "sha256": "7a3144688b61a181f6a92dfaf125653edfc949aec66a2c801242bdc60258702d",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 26902545
+        }
+      }
+    },
     {
       "version": "4.1.47",
       "release_date": "2026-11-27",

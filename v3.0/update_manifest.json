@@ -1,9 +1,10 @@
 {
-  "latest_version": "3.1.47",
+  "latest_version": "3.1.48",
   "release_date": "2026-11-27",
   "min_version_required": "3.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 3.1.47。",
+    "[RELEASE] 主程序版本升级至 3.1.48。",
+    "[更新] 同步本轮主程序修复与优化内容。",
     "[更新] 同步本轮主程序修复与优化内容。",
     "[更新] 同步本轮主程序修复与优化内容。",
     "[修复] 受体金属完整性恢复与元素规范化，避免 PDBQT→PDB 转换丢失金属或误判蛋白 CA。",
@@ -12,37 +13,84 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.47/LKDock_v3.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.48/LKDock_v3.0_update_Mac.zip",
       "file_size_mb": 9.5,
-      "sha256": "e47fdbaa9dc7538ba15c5152a1cdf952b5bd74adeab9adb427aaceb6db6c7abe",
+      "sha256": "bf82c125ac9dbcec1bd870c18816974d9cd4ae8bd9c33c053935d831f55690bf",
       "files_to_replace": [
         "main3.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 9991986
+      "size": 9990129
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.47/LKDock_v3.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.48/LKDock_v3.0_update_Win.zip",
       "file_size_mb": 10.7,
-      "sha256": "ea41cf5b64e524439966df47be90a7da4b6a6f2810aa8a7592c8833fac5fc4d3",
+      "sha256": "336c1950669a582558218fc786698d0bbb3d628ef3938f13866dd19b0f178cb2",
       "files_to_replace": [
         "main3.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 11224327
+      "size": 11224103
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.47/LKDock_v3.0_update_Linux.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.48/LKDock_v3.0_update_Linux.zip",
       "file_size_mb": 9.7,
-      "sha256": "e946263d5f40edfac9baa67836b5927f159edec2fef7d04f1c8786c9066ec763",
+      "sha256": "a8f11cb7825d2c653e9be1758d2b286d8637e8b80cb818802098b0ff170e5448",
       "files_to_replace": [
         "main3.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 10137456
+      "size": 10139123
     }
   },
   "versions": [
+    {
+      "version": "3.1.48",
+      "release_date": "2026-11-27",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 3.1.48。",
+        "[更新] 同步本轮主程序修复与优化内容。",
+        "[更新] 同步本轮主程序修复与优化内容。",
+        "[更新] 同步本轮主程序修复与优化内容。",
+        "[修复] 受体金属完整性恢复与元素规范化，避免 PDBQT→PDB 转换丢失金属或误判蛋白 CA。",
+        "[修复] MD 轨迹 PBC 连续性、分组还原、RMSD/RMSF 及残基标注增强。",
+        "[优化] 报告 2D/PyMOL/PPI/分析图全量嵌入、坏图检测和可视化归档清单。"
+      ],
+      "min_from_version": "3.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.48/LKDock_v3.0_update_Mac.zip",
+          "file_size_mb": 9.5,
+          "sha256": "bf82c125ac9dbcec1bd870c18816974d9cd4ae8bd9c33c053935d831f55690bf",
+          "files_to_replace": [
+            "main3.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 9990129
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.48/LKDock_v3.0_update_Win.zip",
+          "file_size_mb": 10.7,
+          "sha256": "336c1950669a582558218fc786698d0bbb3d628ef3938f13866dd19b0f178cb2",
+          "files_to_replace": [
+            "main3.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 11224103
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v3.1.48/LKDock_v3.0_update_Linux.zip",
+          "file_size_mb": 9.7,
+          "sha256": "a8f11cb7825d2c653e9be1758d2b286d8637e8b80cb818802098b0ff170e5448",
+          "files_to_replace": [
+            "main3.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 10139123
+        }
+      }
+    },
     {
       "version": "3.1.47",
       "release_date": "2026-11-27",
