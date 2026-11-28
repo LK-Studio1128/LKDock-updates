@@ -1,45 +1,90 @@
 {
-  "latest_version": "4.1.49",
-  "release_date": "2026-11-27",
+  "latest_version": "4.1.50",
+  "release_date": "2026-11-28",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 4.1.49。",
+    "[RELEASE] 主程序版本升级至 4.1.50。",
+    "[更新] 同步本轮主程序修复与优化内容。",
     "[新增] 4.0 辅因子力场库继续内嵌于 main4，不依赖外置资源即可释放 HEM 等参数。",
     "[更新] 同步本轮主程序修复与优化内容。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.49/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 24.9,
-      "sha256": "07996ddeb931441e2426bbc6802fa752654dcc9c82a617a3434cfe18900fa691",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.50/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 25.2,
+      "sha256": "60fe475c9b8f47fac3b94d6398eae75748e68b445a6e6ebc2c4e60f722168c43",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 26137977
+      "size": 26435442
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.49/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 27.5,
-      "sha256": "2b20160401f209e953cceef01e9518dc4e67d8d06ff4d9ad5243b8aabe4cc498",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.50/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 27.8,
+      "sha256": "b7654c1f219e11708f2bf58d1fca80bd8d85e619026319c1165159794f8469b6",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 28841845
+      "size": 29156967
     },
     "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.49/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 25.7,
-      "sha256": "35f565079f33f275710335f30f9998bd2dd63a77531cbe3ab50dad2516c47058",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.50/LKDock_v4.0_update_Linux.zip",
+      "file_size_mb": 26.0,
+      "sha256": "bcf8e8afa58fb1d9ee81b5186d44fff18c85e652ad989b29b3d3313149d95a0c",
       "files_to_replace": [
         "main4.cpython-311-x86_64-linux-gnu.so"
       ],
       "python_version": "3.11",
-      "size": 26959887
+      "size": 27257321
     }
   },
   "versions": [
+    {
+      "version": "4.1.50",
+      "release_date": "2026-11-28",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 4.1.50。",
+        "[更新] 同步本轮主程序修复与优化内容。",
+        "[新增] 4.0 辅因子力场库继续内嵌于 main4，不依赖外置资源即可释放 HEM 等参数。",
+        "[更新] 同步本轮主程序修复与优化内容。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.50/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 25.2,
+          "sha256": "60fe475c9b8f47fac3b94d6398eae75748e68b445a6e6ebc2c4e60f722168c43",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 26435442
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.50/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 27.8,
+          "sha256": "b7654c1f219e11708f2bf58d1fca80bd8d85e619026319c1165159794f8469b6",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 29156967
+        },
+        "linux": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.50/LKDock_v4.0_update_Linux.zip",
+          "file_size_mb": 26.0,
+          "sha256": "bcf8e8afa58fb1d9ee81b5186d44fff18c85e652ad989b29b3d3313149d95a0c",
+          "files_to_replace": [
+            "main4.cpython-311-x86_64-linux-gnu.so"
+          ],
+          "python_version": "3.11",
+          "size": 27257321
+        }
+      }
+    },
     {
       "version": "4.1.49",
       "release_date": "2026-11-27",
