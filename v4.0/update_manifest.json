@@ -1,46 +1,72 @@
 {
-  "latest_version": "4.1.50",
+  "latest_version": "4.1.51",
   "release_date": "2026-11-28",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 4.1.50。",
+    "[RELEASE] 主程序版本升级至 4.1.51。",
+    "[更新] 同步本轮主程序修复与优化内容。",
     "[更新] 同步本轮主程序修复与优化内容。",
     "[新增] 4.0 辅因子力场库继续内嵌于 main4，不依赖外置资源即可释放 HEM 等参数。",
     "[更新] 同步本轮主程序修复与优化内容。"
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.50/LKDock_v4.0_update_Mac.zip",
-      "file_size_mb": 25.2,
-      "sha256": "60fe475c9b8f47fac3b94d6398eae75748e68b445a6e6ebc2c4e60f722168c43",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.51/LKDock_v4.0_update_Mac.zip",
+      "file_size_mb": 25.3,
+      "sha256": "5cee8a3b87ea6f386e189345871b69f20f823f69aec7ea3b19dbb001211e0273",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 26435442
+      "size": 26519602
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.50/LKDock_v4.0_update_Win.zip",
-      "file_size_mb": 27.8,
-      "sha256": "b7654c1f219e11708f2bf58d1fca80bd8d85e619026319c1165159794f8469b6",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.51/LKDock_v4.0_update_Win.zip",
+      "file_size_mb": 27.9,
+      "sha256": "6df7e6e5b20d1b949f0f3b6029c0a02a181c1da1ba6b73a5f363dd2c073ee309",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 29156967
-    },
-    "linux": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.50/LKDock_v4.0_update_Linux.zip",
-      "file_size_mb": 26.0,
-      "sha256": "bcf8e8afa58fb1d9ee81b5186d44fff18c85e652ad989b29b3d3313149d95a0c",
-      "files_to_replace": [
-        "main4.cpython-311-x86_64-linux-gnu.so"
-      ],
-      "python_version": "3.11",
-      "size": 27257321
+      "size": 29242592
     }
   },
   "versions": [
+    {
+      "version": "4.1.51",
+      "release_date": "2026-11-28",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 4.1.51。",
+        "[更新] 同步本轮主程序修复与优化内容。",
+        "[更新] 同步本轮主程序修复与优化内容。",
+        "[新增] 4.0 辅因子力场库继续内嵌于 main4，不依赖外置资源即可释放 HEM 等参数。",
+        "[更新] 同步本轮主程序修复与优化内容。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.51/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 25.3,
+          "sha256": "5cee8a3b87ea6f386e189345871b69f20f823f69aec7ea3b19dbb001211e0273",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 26519602
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.51/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 27.9,
+          "sha256": "6df7e6e5b20d1b949f0f3b6029c0a02a181c1da1ba6b73a5f363dd2c073ee309",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 29242592
+        }
+      }
+    },
     {
       "version": "4.1.50",
       "release_date": "2026-11-28",
