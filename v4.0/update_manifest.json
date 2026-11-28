@@ -1,9 +1,10 @@
 {
-  "latest_version": "4.1.51",
-  "release_date": "2026-11-28",
+  "latest_version": "4.1.52",
+  "release_date": "2026-11-29",
   "min_version_required": "4.0.0",
   "changes": [
-    "[RELEASE] 主程序版本升级至 4.1.51。",
+    "[RELEASE] 主程序版本升级至 4.1.52。",
+    "[更新] 同步本轮主程序修复与优化内容。",
     "[更新] 同步本轮主程序修复与优化内容。",
     "[更新] 同步本轮主程序修复与优化内容。",
     "[新增] 4.0 辅因子力场库继续内嵌于 main4，不依赖外置资源即可释放 HEM 等参数。",
@@ -11,27 +12,63 @@
   ],
   "platforms": {
     "macos": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.51/LKDock_v4.0_update_Mac.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.52/LKDock_v4.0_update_Mac.zip",
       "file_size_mb": 25.3,
-      "sha256": "5cee8a3b87ea6f386e189345871b69f20f823f69aec7ea3b19dbb001211e0273",
+      "sha256": "d1d64948a11696e5e88906676d1715f4c6886c5003ea258e63f8bb85973799ce",
       "files_to_replace": [
         "main4.cpython-311-darwin.so"
       ],
       "python_version": "3.11",
-      "size": 26519602
+      "size": 26521075
     },
     "windows": {
-      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.51/LKDock_v4.0_update_Win.zip",
+      "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.52/LKDock_v4.0_update_Win.zip",
       "file_size_mb": 27.9,
-      "sha256": "6df7e6e5b20d1b949f0f3b6029c0a02a181c1da1ba6b73a5f363dd2c073ee309",
+      "sha256": "e20dac9d5fbb3e4868fe51ffd251b7f493d48c7f7c977b169db98086e77f279c",
       "files_to_replace": [
         "main4.cp311-win_amd64.pyd"
       ],
       "python_version": "3.11",
-      "size": 29242592
+      "size": 29244907
     }
   },
   "versions": [
+    {
+      "version": "4.1.52",
+      "release_date": "2026-11-29",
+      "status": "stable",
+      "changes": [
+        "[RELEASE] 主程序版本升级至 4.1.52。",
+        "[更新] 同步本轮主程序修复与优化内容。",
+        "[更新] 同步本轮主程序修复与优化内容。",
+        "[更新] 同步本轮主程序修复与优化内容。",
+        "[新增] 4.0 辅因子力场库继续内嵌于 main4，不依赖外置资源即可释放 HEM 等参数。",
+        "[更新] 同步本轮主程序修复与优化内容。"
+      ],
+      "min_from_version": "4.0.0",
+      "platforms": {
+        "macos": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.52/LKDock_v4.0_update_Mac.zip",
+          "file_size_mb": 25.3,
+          "sha256": "d1d64948a11696e5e88906676d1715f4c6886c5003ea258e63f8bb85973799ce",
+          "files_to_replace": [
+            "main4.cpython-311-darwin.so"
+          ],
+          "python_version": "3.11",
+          "size": 26521075
+        },
+        "windows": {
+          "download_url": "https://github.com/LK-Studio1128/LKDock-updates/releases/download/v4.1.52/LKDock_v4.0_update_Win.zip",
+          "file_size_mb": 27.9,
+          "sha256": "e20dac9d5fbb3e4868fe51ffd251b7f493d48c7f7c977b169db98086e77f279c",
+          "files_to_replace": [
+            "main4.cp311-win_amd64.pyd"
+          ],
+          "python_version": "3.11",
+          "size": 29244907
+        }
+      }
+    },
     {
       "version": "4.1.51",
       "release_date": "2026-11-28",
